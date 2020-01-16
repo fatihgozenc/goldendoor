@@ -1,9 +1,14 @@
 import App from 'next/app'
 import fetch from 'isomorphic-unfetch'
+import Layout from '../components/layout/Layout';
 
 function GoldenDoor({ Component, pageProps, layoutData }) {
 	console.log(layoutData)
-	return <Component {...pageProps} />
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	)
 }
 
 GoldenDoor.getInitialProps = async (appContext) => {
