@@ -1,0 +1,1 @@
+{"name":"goldendoor-next","version":"0.1.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"@zeit/next-sass":"^1.0.1","isomorphic-unfetch":"^3.0.0","next":"^9.2.0","node-sass":"^4.13.1","react":"^16.12.0","react-dom":"^16.12.0"},"readme":"ERROR: No README data found!","_id":"goldendoor-next@0.1.0"}
