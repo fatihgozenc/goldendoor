@@ -102,21 +102,34 @@ module.exports =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 var _jsxFileName = "/Users/macbook/repos/goldendoor-next/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-function Index() {
+
+const Index = ({
+  data
+}) => {
+  // console.log(data)
   return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 4
     },
-    __self: this
+    __self: undefined
   }, "Hello Next.js");
-}
+};
+
+Index.getInitialProps = async () => {
+  const res = await fetch('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/home');
+  const json = await res.json();
+  return {
+    data: json
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 

@@ -226,25 +226,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Layout = props => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}));
+const Layout = props => {
+  console.log(props.data);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -2459,10 +2462,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function GoldenDoor({
   Component,
   pageProps,
-  layoutData
+  layoutData,
+  ctx
 }) {
-  console.log(layoutData);
+  // console.log(ctx)
   return __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    data: layoutData,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -2478,6 +2483,7 @@ function GoldenDoor({
 }
 
 GoldenDoor.getInitialProps = async appContext => {
+  // console.log(appContext.ctx)
   const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/layout');
   const data = await response.json();
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext);

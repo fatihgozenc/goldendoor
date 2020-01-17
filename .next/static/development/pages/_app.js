@@ -138,22 +138,23 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var Layout = function Layout(props) {
+  console.log(props.data);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
+  }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }));
@@ -9062,9 +9063,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function GoldenDoor(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps,
-      layoutData = _ref.layoutData;
-  console.log(layoutData);
+      layoutData = _ref.layoutData,
+      ctx = _ref.ctx;
+  // console.log(ctx)
   return __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    data: layoutData,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
