@@ -5,7 +5,7 @@ import { API_HOST } from '../config';
 
 function GoldenDoor({ Component, pageProps, layoutData, pathname }) {
 	return (
-		<Layout data={layoutData} path={pathname}>
+		<Layout data={layoutData} pathname={pathname}>
 			<Component {...pageProps} />
 		</Layout>
 	)

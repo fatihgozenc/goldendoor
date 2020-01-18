@@ -657,6 +657,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
+/***/ "./config/index.js":
+/*!*************************!*\
+  !*** ./config/index.js ***!
+  \*************************/
+/*! exports provided: API_HOST */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
+const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
@@ -679,28 +693,27 @@ module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "core-j
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_templates_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/templates/home */ "./components/templates/home/index.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var _components_templates_home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/templates/home */ "./components/templates/home/index.js");
 var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
 const Index = ({
   data
-}) => {
-  // console.log(data)
-  return __jsx(_components_templates_home__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    data: data,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  });
-};
+}) => __jsx(_components_templates_home__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  data: data,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 4
+  },
+  __self: undefined
+});
 
 Index.getInitialProps = async () => {
-  const res = await fetch('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/home');
+  const res = await fetch(`${_config__WEBPACK_IMPORTED_MODULE_1__["API_HOST"]}de/home`);
   const json = await res.json();
   return {
     data: json

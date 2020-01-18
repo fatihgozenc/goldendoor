@@ -1,10 +1,7 @@
 import { API_HOST } from '../../config';
+import Home from '../../components/templates/home';
 
-const Index = ({ data }) => {
-	return (
-		<p>Hello Next.js</p>
-	);
-}
+const Index = ({ data }) => <Home data={data} />
 
 Index.getInitialProps = async () => {
 	const res = await fetch(`${API_HOST}en/home`)

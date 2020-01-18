@@ -19,6 +19,15 @@ const Header = ({ data, logo, lang, pathname }) => {
 		cookies.get('lang') === 'de' ? cookies.set('lang', 'en') : cookies.set('lang', 'de')
 	}
 
+	const setPathLang = () => {
+		// lang === 'de' ? `/en${pathname === '/' ? '' : pathname}` : `${pathname.split('/en')[1]}`
+		return 'de'
+		if (lang === 'de') {
+			return
+		}
+	}
+
+
 	const toggleMenu = (e) => {
 		console.log(navigation, e.currentTarget)
 		menuToggler.current.classList.toggle('toggleMenuIcon');
@@ -72,7 +81,8 @@ const Header = ({ data, logo, lang, pathname }) => {
 							className="panel__lang-selector"
 							onClick={changeLang}>{`${lang.toUpperCase()}▾`}
 						</button>
-						<a href={lang === 'de' ? `/en${pathname}` : `${pathname.split('/en')[1] === '' ? '/' : `${pathname.split('/en')[1]}`}`}
+						{console.log(pathname.split('/en'))}
+						<a href={setPathLang()}
 							ref={langSelection}
 							className="panel__lang-selected"
 							onClick={setLang}><span>{(lang === 'de' ? 'EN' : 'DE')}</span>

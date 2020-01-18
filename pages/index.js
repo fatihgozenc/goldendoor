@@ -1,14 +1,10 @@
+import { API_HOST } from '../config';
 import Home from '../components/templates/home';
 
-const Index = ({ data }) => {
-	// console.log(data)
-	return (
-		<Home data={data} />
-	);
-}
+const Index = ({ data }) => <Home data={data} />
 
 Index.getInitialProps = async () => {
-	const res = await fetch('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/home')
+	const res = await fetch(`${API_HOST}de/home`)
 	const json = await res.json()
 	return { data: json }
 }

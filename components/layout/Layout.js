@@ -4,9 +4,9 @@ import Footer from './Footer';
 import './style.scss';
 
 const Layout = (props) => {
-	// console.log(props.data)
 	const logo = props.data.footer.info.logo;
 	const headerData = props.data.header;
+	const footerData = props.data.footer;
 	const lang = props.data.lang;
 	const pathname = props.pathname;
 
@@ -15,7 +15,7 @@ const Layout = (props) => {
 			<Header logo={logo} data={headerData} lang={lang} pathname={pathname} />
 			{props.children}
 			<Newsletter />
-			<Footer />
+			<Footer data={footerData} />
 		</>
 	)
 };
