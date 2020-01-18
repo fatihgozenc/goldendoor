@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Footer.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -69,47 +69,234 @@ var Footer = function Footer(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Header.js";
+/* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cookie-universal */ "./node_modules/cookie-universal/dist/cookie-universal-common.js");
+/* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
+/* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-var Header = function Header() {
+
+var cookies = cookie_universal__WEBPACK_IMPORTED_MODULE_1___default()();
+
+var Header = function Header(_ref) {
+  var data = _ref.data,
+      logo = _ref.logo,
+      lang = _ref.lang,
+      pathname = _ref.pathname;
+  var navigation = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  var langSelection = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  var menuToggler = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+
+  var changeLang = function changeLang() {
+    langSelection.current.previousElementSibling.classList.toggle('lowOpacity');
+    langSelection.current.classList.toggle('changeLang');
+  };
+
+  var setLang = function setLang() {
+    cookies.get('lang') === 'de' ? cookies.set('lang', 'en') : cookies.set('lang', 'de');
+  };
+
+  var toggleMenu = function toggleMenu(e) {
+    console.log(navigation, e.currentTarget);
+    menuToggler.current.classList.toggle('toggleMenuIcon');
+    navigation.current.classList.toggle('nav__opening');
+    var navItems = navigation.current.querySelectorAll('ul');
+    setTimeout(function () {
+      navItems.forEach(function (item) {
+        item.classList.toggle('nav__child--appear');
+      });
+    }, 250);
+  };
+
   return __jsx("header", {
+    className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 35
     },
     __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
+  }, __jsx("nav", {
+    className: "nav",
+    ref: navigation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 36
     },
     __self: this
-  }, __jsx("a", {
+  }, __jsx("div", {
+    className: "nav__wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 37
     },
     __self: this
-  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/en",
+  }, data.map(function (item) {
+    return __jsx("ul", {
+      key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, __jsx("a", {
+      href: item.url,
+      className: "nav__parent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, item.title), item.children !== null && item.children.map(function (subItem) {
+      return subItem.children !== null ? __jsx("ul", {
+        key: subItem.id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, __jsx("a", {
+        href: subItem.url,
+        className: "nav__child",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, subItem.title), subItem.children.map(function (subItemChild) {
+        return __jsx("li", {
+          key: subItemChild.id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, __jsx("a", {
+          className: "nav__child nav__child--sub",
+          href: subItemChild.url,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        }, subItemChild.title));
+      })) : __jsx("li", {
+        key: subItem.id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, __jsx("a", {
+        href: subItem.url,
+        className: "nav__child",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, subItem.title));
+    }));
+  }))), __jsx("div", {
+    className: "frame",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 68
     },
     __self: this
-  }, __jsx("a", {
+  }, __jsx("div", {
+    className: "logoarea",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 69
     },
     __self: this
-  }, "Change to EN")));
+  }, __jsx("div", {
+    className: "panel panel__lang",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, __jsx("button", {
+    className: "panel__lang-selector",
+    onClick: changeLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }, "".concat(lang.toUpperCase(), "\u25BE")), __jsx("a", {
+    href: lang === 'de' ? "/en".concat(pathname) : "".concat(pathname.split('/en')[1] === '' ? '/' : "".concat(pathname.split('/en')[1])),
+    ref: langSelection,
+    className: "panel__lang-selected",
+    onClick: setLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: this
+  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+    id: "logo",
+    href: lang === 'de' ? '/' : '/en',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }, __jsx("img", {
+    src: logo,
+    alt: "Golden Door Logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "panel panel__menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: this
+  }, __jsx("button", {
+    className: "menutoggler__button",
+    ref: menuToggler,
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: this
+  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  })))), __jsx("a", {
+    href: "#newsletter",
+    className: "menuMailer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -130,37 +317,148 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/layout/Header.js");
 /* harmony import */ var _Newsletter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Newsletter */ "./components/layout/Newsletter.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/layout/Footer.js");
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Layout.js";
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./components/layout/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
 var Layout = function Layout(props) {
-  console.log(props.data);
+  // console.log(props.data)
+  var logo = props.data.footer.info.logo;
+  var headerData = props.data.header;
+  var lang = props.data.lang;
+  var pathname = props.pathname;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    logo: logo,
+    data: headerData,
+    lang: lang,
+    pathname: pathname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 15
     },
     __self: this
   }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 17
     },
     __self: this
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 18
     },
     __self: this
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./components/layout/MenuMailer.js":
+/*!*****************************************!*\
+  !*** ./components/layout/MenuMailer.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuMailer.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var MenuMailer = function MenuMailer() {
+  return __jsx("svg", {
+    className: "menuMailer",
+    viewBox: "0 0 30 22.48",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, __jsx("path", {
+    fill: "#c2ac84",
+    d: "M29.7,0,.47,10.58a.7.7,0,0,0-.16,1.24l4.37,3L24.51,4.35,7.72,16.88V22a.44.44,0,0,0,.68.37l3.7-2.46,3.64,2.49a.71.71,0,0,0,1-.22L30,.34A.23.23,0,0,0,29.7,0Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuMailer);
+
+/***/ }),
+
+/***/ "./components/layout/MenuToggler.js":
+/*!******************************************!*\
+  !*** ./components/layout/MenuToggler.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuToggler.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var MenuToggler = function MenuToggler() {
+  return __jsx("svg", {
+    className: "menutoggler",
+    height: "30",
+    width: "45",
+    viewBox: "0 0 30 12",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx("rect", {
+    width: "30",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }), __jsx("rect", {
+    x: "8",
+    y: "6",
+    width: "22",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), __jsx("rect", {
+    x: "18",
+    y: "12",
+    width: "12",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuToggler);
 
 /***/ }),
 
@@ -177,7 +475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Newsletter.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Newsletter.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -224,6 +522,20 @@ var Newsletter = function Newsletter(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Newsletter);
+
+/***/ }),
+
+/***/ "./config/index.js":
+/*!*************************!*\
+  !*** ./config/index.js ***!
+  \*************************/
+/*! exports provided: API_HOST */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
+var API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
 
 /***/ }),
 
@@ -1013,6 +1325,23 @@ module.exports = _typeof;
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
 
+
+/***/ }),
+
+/***/ "./node_modules/cookie-universal/dist/cookie-universal-common.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/cookie-universal/dist/cookie-universal-common.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports=function(e){function t(o){if(r[o])return r[o].exports;var n=r[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,t),n.l=!0,n.exports}var r={};return t.m=e,t.c=r,t.d=function(e,r,o){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,r){"use strict";var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},n=r(1);e.exports=function(t,r){var i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],a="object"===("undefined"==typeof document?"undefined":o(document))&&"string"==typeof document.cookie,s="object"===(void 0===t?"undefined":o(t))&&"object"===(void 0===r?"undefined":o(r))&&void 0!==e,u=!a&&!s||a&&s,f=function(e){if(s){var o=t.headers.cookie||"";return e&&(o=r.getHeaders(),o=o["set-cookie"]?o["set-cookie"].map(function(e){return e.split(";")[0]}).join(";"):""),o}if(a)return document.cookie||""},c=function(){var e=r.getHeader("Set-Cookie");return(e="string"==typeof e?[e]:e)||[]},p=function(e){return r.setHeader("Set-Cookie",e)},d=function(e,t){if(!t)return e;try{return JSON.parse(e)}catch(t){return e}},l={parseJSON:i,set:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{path:"/"};if(!u)if(t="object"===(void 0===t?"undefined":o(t))?JSON.stringify(t):t,s){var i=c();i.push(n.serialize(e,t,r)),p(i)}else document.cookie=n.serialize(e,t,r)},setAll:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];u||Array.isArray(e)&&e.forEach(function(e){var t=e.name,r=void 0===t?"":t,o=e.value,n=void 0===o?"":o,i=e.opts,a=void 0===i?{path:"/"}:i;l.set(r,n,a)})},get:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{fromRes:!1,parseJSON:l.parseJSON};if(u)return"";var r=n.parse(f(t.fromRes)),o=r[e];return d(o,t.parseJSON)},getAll:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{fromRes:!1,parseJSON:l.parseJSON};if(u)return{};var t=n.parse(f(e.fromRes));for(var r in t)t[r]=d(t[r],e.parseJSON);return t},remove:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{path:"/"};if(!u){var r=l.get(e);t.expires=new Date(0),r&&l.set(e,"",t)}},removeAll:function(){if(!u){var e=n.parse(f());for(var t in e)l.remove(t)}},nodeCookie:n};return l}},function(e,t,r){"use strict";function o(e,t){if("string"!=typeof e)throw new TypeError("argument str must be a string");for(var r={},o=t||{},n=e.split(u),s=o.decode||a,f=0;f<n.length;f++){var c=n[f],p=c.indexOf("=");if(!(p<0)){var d=c.substr(0,p).trim(),l=c.substr(++p,c.length).trim();'"'==l[0]&&(l=l.slice(1,-1)),void 0==r[d]&&(r[d]=i(l,s))}}return r}function n(e,t,r){var o=r||{},n=o.encode||s;if("function"!=typeof n)throw new TypeError("option encode is invalid");if(!f.test(e))throw new TypeError("argument name is invalid");var i=n(t);if(i&&!f.test(i))throw new TypeError("argument val is invalid");var a=e+"="+i;if(null!=o.maxAge){var u=o.maxAge-0;if(isNaN(u))throw new Error("maxAge should be a Number");a+="; Max-Age="+Math.floor(u)}if(o.domain){if(!f.test(o.domain))throw new TypeError("option domain is invalid");a+="; Domain="+o.domain}if(o.path){if(!f.test(o.path))throw new TypeError("option path is invalid");a+="; Path="+o.path}if(o.expires){if("function"!=typeof o.expires.toUTCString)throw new TypeError("option expires is invalid");a+="; Expires="+o.expires.toUTCString()}if(o.httpOnly&&(a+="; HttpOnly"),o.secure&&(a+="; Secure"),o.sameSite){switch("string"==typeof o.sameSite?o.sameSite.toLowerCase():o.sameSite){case!0:a+="; SameSite=Strict";break;case"lax":a+="; SameSite=Lax";break;case"strict":a+="; SameSite=Strict";break;case"none":a+="; SameSite=None";break;default:throw new TypeError("option sameSite is invalid")}}return a}function i(e,t){try{return t(e)}catch(t){return e}}/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+t.parse=o,t.serialize=n;var a=decodeURIComponent,s=encodeURIComponent,u=/; */,f=/^[\u0009\u0020-\u007e\u0080-\u00ff]+$/}]);
 
 /***/ }),
 
@@ -9039,6 +9368,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -9048,7 +9378,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/pages/_app.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
@@ -9060,14 +9390,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 function GoldenDoor(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps,
       layoutData = _ref.layoutData,
-      ctx = _ref.ctx;
-  // console.log(ctx)
+      pathname = _ref.pathname;
   return __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
     data: layoutData,
+    path: pathname,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -9083,31 +9414,34 @@ function GoldenDoor(_ref) {
 }
 
 GoldenDoor.getInitialProps = function _callee(appContext) {
-  var response, data, appProps;
+  var pathname, lang, response, data, appProps;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/layout'));
+          pathname = appContext.ctx.asPath;
+          lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
+          _context.next = 4;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("".concat(_config__WEBPACK_IMPORTED_MODULE_13__["API_HOST"]).concat(lang, "/layout")));
 
-        case 2:
+        case 4:
           response = _context.sent;
-          _context.next = 5;
+          _context.next = 7;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(response.json());
 
-        case 5:
+        case 7:
           data = _context.sent;
-          _context.next = 8;
+          _context.next = 10;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_10___default.a.getInitialProps(appContext));
 
-        case 8:
+        case 10:
           appProps = _context.sent;
           return _context.abrupt("return", _objectSpread({}, appProps, {
-            layoutData: data
+            layoutData: data,
+            pathname: pathname
           }));
 
-        case 10:
+        case 12:
         case "end":
           return _context.stop();
       }
@@ -9130,5 +9464,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js!./","static/runtime/webpack.js"]]]);
+},[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js!./","static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=_app.js.map

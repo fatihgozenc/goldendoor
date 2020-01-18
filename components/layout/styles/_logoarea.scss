@@ -1,0 +1,79 @@
+.logoarea {
+	display: flex;
+	justify-content: space-between;
+	height: 8rem;
+	@include md {
+		height: 10rem;
+	}
+	@include lg {
+		height: 12rem;
+	}
+}
+
+#logo {
+	transform: translateY(-50%);
+	cursor: pointer;
+	pointer-events: all;
+
+	img {
+		height: 8rem;
+		@include md {
+			height: 10rem;
+		}
+		@include lg {
+			height: 12rem;
+		}
+	}
+}
+
+.panel {
+	flex: .48;
+	height: 100%;
+	border-top: 2px solid $gold;
+	padding: 3%;
+	
+	@include lg {
+		padding: 1.6%;
+	}
+
+	button, a {
+		display: block;
+		pointer-events: all;
+		font-size: 1.7rem;
+		padding: 3%;
+		text-decoration: unset;
+
+		@include lg {
+			padding: 1%;
+		}
+	}
+}
+
+.panel__menu button {
+	float: right;
+	overflow: hidden;
+}
+
+.panel__lang-selector {
+	position: relative;
+}
+
+.panel__lang-selected {
+	opacity: 0;
+	visibility: hidden;
+	transition: .5s all ease;
+	transform: translateY(50%);
+}
+
+.lowOpacity {
+	transition: .5s all ease;
+	opacity: .3;
+}
+
+.changeLang {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	transition: .5s all ease;
+	transform: translateY(0);
+}

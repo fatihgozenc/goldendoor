@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Footer.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -160,46 +160,232 @@ const Footer = props => __jsx("footer", {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Header.js";
+/* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cookie-universal */ "cookie-universal");
+/* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
+/* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Header = () => __jsx("header", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx("a", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/en",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, __jsx("a", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}, "Change to EN")));
+
+const cookies = cookie_universal__WEBPACK_IMPORTED_MODULE_1___default()();
+
+const Header = ({
+  data,
+  logo,
+  lang,
+  pathname
+}) => {
+  const navigation = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  const langSelection = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  const menuToggler = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+
+  const changeLang = () => {
+    langSelection.current.previousElementSibling.classList.toggle('lowOpacity');
+    langSelection.current.classList.toggle('changeLang');
+  };
+
+  const setLang = () => {
+    cookies.get('lang') === 'de' ? cookies.set('lang', 'en') : cookies.set('lang', 'de');
+  };
+
+  const toggleMenu = e => {
+    console.log(navigation, e.currentTarget);
+    menuToggler.current.classList.toggle('toggleMenuIcon');
+    navigation.current.classList.toggle('nav__opening');
+    let navItems = navigation.current.querySelectorAll('ul');
+    setTimeout(() => {
+      navItems.forEach(item => {
+        item.classList.toggle('nav__child--appear');
+      });
+    }, 250);
+  };
+
+  return __jsx("header", {
+    className: "header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx("nav", {
+    className: "nav",
+    ref: navigation,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "nav__wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, data.map(item => {
+    return __jsx("ul", {
+      key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: undefined
+    }, __jsx("a", {
+      href: item.url,
+      className: "nav__parent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: undefined
+    }, item.title), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
+      key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: undefined
+    }, __jsx("a", {
+      href: subItem.url,
+      className: "nav__child",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: undefined
+    }, subItem.title), subItem.children.map(subItemChild => __jsx("li", {
+      key: subItemChild.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: undefined
+    }, __jsx("a", {
+      className: "nav__child nav__child--sub",
+      href: subItemChild.url,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: undefined
+    }, subItemChild.title)))) : __jsx("li", {
+      key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: undefined
+    }, __jsx("a", {
+      href: subItem.url,
+      className: "nav__child",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: undefined
+    }, subItem.title))));
+  }))), __jsx("div", {
+    className: "frame",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "logoarea",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "panel panel__lang",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, __jsx("button", {
+    className: "panel__lang-selector",
+    onClick: changeLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }, `${lang.toUpperCase()}▾`), __jsx("a", {
+    href: lang === 'de' ? `/en${pathname}` : `${pathname.split('/en')[1] === '' ? '/' : `${pathname.split('/en')[1]}`}`,
+    ref: langSelection,
+    className: "panel__lang-selected",
+    onClick: setLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+    id: "logo",
+    href: lang === 'de' ? '/' : '/en',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: logo,
+    alt: "Golden Door Logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "panel panel__menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  }, __jsx("button", {
+    className: "menutoggler__button",
+    ref: menuToggler,
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: undefined
+  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
+  })))), __jsx("a", {
+    href: "#newsletter",
+    className: "menuMailer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: undefined
+  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: undefined
+  }))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -219,37 +405,148 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/layout/Header.js");
 /* harmony import */ var _Newsletter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Newsletter */ "./components/layout/Newsletter.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/layout/Footer.js");
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Layout.js";
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./components/layout/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
 const Layout = props => {
-  console.log(props.data);
+  // console.log(props.data)
+  const logo = props.data.footer.info.logo;
+  const headerData = props.data.header;
+  const lang = props.data.lang;
+  const pathname = props.pathname;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    logo: logo,
+    data: headerData,
+    lang: lang,
+    pathname: pathname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 15
     },
     __self: undefined
   }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 17
     },
     __self: undefined
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 18
     },
     __self: undefined
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./components/layout/MenuMailer.js":
+/*!*****************************************!*\
+  !*** ./components/layout/MenuMailer.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuMailer.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const MenuMailer = () => {
+  return __jsx("svg", {
+    className: "menuMailer",
+    viewBox: "0 0 30 22.48",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, __jsx("path", {
+    fill: "#c2ac84",
+    d: "M29.7,0,.47,10.58a.7.7,0,0,0-.16,1.24l4.37,3L24.51,4.35,7.72,16.88V22a.44.44,0,0,0,.68.37l3.7-2.46,3.64,2.49a.71.71,0,0,0,1-.22L30,.34A.23.23,0,0,0,29.7,0Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuMailer);
+
+/***/ }),
+
+/***/ "./components/layout/MenuToggler.js":
+/*!******************************************!*\
+  !*** ./components/layout/MenuToggler.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuToggler.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const MenuToggler = () => {
+  return __jsx("svg", {
+    className: "menutoggler",
+    height: "30",
+    width: "45",
+    viewBox: "0 0 30 12",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, __jsx("rect", {
+    width: "30",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }), __jsx("rect", {
+    x: "8",
+    y: "6",
+    width: "22",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }), __jsx("rect", {
+    x: "18",
+    y: "12",
+    width: "12",
+    height: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuToggler);
 
 /***/ }),
 
@@ -266,7 +563,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Newsletter.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Newsletter.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -311,6 +608,31 @@ const Newsletter = props => __jsx("div", {
 }, "About")));
 
 /* harmony default export */ __webpack_exports__["default"] = (Newsletter);
+
+/***/ }),
+
+/***/ "./components/layout/style.scss":
+/*!**************************************!*\
+  !*** ./components/layout/style.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./config/index.js":
+/*!*************************!*\
+  !*** ./config/index.js ***!
+  \*************************/
+/*! exports provided: API_HOST */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
+const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
 
 /***/ }),
 
@@ -2439,6 +2761,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -2447,7 +2770,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/pages/_app.js";
+var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
@@ -2459,15 +2782,16 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 function GoldenDoor({
   Component,
   pageProps,
   layoutData,
-  ctx
+  pathname
 }) {
-  // console.log(ctx)
   return __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
     data: layoutData,
+    path: pathname,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -2483,12 +2807,14 @@ function GoldenDoor({
 }
 
 GoldenDoor.getInitialProps = async appContext => {
-  // console.log(appContext.ctx)
-  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/layout');
+  const pathname = appContext.ctx.asPath;
+  const lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
+  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()(`${_config__WEBPACK_IMPORTED_MODULE_12__["API_HOST"]}${lang}/layout`);
   const data = await response.json();
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {
-    layoutData: data
+    layoutData: data,
+    pathname
   });
 };
 
@@ -2505,6 +2831,17 @@ GoldenDoor.getInitialProps = async appContext => {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "cookie-universal":
+/*!***********************************!*\
+  !*** external "cookie-universal" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("cookie-universal");
 
 /***/ }),
 

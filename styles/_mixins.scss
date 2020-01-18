@@ -1,0 +1,28 @@
+@mixin title {
+  font-weight: bold;
+  font-family: 'Noto Serif';
+}
+
+@mixin display_text {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  line-height: 1.6;
+  font-family: "Noto Serif";
+}
+
+.backgroundImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.bg_img {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+$loopingImgHeight: 17vh;

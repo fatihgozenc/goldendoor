@@ -1,0 +1,1 @@
+export const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/'

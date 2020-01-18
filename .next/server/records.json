@@ -21,12 +21,12 @@
     "byName": {
       "init-server.js": 0,
       "on-error-server.js": 1,
-      "static/4BHWi37kh037FzBztp50z/pages/_app.js": 2,
-      "static/4BHWi37kh037FzBztp50z/pages/_document.js": 3,
-      "static/4BHWi37kh037FzBztp50z/pages/_error.js": 4,
-      "static/4BHWi37kh037FzBztp50z/pages/about.js": 5,
-      "static/4BHWi37kh037FzBztp50z/pages/en.js": 6,
-      "static/4BHWi37kh037FzBztp50z/pages/index.js": 7
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/_app.js": 2,
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/_document.js": 3,
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/_error.js": 4,
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/about.js": 5,
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/en.js": 6,
+      "static/dGwq7e2qDIZcMLeO9nL41/pages/index.js": 7
     },
     "bySource": {},
     "usedIds": [

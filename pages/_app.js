@@ -1,22 +1,23 @@
 import App from 'next/app'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/Layout';
+import { API_HOST } from '../config';
 
-function GoldenDoor({ Component, pageProps, layoutData, ctx }) {
-	// console.log(ctx)
+function GoldenDoor({ Component, pageProps, layoutData, pathname }) {
 	return (
-		<Layout data={layoutData}>
+		<Layout data={layoutData} path={pathname}>
 			<Component {...pageProps} />
 		</Layout>
 	)
 }
 
 GoldenDoor.getInitialProps = async (appContext) => {
-	// console.log(appContext.ctx)
-	const response = await fetch('http://goldendoor-api.narcissundtaurus.com/wp-json/gd/de/layout')
+	const pathname = appContext.ctx.asPath
+	const lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
+	const response = await fetch(`${API_HOST}${lang}/layout`)
 	const data = await response.json()
 	const appProps = await App.getInitialProps(appContext);
-	return { ...appProps, layoutData: data }
+	return { ...appProps, layoutData: data, pathname }
 }
 
 export default GoldenDoor;
