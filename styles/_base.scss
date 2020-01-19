@@ -43,6 +43,17 @@ button {
 	}
 }
 
+.golden__button {
+	background: none;
+	color: $gold;
+	border: none;
+	@include display_text;
+	padding: 2rem;
+	border-radius: 4px;
+	font-weight: bold;
+	background-image: $gradGold;
+  }
+
 input {
 	font-family: inherit;
 }

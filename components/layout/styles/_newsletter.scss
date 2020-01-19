@@ -1,81 +1,191 @@
 .newsletter {
-  padding: 16% 8%;
-  display: flex;
-  flex-direction: column;
+padding: 16% 8%;
+display: flex;
+flex-direction: column;
 
-  input:not([type="submit"]) {
-    background: none;
-    border: none;
-    border-bottom: 1px solid $gold;
-  }
+input:not([type="submit"]) {
+	background: none;
+	border: none;
+	border-bottom: 1px solid $gold;
 
-  input[type="submit"]{
-    @include md {
-      margin: 0 auto;
-      display: inherit;
-    }
-  }
+	&:focus {
+		outline:none;
+	}
+}
 
-  label {
-    @include display_text;
-    position: absolute;
-    z-index: -1;
-  }
+input[type="submit"]{
+	@include md {
+	margin: 0 auto;
+	display: inherit;
+	}
+}
 
-  @include md {
-    padding: 16% 8% 0 8%;
-    flex-direction: row;
-  }
+label {
+	@include display_text;
+	font-size: .9em;
+}
 
-  @include xl {
-    max-width: 1140px;
-    margin: 4% auto;
-  }
+@include md {
+	padding: 16% 8% 0 8%;
+	flex-direction: row;
+}
 
-  @include xxl {
-    max-width: 1600px;
-  }
+@include xl {
+	max-width: 1140px;
+	margin: 4% auto;
+}
+
+@include xxl {
+	max-width: 1600px;
+}
 }
 
 .newsletter__block{
-  h3{
-    font-size: 3.6rem;
-    @include title;
-  }
-  p {
-    @include display_text;
-  }
-  @include md {
-    flex: 1 0 50%;
-  }
+h3{
+	font-size: 3.6rem;
+	@include title;
+}
+p {
+	@include display_text;
+}
+@include md {
+	flex: 1 0 50%;
+}
 }
 
 .newsletter__form--field{
-  padding: 5% 0;
-  flex: 1;
+padding: 5% 0;
+flex: 1;
+
+	select {
+		width: 100%;
+		text-overflow: ellipsis;
+		display: block;
+		font-weight: 700;
+		line-height: 1.6;
+		padding: 1rem 1.4em 1rem 2rem;
+		width: 100%;
+		font-weight: bold;
+		color: $gold;
+		max-width: 100%;
+		box-sizing: border-box;
+		font-family:"Lato";
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		border: none;
+		border-bottom: 1px solid $gold;
+		box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+		border-radius: 0;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		background-color: transparent;
+		background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23C2AC84%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+		background-repeat: no-repeat, repeat;
+		background-position: left .2em top 50%, 0 0;
+		background-size: .65em auto, 100%;
+
+		&::-ms-expand {
+			display: none;
+		}
+		&:focus {
+			border-color: $gold;
+			box-shadow: none;
+			color: $gold;
+			outline: none;
+		}
+	}
 }
 
 .newsletter__datenschutz {
-  p {
-    font-family: 'Noto Serif';
-    font-size: 1.2rem;
-  }
+	p {
+		font-family: 'Noto Serif';
+		font-size: 1.2rem;
+	}
+	.label__radio{
+		cursor: pointer;
+		padding-left: 1.6rem;
+		position: relative;
+		font-weight: bold;
+		font-size: 1.2rem;
+		line-height: 2;
+	  
+		&:hover{
+		  @include xl {
+			&::after {
+			  transform: scale(2);
+			  opacity: .25;
+			  transition: .25s all ease;
+			}
+		  }
+		}
+	  
+		&::before {
+		  position: absolute;
+		  z-index: -1;
+		  content: "";
+		  height: 1.8rem;
+		  left: -1.8rem;
+		  top: -2px;
+		  width: 1.8rem;
+		  border-radius: 5rem;
+		  border: 1px solid $gold;
+	  
+	  
+		}
+		&::after {
+		  transition: .25s all ease;
+		  transform: scale(.3);
+		  position: absolute;
+		  z-index: -1;
+		  content: "";
+		  opacity: 0;
+		  height: 1.4rem;
+		  left: -1.5rem;
+		  top: 1px;
+		  width: 1.4rem;
+		  border-radius: 5rem;
+		  background: $gold;
+		}
+	  }
+	  
+	  .input__radio {
+		cursor: pointer;
+		opacity: 0;
+	  
+		&:hover + .label__radio::after{
+			transform: scale(2);
+			opacity: .25;
+			transition: .25s all ease;
+		}
+	  }
+	  
+	  .input__radio:checked {
+		& + .label__radio::after {
+		  transform: scale(1);
+		  opacity: 1;
+		}
+	  }
 }
 
 .newsletter__form--field {
-  display: flex;
+	display: flex;
+	flex-direction: column;
 
-  input {
-    flex: 1;
-  }
+	input {
+		padding: 1rem 0;
+		flex: 1;
+		font-size: 1.6rem;
+		color: $gold;
+	}
 }
 
 .newsletter__form--block {
-  @include xl {
-    display: flex;
+	@include xl {
+		display: flex;
 
-    .newsletter__form--field:nth-child(2) {
-      padding-left: 5%;
-    }
-  }
+		.newsletter__form--field:nth-child(2) {
+			padding-left: 5%;
+		}
+	}
 }

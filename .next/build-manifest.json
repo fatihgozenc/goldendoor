@@ -18,6 +18,20 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+    ],
+    "/en/karriere": [
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/css/static/development/pages/en/karriere.js.chunk.css",
+      "static/runtime/main.js"
+    ],
+    "/en/kontakt": [
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/css/static/development/pages/en/kontakt.js.chunk.css",
+      "static/runtime/main.js"
     ]
   }
 }

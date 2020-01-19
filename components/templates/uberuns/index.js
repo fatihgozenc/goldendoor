@@ -1,9 +1,10 @@
-import Hero from '../../hero'
+import Link from 'next/link'
+import Hero from '../../Hero'
 import parse from 'html-react-parser'
 import MehrLesen from '../../MehrLesen'
 import './style.scss'
 
-export default function({data, lang}) {
+export default function ({ data, lang }) {
 	const story = data.fields.uber_uns_story;
 	const philosophy = data.fields.uber_uns_philosophy;
 	const extra_text_1 = data.fields.uber_uns_extra_text.extra_text_block_1;
@@ -22,13 +23,17 @@ export default function({data, lang}) {
 						{
 							lang === 'de'
 								? (
-									<a href="/referenzen">
-										<MehrLesen name={`ZUM REFEREZEN`} />
-									</a>
+									<Link href="/referenzen">
+										<a>
+											<MehrLesen name={`ZUM REFERENZEN`} />
+										</a>
+									</Link>
 								) : (
-									<a href="/en/referenzen">
-										<MehrLesen name={`TO REFERENCES`} />
-									</a>
+									<Link href="/en/referenzen">
+										<a>
+											<MehrLesen name={`TO REFERENCES`} />
+										</a>
+									</Link>
 								)
 						}
 					</div>
@@ -42,8 +47,8 @@ export default function({data, lang}) {
 				<div className="story story--left">
 					<div className="story__content">
 						<h2 className="title__lg">
-              {philosophy.philosophy_titel}
-            </h2>
+							{philosophy.philosophy_titel}
+						</h2>
 						{parse(philosophy.philosophy_inhalt)}
 						{
 							lang === 'de'
@@ -58,12 +63,12 @@ export default function({data, lang}) {
 								)
 						}
 					</div>
-          <div 
-            className="story__img backgroundImg" 
-            style={{ 
-              backgroundImage: "url(" + philosophy.philosophy_bild + ")" 
-            }} 
-          />
+					<div
+						className="story__img backgroundImg"
+						style={{
+							backgroundImage: "url(" + philosophy.philosophy_bild + ")"
+						}}
+					/>
 				</div>
 
 			</div>

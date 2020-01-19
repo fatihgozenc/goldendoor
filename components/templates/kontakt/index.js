@@ -5,10 +5,10 @@ import DatePicker from 'react-datepicker';
 import './style.scss';
 
 const MapContainer = dynamic(() => import('../../MapContainer'), {
-  ssr: false
+	ssr: false
 });
 
-export default ({data}) => {
+export default ({ data }) => {
 	// const contactInfo = useSelector(state => state.layout.footer.info);
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
 
@@ -307,10 +307,10 @@ export default ({data}) => {
 				</div>
 
 			</div>
-			
+
 			<div className="contact__info">
 				<div className="contact__info--map">
-					<MapContainer/>
+					<MapContainer />
 				</div>
 
 				{/* <div className="contact__info--address">
@@ -325,7 +325,7 @@ export default ({data}) => {
 				</div> */}
 
 			</div>
-			
+
 		</>
 	)
 };

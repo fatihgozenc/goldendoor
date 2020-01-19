@@ -35,7 +35,6 @@ const Header = ({ data, logo, lang, pathname }) => {
 	}
 
 	const toggleMenu = (e) => {
-		console.log(navigation, e.currentTarget)
 		menuToggler.current.classList.toggle('toggleMenuIcon');
 		navigation.current.classList.toggle('nav__opening');
 		let navItems = navigation.current.querySelectorAll('ul');
@@ -55,7 +54,7 @@ const Header = ({ data, logo, lang, pathname }) => {
 							return (
 								<ul key={item.id}>
 									<Link href={item.url}>
-										<a className="nav__parent">{item.title}</a>
+										<a onClick={toggleMenu} className="nav__parent">{item.title}</a>
 									</Link>
 									{item.children !== null &&
 										item.children.map(subItem => (
@@ -63,12 +62,12 @@ const Header = ({ data, logo, lang, pathname }) => {
 												? (
 													<ul key={subItem.id}>
 														<Link href={subItem.url} >
-															<a className="nav__child">{subItem.title}</a>
+															<a onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 														</Link>
 														{subItem.children.map(subItemChild => (
 															<li key={subItemChild.id}>
 																<Link href={subItemChild.url}>
-																	<a className="nav__child nav__child--sub">
+																	<a onClick={toggleMenu} className="nav__child nav__child--sub">
 																		{subItemChild.title}
 																	</a>
 																</Link>
@@ -78,7 +77,7 @@ const Header = ({ data, logo, lang, pathname }) => {
 												) : (
 													<li key={subItem.id}>
 														<Link href={subItem.url}>
-															<a className="nav__child">{subItem.title}</a>
+															<a onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 														</Link>
 													</li>
 												)
@@ -96,14 +95,14 @@ const Header = ({ data, logo, lang, pathname }) => {
 						<button
 							className="panel__lang-selector"
 							onClick={changeLang}>
-								{`${lang.toUpperCase()}▾`}
+							{`${lang.toUpperCase()}▾`}
 						</button>
 						<Link href={setPathLang()}>
-							<a 
+							<a
 								ref={langSelection}
 								className="panel__lang-selected"
 								onClick={setLang}>
-									<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
+								<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
 							</a>
 						</Link>
 					</div>
