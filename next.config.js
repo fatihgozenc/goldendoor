@@ -15,7 +15,10 @@ module.exports = withSass(
 			return config
 		},
 		env: {
-			API_HOST: 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/',
+			NEWSLETTER_USER='marketing@goldendoor.group',
+			NEWSLETTER_PASS='&n2go@GD',
+			NEWSLETTER_API_HOST='api.newsletter2go.com',
+			NEWSLETTER_API_KEY='t4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav'
 		}
 	},
 	withFonts({

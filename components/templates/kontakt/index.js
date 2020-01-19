@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import DatePicker from 'react-datepicker';
 import './style.scss';
 
-const MapContainer = dynamic(() => import('../../mapcontainer'), {
+const MapContainer = dynamic(() => import('../../MapContainer'), {
   ssr: false
 });
 
