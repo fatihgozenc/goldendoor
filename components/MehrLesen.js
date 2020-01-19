@@ -1,5 +1,4 @@
 const MehrLesen = ({ name }) => {
-
 	return (
 		<div className="mehrlesen">
 			<span className="mehrlesen_text">{name}&nbsp;&nbsp;</span>
@@ -11,6 +10,6 @@ const MehrLesen = ({ name }) => {
 			</div>
 		</div>
 	)
-};
+}
 
-export default MehrLesen;
+export default MehrLesen

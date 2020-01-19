@@ -108,7 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -396,9 +396,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Header.js";
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -415,20 +418,25 @@ const Header = ({
   const menuToggler = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
 
   const changeLang = () => {
-    langSelection.current.previousElementSibling.classList.toggle('lowOpacity');
-    langSelection.current.classList.toggle('changeLang');
+    langSelection.current.previousElementSibling.classList.add('lowOpacity');
+    langSelection.current.classList.add('changeLang');
   };
 
   const setLang = () => {
     cookies.get('lang') === 'de' ? cookies.set('lang', 'en') : cookies.set('lang', 'de');
+    langSelection.current.previousElementSibling.classList.remove('lowOpacity');
+    langSelection.current.classList.remove('changeLang');
   };
 
   const setPathLang = () => {
-    // lang === 'de' ? `/en${pathname === '/' ? '' : pathname}` : `${pathname.split('/en')[1]}`
-    return 'de';
-
-    if (lang === 'de') {
-      return;
+    if (lang === 'de' && pathname === '/') {
+      return `/en`;
+    } else if (lang === 'en' && pathname === '/en') {
+      return `/`;
+    } else if (lang === 'en') {
+      return pathname.split('/en')[1];
+    } else {
+      return `/en/${pathname.split('/')[1]}`;
     }
   };
 
@@ -448,7 +456,7 @@ const Header = ({
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("nav", {
@@ -456,14 +464,14 @@ const Header = ({
     ref: navigation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx("div", {
     className: "nav__wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 52
     },
     __self: undefined
   }, data.map(item => {
@@ -471,82 +479,106 @@ const Header = ({
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: undefined
-    }, __jsx("a", {
-      href: item.url,
-      className: "nav__parent",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: undefined
-    }, item.title), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
-      key: subItem.id,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 56
       },
       __self: undefined
-    }, __jsx("a", {
-      href: subItem.url,
-      className: "nav__child",
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: item.url,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 57
       },
       __self: undefined
-    }, subItem.title), subItem.children.map(subItemChild => __jsx("li", {
-      key: subItemChild.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: undefined
     }, __jsx("a", {
-      className: "nav__child nav__child--sub",
-      href: subItemChild.url,
+      className: "nav__parent",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 58
       },
       __self: undefined
-    }, subItemChild.title)))) : __jsx("li", {
+    }, item.title)), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
       key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: undefined
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: subItem.url,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
       },
       __self: undefined
     }, __jsx("a", {
-      href: subItem.url,
       className: "nav__child",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 66
       },
       __self: undefined
-    }, subItem.title))));
+    }, subItem.title)), subItem.children.map(subItemChild => __jsx("li", {
+      key: subItemChild.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: undefined
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: subItemChild.url,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: undefined
+    }, __jsx("a", {
+      className: "nav__child nav__child--sub",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: undefined
+    }, subItemChild.title))))) : __jsx("li", {
+      key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: undefined
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: subItem.url,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80
+      },
+      __self: undefined
+    }, __jsx("a", {
+      className: "nav__child",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81
+      },
+      __self: undefined
+    }, subItem.title)))));
   }))), __jsx("div", {
     className: "frame",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("div", {
     className: "logoarea",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx("div", {
     className: "panel panel__lang",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx("button", {
@@ -554,31 +586,43 @@ const Header = ({
     onClick: changeLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 96
     },
     __self: undefined
-  }, `${lang.toUpperCase()}▾`), console.log(pathname.split('/en')), __jsx("a", {
+  }, `${lang.toUpperCase()}▾`), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: setPathLang(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }, __jsx("a", {
     ref: langSelection,
     className: "panel__lang-selected",
     onClick: setLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 106
     },
     __self: undefined
-  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
-    id: "logo",
+  }, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: lang === 'de' ? '/' : '/en',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 110
+    },
+    __self: undefined
+  }, __jsx("a", {
+    id: "logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("img", {
@@ -586,14 +630,14 @@ const Header = ({
     alt: "Golden Door Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 112
     },
     __self: undefined
-  })), __jsx("div", {
+  }))), __jsx("div", {
     className: "panel panel__menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("button", {
@@ -602,13 +646,13 @@ const Header = ({
     onClick: toggleMenu,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 116
     },
     __self: undefined
   }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 117
     },
     __self: undefined
   })))), __jsx("a", {
@@ -616,13 +660,13 @@ const Header = ({
     className: "menuMailer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 121
     },
     __self: undefined
   }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 122
     },
     __self: undefined
   }))));
@@ -648,7 +692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/layout/Footer.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./components/layout/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Layout.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -657,29 +701,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Layout = props => {
-  const logo = props.data.footer.info.logo;
-  const headerData = props.data.header;
-  const footerData = props.data.footer;
-  const lang = props.data.lang;
-  const pathname = props.pathname;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    logo: logo,
-    data: headerData,
-    lang: lang,
-    pathname: pathname,
+    logo: props.data.footer.info.logo,
+    data: props.data.header,
+    lang: props.data.lang,
+    pathname: props.pathname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 10
     },
     __self: undefined
   }), props.children, __jsx(_Newsletter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: props.data.newsletter,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: undefined
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: footerData,
+    data: props.data.footer,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
@@ -703,7 +743,7 @@ const Layout = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuMailer.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuMailer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -742,7 +782,7 @@ const MenuMailer = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuToggler.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuToggler.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -803,51 +843,166 @@ const MenuToggler = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Newsletter.js";
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/Newsletter.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const linkStyle = {
-  marginRight: 15
-};
 
-const Newsletter = props => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}, __jsx("a", {
-  style: linkStyle,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/about",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, __jsx("a", {
-  style: linkStyle,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}, "About")));
+const Newsletter = ({
+  data
+}) => {
+  return __jsx("div", {
+    id: "newsletter",
+    className: "newsletter",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "newsletter__block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, "Newsletter"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, data.subtitel)), __jsx("form", {
+    className: "newsletter__form",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "newsletter__form--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "newsletter__form--field",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "surname",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, data.vorname), __jsx("input", {
+    required: true,
+    type: "text",
+    name: "surname",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "newsletter__form--field",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, data.name), __jsx("input", {
+    required: true,
+    type: "text",
+    name: "name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }))), __jsx("div", {
+    className: "newsletter__form--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "newsletter__form--field",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, data.email), __jsx("input", {
+    required: true,
+    type: "email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }))), __jsx("div", {
+    className: "newsletter__datenschutz",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(data.datenschutz.text), __jsx("input", {
+    type: "checkbox",
+    required: true,
+    name: "acceptance",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }), __jsx("label", {
+    htmlFor: "acceptance",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, data.datenschutz.checkbox), html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(data.datenschutz.extra)), __jsx("input", {
+    type: "submit",
+    className: "golden__button",
+    value: data.datenschutz.button,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  })));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Newsletter);
 
@@ -3012,7 +3167,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/_app.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 

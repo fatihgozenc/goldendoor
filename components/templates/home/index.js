@@ -1,6 +1,7 @@
 import parse from 'html-react-parser';
+import Link from 'next/link';
 import MehrLesen from '../../MehrLesen';
-import Opening from '../../opening/Opening';
+import Opening from '../../opening';
 import './style.scss';
 
 export default function ({ data }) {
@@ -22,20 +23,21 @@ export default function ({ data }) {
 			</div>
 			<div className="pool pool--home">
 				{data.fields.routers.map((route, key) => (
-
-					<a key={key} className="home__route" href={route.link}>
-						<div className="home__route--wrapper">
-							<div className="home__route--img backgroundImg"
-								style={{ backgroundImage: "url(" + route.bild + ")" }} />
-							<div className="home__route--content">
-								<h3 className="title__lg">{route.titel}</h3>
-								{parse(route.inhalt)}
-								<span className="home__route--link">
-									<MehrLesen name={route.titel} />
-								</span>
+					<Link key={key} href={route.link}>
+						<a className="home__route" >
+							<div className="home__route--wrapper">
+								<div className="home__route--img backgroundImg"
+									style={{ backgroundImage: "url(" + route.bild + ")" }} />
+								<div className="home__route--content">
+									<h3 className="title__lg">{route.titel}</h3>
+									{parse(route.inhalt)}
+									<span className="home__route--link">
+										<MehrLesen name={route.titel} />
+									</span>
+								</div>
 							</div>
-						</div>
-					</a>
+						</a>
+					</Link>
 
 				))}
 			</div>

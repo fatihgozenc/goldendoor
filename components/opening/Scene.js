@@ -17,7 +17,7 @@ const Scene = () => {
 
 	return (
 		<div
-			className="container"
+			className="scene-container"
 			onMouseMove={({ clientX: x, clientY: y }) => setProperties({ xy: calc(x, y) })}>
 			<animated.div className="card1" style={{ transform: properties.xy.interpolate(trans1) }} />
 			<animated.div className="card2" style={{ transform: properties.xy.interpolate(trans2) }} />

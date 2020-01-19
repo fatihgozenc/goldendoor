@@ -1,18 +1,51 @@
-import Link from 'next/link';
+import parse from 'html-react-parser';
 
-const linkStyle = {
-	marginRight: 15
+const Newsletter = ({data}) => {
+
+  return (
+    <div id="newsletter" className="newsletter">
+
+      <div className="newsletter__block">
+        <h3>Newsletter</h3>
+        <p>{data.subtitel}</p>
+      </div>
+
+      <form className="newsletter__form">
+
+        <div className="newsletter__form--block">
+
+          <div className="newsletter__form--field">
+            <label htmlFor="surname">{data.vorname}</label>
+            <input required type="text" name="surname"/>
+          </div>
+
+          <div className="newsletter__form--field">
+            <label htmlFor="name">{data.name}</label>
+            <input required type="text" name="name"/>
+          </div>
+
+        </div>
+
+        <div className="newsletter__form--block">
+          <div className="newsletter__form--field">
+            <label htmlFor="email">{data.email}</label>
+            <input required type="email"/>
+          </div>
+        </div>
+
+        <div className="newsletter__datenschutz">
+          {parse(data.datenschutz.text)}
+          <input type="checkbox" required name="acceptance" />
+          <label htmlFor="acceptance">{data.datenschutz.checkbox}</label>
+          {parse(data.datenschutz.extra)}
+        </div>
+
+        <input type="submit" className="golden__button" value={data.datenschutz.button}/>
+        
+      </form>
+
+    </div>
+  )
 };
-
-const Newsletter = (props) => (
-	<div>
-		<Link href="/">
-			<a style={linkStyle}>Home</a>
-		</Link>
-		<Link href="/about">
-			<a style={linkStyle}>About</a>
-		</Link>
-	</div>
-);
 
 export default Newsletter;

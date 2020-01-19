@@ -4,18 +4,18 @@ import Footer from './Footer';
 import './style.scss';
 
 const Layout = (props) => {
-	const logo = props.data.footer.info.logo;
-	const headerData = props.data.header;
-	const footerData = props.data.footer;
-	const lang = props.data.lang;
-	const pathname = props.pathname;
-
+	
 	return (
 		<>
-			<Header logo={logo} data={headerData} lang={lang} pathname={pathname} />
+			<Header 
+				logo={props.data.footer.info.logo} 
+				data={props.data.header} 
+				lang={props.data.lang} 
+				pathname={props.pathname} 
+			/>
 			{props.children}
-			<Newsletter />
-			<Footer data={footerData} />
+			<Newsletter data={props.data.newsletter} />
+			<Footer data={props.data.footer} />
 		</>
 	)
 };
