@@ -1,0 +1,14 @@
+.pool__pagination {
+  display: flex;
+  justify-content: center;
+
+  a {
+    padding: 1rem;
+  }
+}
+
+.pageActive {
+  border-bottom: 3px solid $gold;
+  background: linear-gradient(to top, rgba(194, 172, 132, 0.3), transparent);
+  font-weight: bold;
+}
