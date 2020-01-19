@@ -141,9 +141,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-obfuscate */ "react-obfuscate");
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -154,21 +157,21 @@ const Footer = ({
     className: "footer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx("div", {
     className: "footer__block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: undefined
   }, __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: undefined
   }, __jsx("img", {
@@ -177,117 +180,129 @@ const Footer = ({
     alt: "Golden Door Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: undefined
   })), __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: undefined
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.berlin)), __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.dresden)), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: `tel:${data.info.telefon}`,
+    className: "footer__block__item footer__block__item--numbers",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23
     },
     __self: undefined
-  }, data.info.telefon), __jsx("a", {
-    href: `mailto:${data.info.email.toLowerCase()}`,
+  }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    tel: data.info.telefon.split('T:')[1],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
     },
     __self: undefined
-  }, data.info.email)), __jsx("div", {
-    className: "footer__block__item",
+  }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    email: data.info.email.toLowerCase(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 25
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "footer__routes",
+  })), __jsx("div", {
+    className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: undefined
   }, __jsx("div", {
-    className: "footer__routes--block",
+    className: "footer__routes",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: undefined
+  }, __jsx("div", {
+    className: "footer__routes--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
   }, data.routes.map((route, key) => {
     while (key <= 3) {
-      return __jsx("a", {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        className: "footer__routes--item",
-        to: route.url,
+        href: route.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: undefined
-      }, route.title);
+      }, __jsx("a", {
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: undefined
+      }, route.title));
     }
   })), __jsx("div", {
     className: "footer__routes--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 41
     },
     __self: undefined
   }, data.routes.map((route, key) => {
     while (key >= 4) {
-      return __jsx("a", {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        className: "footer__routes--item",
-        to: route.url,
+        href: route.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 45
         },
         __self: undefined
-      }, route.title);
+      }, __jsx("a", {
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: undefined
+      }, route.title));
     }
   }), __jsx("div", {
     className: "footer__routes--item copyright",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 51
     },
     __self: undefined
   }, data.info.copyright))))), __jsx("div", {
     className: "footer__block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 57
     },
     __self: undefined
   }, __jsx("div", {
     className: "footer__submarken",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx("div", {
@@ -295,21 +310,21 @@ const Footer = ({
     className: "footer__submarken--item ",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 59
     },
     __self: undefined
   }, data.submarken.submarke_text), __jsx("div", {
     className: "footer__submarken--wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 63
     },
     __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
@@ -319,14 +334,20 @@ const Footer = ({
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 67
         },
         __self: undefined
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 68
+        },
+        __self: undefined
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
         },
         __self: undefined
       }, __jsx("img", {
@@ -334,16 +355,16 @@ const Footer = ({
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         },
         __self: undefined
-      })));
+      }))));
     }
   })), __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 79
     },
     __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
@@ -353,14 +374,20 @@ const Footer = ({
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 83
         },
         __self: undefined
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 84
+        },
+        __self: undefined
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
         },
         __self: undefined
       }, __jsx("img", {
@@ -368,16 +395,16 @@ const Footer = ({
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 86
         },
         __self: undefined
-      })));
+      }))));
     }
   }))), __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 98
     },
     __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
@@ -387,14 +414,20 @@ const Footer = ({
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 102
         },
         __self: undefined
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 103
+        },
+        __self: undefined
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
         },
         __self: undefined
       }, __jsx("img", {
@@ -402,10 +435,10 @@ const Footer = ({
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 105
         },
         __self: undefined
-      })));
+      }))));
     }
   })))));
 };
@@ -3349,6 +3382,17 @@ module.exports = require("react-hook-form");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-obfuscate":
+/*!**********************************!*\
+  !*** external "react-obfuscate" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-obfuscate");
 
 /***/ }),
 

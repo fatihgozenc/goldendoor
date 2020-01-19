@@ -155,3 +155,12 @@
     padding: 0 2rem;
   }
 }
+
+.footer__block__item--numbers{
+	a {
+		text-align: center;
+		@include lg {
+			text-align: left;
+		}
+	}
+}

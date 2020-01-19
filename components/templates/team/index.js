@@ -1,9 +1,10 @@
 import React from 'react';
-import Hero from '../../hero';
+import Hero from '../../Hero';
+import Link from 'next/link';
 import Carousel from '../../carousel';
 import './style.scss';
 
-export default function({data}) {
+export default function ({ data }) {
 	const mitarbeiterData = data.fields.mitarbeiter_info;
 	const images = mitarbeiterData.map(item => (
 		item.mitarbeiter_bild
@@ -24,10 +25,11 @@ export default function({data}) {
 				/>
 				<div className="team__lastblock">
 					<h5>{data.fields.karriere_text}</h5>
-          <a className="golden__button" 
-            href={data.fields.karriere_button.link}>
-              {data.fields.karriere_button.text}
-          </a>
+					<Link href={data.fields.karriere_button.link}>
+						<a className="golden__button" >
+							{data.fields.karriere_button.text}
+						</a>
+					</Link>
 				</div>
 			</div>
 		</>

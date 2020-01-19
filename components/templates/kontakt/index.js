@@ -8,8 +8,9 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 	ssr: false
 });
 
-export default ({ data }) => {
-	// const contactInfo = useSelector(state => state.layout.footer.info);
+export default ({ data, layout }) => {
+
+	const contactInfo = layout.footer.info
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
 
 	const [eventDate, setEventDate] = React.useState(new Date());
@@ -313,16 +314,16 @@ export default ({ data }) => {
 					<MapContainer />
 				</div>
 
-				{/* <div className="contact__info--address">
-						<div className="contact__info--logo">
-							<img src={contactInfo.logo} alt="Golden Door Logo"/>
-						</div>
-						{Object.values(contactInfo.address).map((item, key) => (
-							<div key={key}>{parse(item)}</div>
-						))}
-						<a href={`tel:${contactInfo.telefon}`}>{contactInfo.telefon}</a>
-						<a href={`mailto:${contactInfo.email.toLowerCase()}`}>{contactInfo.email}</a>
-				</div> */}
+				<div className="contact__info--address">
+					<div className="contact__info--logo">
+						<img src={contactInfo.logo} alt="Golden Door Logo" />
+					</div>
+					{Object.values(contactInfo.address).map((item, key) => (
+						<div key={key}>{parse(item)}</div>
+					))}
+					<a href={`tel:${contactInfo.telefon}`}>{contactInfo.telefon}</a>
+					<a href={`mailto:${contactInfo.email.toLowerCase()}`}>{contactInfo.email}</a>
+				</div>
 
 			</div>
 

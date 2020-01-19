@@ -8,3 +8,13 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.infos__item {
+	a {
+		display: block;
+		margin: 1rem 0;
+		@include xl {
+			float: left;
+		}
+	}
+}

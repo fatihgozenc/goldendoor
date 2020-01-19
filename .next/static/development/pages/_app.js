@@ -15,9 +15,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-obfuscate */ "./node_modules/react-obfuscate/dist/obfuscate.js");
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -27,21 +30,21 @@ var Footer = function Footer(_ref) {
     className: "footer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx("div", {
     className: "footer__block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: this
   }, __jsx("img", {
@@ -50,117 +53,129 @@ var Footer = function Footer(_ref) {
     alt: "Golden Door Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   })), __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.berlin)), __jsx("div", {
     className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.dresden)), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, __jsx("a", {
-    href: "tel:".concat(data.info.telefon),
+    className: "footer__block__item footer__block__item--numbers",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23
     },
     __self: this
-  }, data.info.telefon), __jsx("a", {
-    href: "mailto:".concat(data.info.email.toLowerCase()),
+  }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    tel: data.info.telefon.split('T:')[1],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
     },
     __self: this
-  }, data.info.email)), __jsx("div", {
-    className: "footer__block__item",
+  }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    email: data.info.email.toLowerCase(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 25
     },
     __self: this
-  }, __jsx("div", {
-    className: "footer__routes",
+  })), __jsx("div", {
+    className: "footer__block__item",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
   }, __jsx("div", {
-    className: "footer__routes--block",
+    className: "footer__routes",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: this
+  }, __jsx("div", {
+    className: "footer__routes--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
   }, data.routes.map(function (route, key) {
     while (key <= 3) {
-      return __jsx("a", {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        className: "footer__routes--item",
-        to: route.url,
+        href: route.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: this
-      }, route.title);
+      }, __jsx("a", {
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, route.title));
     }
   })), __jsx("div", {
     className: "footer__routes--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 41
     },
     __self: this
   }, data.routes.map(function (route, key) {
     while (key >= 4) {
-      return __jsx("a", {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        className: "footer__routes--item",
-        to: route.url,
+        href: route.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 45
         },
         __self: this
-      }, route.title);
+      }, __jsx("a", {
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: this
+      }, route.title));
     }
   }), __jsx("div", {
     className: "footer__routes--item copyright",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 51
     },
     __self: this
   }, data.info.copyright))))), __jsx("div", {
     className: "footer__block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 57
     },
     __self: this
   }, __jsx("div", {
     className: "footer__submarken",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 58
     },
     __self: this
   }, __jsx("div", {
@@ -168,21 +183,21 @@ var Footer = function Footer(_ref) {
     className: "footer__submarken--item ",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 59
     },
     __self: this
   }, data.submarken.submarke_text), __jsx("div", {
     className: "footer__submarken--wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 61
     },
     __self: this
   }, __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 63
     },
     __self: this
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
@@ -192,14 +207,20 @@ var Footer = function Footer(_ref) {
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 67
         },
         __self: this
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 68
+        },
+        __self: this
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
         },
         __self: this
       }, __jsx("img", {
@@ -207,16 +228,16 @@ var Footer = function Footer(_ref) {
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         },
         __self: this
-      })));
+      }))));
     }
   })), __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 79
     },
     __self: this
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
@@ -226,14 +247,20 @@ var Footer = function Footer(_ref) {
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 83
         },
         __self: this
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 84
+        },
+        __self: this
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
         },
         __self: this
       }, __jsx("img", {
@@ -241,16 +268,16 @@ var Footer = function Footer(_ref) {
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 86
         },
         __self: this
-      })));
+      }))));
     }
   }))), __jsx("div", {
     className: "footer__submarken--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 98
     },
     __self: this
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
@@ -260,14 +287,20 @@ var Footer = function Footer(_ref) {
         className: "footer__submarken--item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 102
         },
         __self: this
-      }, __jsx("a", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: marke.route,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 103
+        },
+        __self: this
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
         },
         __self: this
       }, __jsx("img", {
@@ -275,10 +308,10 @@ var Footer = function Footer(_ref) {
         alt: "Submarke Logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 105
         },
         __self: this
-      })));
+      }))));
     }
   })))));
 };
@@ -10638,6 +10671,186 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-obfuscate/dist/obfuscate.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-obfuscate/dist/obfuscate.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Obfuscate =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Obfuscate, _Component);
+
+  function Obfuscate(props) {
+    var _this;
+
+    _classCallCheck(this, Obfuscate);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Obfuscate).call(this, props));
+    _this.state = {
+      humanInteraction: false
+    };
+    return _this;
+  } // Convert contact information to contact URL scheme
+
+
+  _createClass(Obfuscate, [{
+    key: "createContactLink",
+    value: function createContactLink(props) {
+      var link; // Combine email header parameters for use with email
+
+      var combineHeaders = function combineHeaders(params) {
+        return Object.keys(params).map(function (key) {
+          return "".concat(key, "=").concat(encodeURIComponent(params[key]));
+        }).join('&');
+      };
+
+      if (props.email) {
+        link = "mailto:".concat(props.email);
+
+        if (props.headers) {
+          link += "?".concat(combineHeaders(props.headers));
+        }
+      } else if (props.tel) {
+        link = "tel:".concat(props.tel);
+      } else if (props.sms) {
+        link = "sms:".concat(props.sms);
+      } else if (props.facetime) {
+        link = "facetime:".concat(props.facetime);
+      } else if (props.href) {
+        link = props.href;
+      } else if (_typeof(props.children) !== 'object') {
+        link = props.children;
+      } else {
+        return '';
+      }
+
+      return link;
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(event) {
+      var onClick = this.props.onClick; // If focused or hovered, this js will be skipped with preference for html
+
+      if (this.state.humanInteraction === false) {
+        event.preventDefault(); // Allow instantiator to provide an onClick method to be called
+        // before we change location (e.g. for analytics tracking)
+
+        if (onClick && typeof onClick === 'function') {
+          onClick();
+        }
+
+        window.location.href = this.createContactLink(this.props);
+      }
+    }
+  }, {
+    key: "handleCopiability",
+    value: function handleCopiability() {
+      this.setState({
+        humanInteraction: true
+      });
+    }
+  }, {
+    key: "reverse",
+    value: function reverse(string) {
+      if (typeof string !== 'undefined') {
+        return string.split('').reverse().join('').replace('(', ')').replace(')', '(');
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var humanInteraction = this.state.humanInteraction;
+
+      var _this$props = this.props,
+          _this$props$element = _this$props.element,
+          Element = _this$props$element === void 0 ? 'a' : _this$props$element,
+          children = _this$props.children,
+          tel = _this$props.tel,
+          sms = _this$props.sms,
+          facetime = _this$props.facetime,
+          email = _this$props.email,
+          href = _this$props.href,
+          headers = _this$props.headers,
+          obfuscate = _this$props.obfuscate,
+          obfuscateChildren = _this$props.obfuscateChildren,
+          linkText = _this$props.linkText,
+          style = _this$props.style,
+          others = _objectWithoutProperties(_this$props, ["element", "children", "tel", "sms", "facetime", "email", "href", "headers", "obfuscate", "obfuscateChildren", "linkText", "style"]);
+
+      var propsList = children || tel || sms || facetime || email || href;
+
+      var obsStyle = _objectSpread({}, style || {}, {
+        unicodeBidi: 'bidi-override',
+        direction: humanInteraction === true || obfuscate === false || obfuscateChildren === false ? 'ltr' : 'rtl'
+      });
+
+      var link = humanInteraction === true || obfuscate === false || _typeof(children) === 'object' || obfuscateChildren === false // Allow child elements
+      ? propsList : this.reverse(propsList);
+      var clickProps = Element === 'a' ? {
+        href: humanInteraction === true || obfuscate === false ? this.createContactLink(this.props) : linkText || 'obfuscated',
+        onClick: this.handleClick.bind(this)
+      } : {};
+
+      var props = _objectSpread({
+        onFocus: this.handleCopiability.bind(this),
+        onMouseOver: this.handleCopiability.bind(this),
+        onContextMenu: this.handleCopiability.bind(this)
+      }, others, clickProps, {
+        style: obsStyle
+      });
+
+      return _react["default"].createElement(Element, props, link);
+    }
+  }]);
+
+  return Obfuscate;
+}(_react.Component);
+
+exports["default"] = Obfuscate;
 
 /***/ }),
 

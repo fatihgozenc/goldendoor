@@ -1,5 +1,6 @@
 import Icon from '../Icon';
 import parse from 'html-react-parser';
+import Obfuscate from 'react-obfuscate';
 import './style.scss';
 
 const IMG_WIDTH = 300;
@@ -8,7 +9,7 @@ const parentPad = 0;
 const VISIBLEIMAGES = 3;
 const DURATION = 750;
 
-export default function(props) {
+export default function (props) {
 	const {
 		imgList = [],
 		img_width = IMG_WIDTH,
@@ -213,30 +214,30 @@ export default function(props) {
 						})
 					}
 				</ul>
-				<div 
+				<div
 					className={`carousel__infos carousel__infos--${props.name}`}>
-					{props.name === "team" 
+					{props.name === "team"
 
-						? ( 
+						? (
 
-						props.data.map((item, key) => (
-							key === middleImageKey &&
-							<div key={key} className="infos__item">
-								<h3>{item.mitarbeiter_name}</h3>
-								<h4>{item.mitarbeiter_titel}</h4>
-								<p>{item.mitarbeiter_email}</p>
-								<p>{item.mitarbeiter_telefon}</p>
-							</div>
-						))
+							props.data.map((item, key) => (
+								key === middleImageKey &&
+								<div key={key} className="infos__item">
+									<h3>{item.mitarbeiter_name}</h3>
+									<h4>{item.mitarbeiter_titel}</h4>
+									<Obfuscate email={item.mitarbeiter_email} />
+									<Obfuscate tel={item.mitarbeiter_telefon} />
+								</div>
+							))
 
-						):(
+						) : (
 
 							props.data.map((item, key) => (
 								key === middleImageKey &&
 								<div key={key} className="infos__item infos__item--downloads">
 									<h4>{item.name}</h4>
 									<a href={item.link} target="_blank" className="singleloc__button">
-											<Icon type="factsheet" name="DOWNLOAD"/>
+										<Icon type="factsheet" name="DOWNLOAD" />
 									</a>
 								</div>
 							))

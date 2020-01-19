@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import parse from 'html-react-parser';
+import Obfuscate from 'react-obfuscate';
 
 const Footer = ({ data }) => {
 
@@ -19,9 +20,9 @@ const Footer = ({ data }) => {
 					{parse(data.info.address.dresden)}
 				</div>
 
-				<div className="footer__block__item">
-					<a href={`tel:${data.info.telefon}`}>{data.info.telefon}</a>
-					<a href={`mailto:${data.info.email.toLowerCase()}`}>{data.info.email}</a>
+				<div className="footer__block__item footer__block__item--numbers">
+					<Obfuscate tel={data.info.telefon.split('T:')[1]} />
+					<Obfuscate email={data.info.email.toLowerCase()} />
 				</div>
 
 				<div className="footer__block__item">
@@ -30,7 +31,9 @@ const Footer = ({ data }) => {
 							{data.routes.map((route, key) => {
 								while (key <= 3) {
 									return (
-										<a key={route.id} className="footer__routes--item" to={route.url}>{route.title}</a>
+										<Link key={route.id} href={route.url}>
+											<a className="footer__routes--item" >{route.title}</a>
+										</Link>
 									)
 								}
 							})}
@@ -39,7 +42,9 @@ const Footer = ({ data }) => {
 							{data.routes.map((route, key) => {
 								while (key >= 4) {
 									return (
-										<a key={route.id} className="footer__routes--item" to={route.url}>{route.title}</a>
+										<Link key={route.id} href={route.url}>
+											<a className="footer__routes--item">{route.title}</a>
+										</Link>
 									)
 								}
 							})}
@@ -60,9 +65,11 @@ const Footer = ({ data }) => {
 								while (key < 4) {
 									return (
 										<div key={key} className="footer__submarken--item">
-											<a href={marke.route}>
-												<img src={marke.logo} alt="Submarke Logo" />
-											</a>
+											<Link href={marke.route}>
+												<a>
+													<img src={marke.logo} alt="Submarke Logo" />
+												</a>
+											</Link>
 										</div>
 									)
 								}
@@ -74,9 +81,11 @@ const Footer = ({ data }) => {
 								while (key > 3 && key < 8) {
 									return (
 										<div key={key} className="footer__submarken--item">
-											<a href={marke.route}>
-												<img src={marke.logo} alt="Submarke Logo" />
-											</a>
+											<Link href={marke.route}>
+												<a>
+													<img src={marke.logo} alt="Submarke Logo" />
+												</a>
+											</Link>
 										</div>
 									)
 								}
@@ -91,9 +100,11 @@ const Footer = ({ data }) => {
 							while (key > 7) {
 								return (
 									<div key={key} className="footer__submarken--item">
-										<a href={marke.route}>
-											<img src={marke.logo} alt="Submarke Logo" />
-										</a>
+										<Link href={marke.route}>
+											<a>
+												<img src={marke.logo} alt="Submarke Logo" />
+											</a>
+										</Link>
 									</div>
 								)
 							}
