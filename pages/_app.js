@@ -1,13 +1,19 @@
 import App from 'next/app'
+import Head from 'next/head';
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/Layout';
 import { API_HOST } from '../config';
 
 function GoldenDoor({ Component, pageProps, layoutData, pathname }) {
 	return (
-		<Layout data={layoutData} pathname={pathname}>
-			<Component {...pageProps} />
-		</Layout>
+		<>
+			<Head>
+				<link href="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css" rel="stylesheet" />
+			</Head>
+			<Layout data={layoutData} pathname={pathname}>
+				<Component {...pageProps} />
+			</Layout>
+		</>
 	)
 }
 

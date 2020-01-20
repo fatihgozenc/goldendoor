@@ -234,9 +234,30 @@
   flex-wrap: wrap;
 }
 
+.react-datepicker{
+	font-size: 1.2rem !important;
+}
+
+.uncheckedField{
+	animation: unchecked 1s linear infinite;
+}
+
+@keyframes unchecked{
+	0%{
+		color: $gold;
+	}
+	50% {
+		color: red;
+	}
+	100%{
+		color: $gold;
+	}
+}
+
 .contact__stepblock--date {
   flex: 40%;
-  margin: 1rem 5px 1rem 0;
+	margin: 1rem 5px 1rem 0;
+	overflow: hidden;
 
   @include md {
     margin: 1rem 1rem 1rem 0;
@@ -255,7 +276,7 @@
   }
 
   input {
-    margin: .3;
+    margin: .3rem;
     width: 100%;
     background: transparent;
     border: none;

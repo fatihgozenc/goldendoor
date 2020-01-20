@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import Breadcrumb from '../../Breadcrumb';
 import parse from 'html-react-parser';
+import { useForm } from "react-hook-form";
 import DatePicker from 'react-datepicker';
 import './style.scss';
 
@@ -22,32 +23,58 @@ export default ({ data, layout }) => {
 	const stepSlider = React.useRef();
 	const dateRange = React.useRef();
 	const dates = React.useRef();
+	const firstStepLock = React.useRef();
+	const secondStepLock = React.useRef();
 
 	const changeStep = (e) => {
+		const isDateAnswerOneChecked = firstStepLock.current.nextElementSibling.firstElementChild.checked;
+		const isDateAnswerTwoChecked = firstStepLock.current.nextElementSibling.nextElementSibling.firstElementChild.checked;
 		const ellipses = formSteps.current.parentElement.parentElement.firstElementChild.children;
-		if (e.currentTarget.classList.contains('goFirst')) {
-			formSteps.current.classList.remove('atSecondStep')
-			ellipses[1].classList.remove('activeStep')
-			ellipses[0].classList.add('activeStep')
-		} else if (e.currentTarget.classList.contains('goNext')) {
-			formSteps.current.classList.remove('atSecondStep')
-			formSteps.current.classList.add('atThirdStep')
-			ellipses[1].classList.remove('activeStep')
-			ellipses[2].classList.add('activeStep')
-		} else if (e.currentTarget.classList.contains('goSecond')) {
-			formSteps.current.classList.remove('atThirdStep')
-			formSteps.current.classList.add('atSecondStep')
-			ellipses[2].classList.remove('activeStep')
-			ellipses[1].classList.add('activeStep')
+
+		if (isDateAnswerOneChecked === true || isDateAnswerTwoChecked === true) {
+
+			firstStepLock.current.parentElement.classList.remove('uncheckedField')
+
+			if (e.currentTarget.classList.contains('goFirst')) {
+				formSteps.current.classList.remove('atSecondStep')
+				ellipses[1].classList.remove('activeStep')
+				ellipses[0].classList.add('activeStep')
+			} else if (e.currentTarget.classList.contains('goNext')) {
+
+				if (secondStepLock.current.nextElementSibling.value.length > 0) {
+					formSteps.current.classList.remove('atSecondStep')
+					formSteps.current.classList.add('atThirdStep')
+					ellipses[1].classList.remove('activeStep')
+					ellipses[2].classList.add('activeStep')
+				} else {
+					secondStepLock.current.parentElement.classList.add('uncheckedField')
+				}
+
+			} else if (e.currentTarget.classList.contains('goSecond')) {
+				formSteps.current.classList.remove('atThirdStep')
+				formSteps.current.classList.add('atSecondStep')
+				ellipses[2].classList.remove('activeStep')
+				ellipses[1].classList.add('activeStep')
+			} else {
+				formSteps.current.classList.add('atSecondStep')
+				ellipses[0].classList.remove('activeStep')
+				ellipses[1].classList.add('activeStep')
+			}
+
 		} else {
-			formSteps.current.classList.add('atSecondStep')
-			ellipses[0].classList.remove('activeStep')
-			ellipses[1].classList.add('activeStep')
+			firstStepLock.current.parentElement.classList.add('uncheckedField')
 		}
+
+	}
+
+	const removeUnchecked = (e) => {
+		e.currentTarget.parentElement.classList.contains('uncheckedField') === true ? e.currentTarget.parentElement.classList.remove('uncheckedField') : null
 	}
 
 	const hideDates = (e) => {
+		const container = e.currentTarget.parentElement.parentElement;
 		const answerYes = e.currentTarget.parentElement.parentElement.children[1].firstElementChild;
+		container.classList.contains('uncheckedField') === true ? container.classList.remove('uncheckedField') : null;
 		if (answerYes.checked) {
 			dates.current.classList.remove('hidden')
 			dateRange.current.classList.add('hidden')
@@ -55,6 +82,37 @@ export default ({ data, layout }) => {
 			dates.current.classList.add('hidden')
 			dateRange.current.classList.remove('hidden')
 		}
+	}
+
+	const { handleSubmit, register, errors } = useForm();
+	const onSubmit = values => {
+		const dates = {
+			eventdatum: eventDate.toDateString(),
+			ausweichtermin: elusiveDate.toDateString(),
+			eventzeitbeginn: beginTime.toDateString(),
+			eventzeitend: endTime.toDateString()
+		};
+		const finalForm = { ...values, ...dates };
+		console.log(finalForm)
+	};
+
+	const getFormData = (e) => {
+		const formElement = e.currentTarget.parentElement.parentElement.parentElement;
+		const inputs = Array.from(formElement.getElementsByTagName('input'));
+		const selects = Array.from(formElement.getElementsByTagName('select'));
+		const textArea = formElement.getElementsByTagName('textarea');
+		const textAreaValue = ['nachricht', textArea[0].value];
+		const selectValues = selects.map((item, key) => (
+			[item.getAttribute('name'), item.value]
+		))
+		const inputValues = inputs.map((item, key) => {
+			if (item.type === 'radio' && item.checked === true) {
+				return [item.getAttribute('name'), item.value]
+			} else if (item.type !== 'radio') {
+				return [item.getAttribute('name'), item.value]
+			}
+		})
+		console.log(inputValues.concat(selectValues, ['nachricht', textArea[0].value]))
 	}
 
 	React.useEffect(() => {
@@ -83,7 +141,7 @@ export default ({ data, layout }) => {
 
 				<div className="contact--wrapper">
 
-					<form className="contact__steps" ref={formSteps}>
+					<form className="contact__steps" ref={formSteps} onSubmit={handleSubmit(onSubmit)}>
 
 						<div className="contact__step">
 
@@ -91,7 +149,7 @@ export default ({ data, layout }) => {
 
 								<div className="contact__stepblock">
 									<label htmlFor="event_type" className="label__select">{steps[0].kontakt_frage_1.frage}</label>
-									<select id="event_type">
+									<select name="event_type" ref={register}>
 										<optgroup>
 											{steps[0].kontakt_frage_1.optionen.map((item, key) => (
 												<option key={key} value={item.option}>{item.option}</option>
@@ -102,7 +160,7 @@ export default ({ data, layout }) => {
 
 								<div className="contact__stepblock">
 									<label htmlFor="event_location" className="label__select">{steps[0].kontakt_frage_2.frage}</label>
-									<select id="event_location">
+									<select ref={register} name="event_location">
 										<optgroup>
 											{steps[0].kontakt_frage_2.optionen.map((item, key) => (
 												<option key={key} value={item.option}>{item.option}</option>
@@ -116,11 +174,13 @@ export default ({ data, layout }) => {
 							<div className="contact__step--flexWrapper-xl">
 
 								<div className="contact__stepblock">
-									<label htmlFor="event_date_answer"
+									<label
+										ref={firstStepLock}
+										htmlFor="event_date_answer"
 										className="contact__stepblock--inner">{steps[0].kontakt_frage_3.frage}</label>
 									{steps[0].kontakt_frage_3.optionen.map((item, key) => (
 										<p className="contact__stepblock--inner" key={key}>
-											<input onClick={hideDates} className="input__radio" type="radio" name="event_date_answer" value={item.option} />
+											<input onClick={hideDates} ref={register} className="input__radio" type="radio" name="event_date_answer" value={item.option} />
 											<span className="label__radio">{item.option}</span>
 										</p>
 									))}
@@ -128,26 +188,27 @@ export default ({ data, layout }) => {
 
 								<div className="contact__stepblock" ref={dateRange}>
 									<label className="label__text" htmlFor="date_range">{steps[0].kontakt_frage_5}</label>
-									<input className="input__text" required type="text" id="event_date_answer" />
+									<input className="input__text" name="date_range" ref={register} type="text" />
 								</div>
 
-								<div
-									ref={dates}
+								<div ref={dates}
 									className="contact__stepblock contact__stepblock--datewrapper hidden">
 
 									<div className="contact__stepblock--date">
 										<label htmlFor="date_of_event">{steps[0].kontakt_frage_6.datum}</label>
-										<DatePicker selected={eventDate} onChange={date => setEventDate(date)} />
+										<DatePicker selected={eventDate} name="eventdatum" ref={register} onChange={date => setEventDate(date)} />
 									</div>
 
 									<div className="contact__stepblock--date">
 										<label htmlFor="date_of_elusive">{steps[0].kontakt_frage_6.ausweichtermin}</label>
-										<DatePicker selected={elusiveDate} onChange={date => setElusiveDate(date)} />
+										<DatePicker selected={elusiveDate} name="ausweichtermin" ref={register} onChange={date => setElusiveDate(date)} />
 									</div>
 
 									<div className="contact__stepblock--date">
 										<label htmlFor="date_of_elusive">{steps[0].kontakt_frage_6.beginn}</label>
 										<DatePicker
+											ref={register}
+											name="event_beginn_zeit"
 											showTimeSelect
 											showTimeSelectOnly
 											timeIntervals={15}
@@ -160,6 +221,7 @@ export default ({ data, layout }) => {
 									<div className="contact__stepblock--date">
 										<label htmlFor="date_of_elusive">{steps[0].kontakt_frage_6.ende}</label>
 										<DatePicker
+											name="event_end_zeit"
 											showTimeSelect
 											showTimeSelectOnly
 											timeIntervals={15}
@@ -193,16 +255,16 @@ export default ({ data, layout }) => {
 								<div className="contact__step--flexWrapper">
 
 									<div className="contact__stepblock">
-										<label className="label__text" htmlFor="people_number">{steps[1].feld_1.frage_1}</label>
-										<input type="text" required className="input__text" name="people_number" />
+										<label ref={secondStepLock} className="label__text" htmlFor="personenzahl">{steps[1].feld_1.frage_1}</label>
+										<input onChange={removeUnchecked} type="text" ref={register({ required: true })} className="input__text" name="personenzahl" />
 									</div>
 
 									<div className="contact__stepblock">
-										<label htmlFor="event_budget"
+										<label htmlFor="event_max_budget"
 											className="contact__stepblock--inner">{steps[1].feld_1.frage_2.fragefeld}</label>
 										{Object.values(steps[1].feld_1.frage_2.optionen).map((item, key) => (
 											<p className="contact__stepblock--inner" key={key}>
-												<input type="radio" className="input__radio" name="event_budget" value={item} />
+												<input ref={register} type="radio" className="input__radio" name="event_max_budget" value={item} />
 												<span className="label__radio">{item}</span>
 											</p>
 										))}
@@ -218,7 +280,7 @@ export default ({ data, layout }) => {
 
 										<div key={key} className="contact__stepblock">
 											<label htmlFor={`event_${item.fragefeld.toLowerCase()}`} className="label__select">{item.fragefeld}</label>
-											<select name={`event_${item.fragefeld.toLowerCase()}`}>
+											<select ref={register} name={`event_${item.fragefeld.toLowerCase()}`}>
 
 												{item.optionen.map((subItem, subKey) => (
 													<option key={subKey} value={subItem.option}>{subItem.option}</option>
@@ -252,8 +314,8 @@ export default ({ data, layout }) => {
 							<div className="contact__step--flexWrapper">
 
 								<div className="contact__stepblock">
-									<label htmlFor="event_location" className="label__select">{steps[2].anredefeld.frage}</label>
-									<select name="event_location">
+									<label htmlFor="kontakt_anrede" className="label__select">{steps[2].anredefeld.frage}</label>
+									<select ref={register} name="kontakt_anrede">
 										{steps[2].anredefeld.sex.map((item, key) => (
 											<option key={key} value={item.option}>{item.option}</option>
 										))}
@@ -263,19 +325,20 @@ export default ({ data, layout }) => {
 								{Object.values(steps[2].andere_fragen).map((item, key) => (
 
 									<div key={key} className="contact__stepblock">
-										<label className="label__text" htmlFor={`contactdata_${item}`}>{item}</label>
+										<label className="label__text" htmlFor={`kontakt_${item}`}>{item}</label>
 										{key === 0 | 4
 											? (
 												<input
+													ref={register}
 													className="input__text"
-													type="text" id={`contactdata_${item.toLowerCase()}`}
-													name={`contactdata_${item.toLowerCase()}`} />
+													type="text" id={`kontakt_${item.toLowerCase()}`}
+													name={`kontakt_${item.toLowerCase()}`} />
 											) : (
 												<input
-													required
+													ref={register({ required: true })}
 													className="input__text"
-													type="text" id={`contactdata_${item.toLowerCase()}`}
-													name={`contactdata_${item.toLowerCase()}`} />
+													type="text" id={`kontakt_${item.toLowerCase()}`}
+													name={`kontakt_${item.toLowerCase()}`} />
 											)
 										}
 									</div>
@@ -283,10 +346,9 @@ export default ({ data, layout }) => {
 								))}
 
 								<div className="contact__stepblock">
-									<label htmlFor="event__nachricht">{steps[0].kontakt_frage_4}</label>
-									<textarea
-										name="event__nachricht"
-										id="event__nachricht" cols="30" rows="5" />
+									<label htmlFor="event_nachricht">{steps[0].kontakt_frage_4}</label>
+									<textarea ref={register}
+										name="event_nachricht" cols="30" rows="5" />
 								</div>
 
 							</div>
