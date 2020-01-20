@@ -1,13 +1,15 @@
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Breadcrumb from '../../Breadcrumb';
 import './style.scss'
 
 export default function({data, lang}){
-  // const pageUrl = window.location.pathname;
-  console.log(lang)
-
   return (
     <>
+    <NextSeo
+      title={data.fields.seo.title}
+      description={data.fields.seo.description}
+    />
     <div className="page__title">
       <Breadcrumb slug={data.slug} title={data.title}/>
       <h1>{data.title}</h1>

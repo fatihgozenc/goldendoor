@@ -1,15 +1,19 @@
 import parse from 'html-react-parser';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 import MehrLesen from '../../MehrLesen';
 import Opening from '../../opening';
 import './style.scss';
 
 export default function ({ data }) {
-
 	const paragraphs = data.content.split("\n\r");
 
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<Opening data={data.fields.text_slider} />
 			<div className="preface">
 				<h2>{parse(data.fields.titel)}</h2>
@@ -22,7 +26,9 @@ export default function ({ data }) {
 				</div>
 			</div>
 			<div className="pool pool--home">
+
 				{data.fields.routers.map((route, key) => (
+
 					<Link key={key} href={route.link}>
 						<a className="home__route" >
 							<div className="home__route--wrapper">

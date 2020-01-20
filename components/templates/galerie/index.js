@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Breadcrumb from '../../Breadcrumb';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import parse from 'html-react-parser';
@@ -28,6 +29,11 @@ export default function({data}) {
 	})
 
 	return (
+		<>
+		<NextSeo
+			title={data.fields.seo.title}
+			description={data.fields.seo.description}
+		/>
 		<div className="page--gallery">
 			<div className="page__title page__title--contact">
 				<Breadcrumb slug={data.slug} title={data.title} />
@@ -72,5 +78,6 @@ export default function({data}) {
 
 			</div>
 		</div>
+		</>
 	)
 };

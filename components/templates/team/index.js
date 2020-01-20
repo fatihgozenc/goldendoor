@@ -1,4 +1,4 @@
-import React from 'react';
+import { NextSeo } from 'next-seo';
 import Hero from '../../Hero';
 import Link from 'next/link';
 import Carousel from '../../carousel';
@@ -12,6 +12,10 @@ export default function ({ data }) {
 
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<Hero data={data} />
 			<div id="content" className="team">
 				<Carousel

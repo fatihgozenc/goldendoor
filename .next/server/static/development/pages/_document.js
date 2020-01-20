@@ -1480,7 +1480,34 @@ class GoldenDoorDocument extends next_document__WEBPACK_IMPORTED_MODULE_8___defa
   }
 
   render() {
-    return __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Head"], null), __jsx("body", null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["NextScript"], null), __jsx("script", {
+    return __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Head"], null, __jsx("link", {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png"
+    }), __jsx("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/favicon-32x32.png"
+    }), __jsx("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/favicon-16x16.png"
+    }), __jsx("link", {
+      rel: "manifest",
+      href: "/site.webmanifest"
+    }), __jsx("link", {
+      rel: "mask-icon",
+      href: "/safari-pinned-tab.svg",
+      color: "#632948"
+    }), __jsx("meta", {
+      name: "msapplication-TileColor",
+      content: "#603cba"
+    }), __jsx("meta", {
+      name: "theme-color",
+      content: "#603cba"
+    })), __jsx("body", null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["NextScript"], null), __jsx("script", {
       dangerouslySetInnerHTML: {
         __html: `(function (d, t) {
 					var pp = d.createElement(t), s = d.getElementsByTagName(t)[0];

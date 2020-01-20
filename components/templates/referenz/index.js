@@ -1,4 +1,5 @@
-import Hero from '../../Hero'
+import { NextSeo } from 'next-seo';
+import Hero from '../../Hero';
 import parse from 'html-react-parser';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import MehrLesen from '../../MehrLesen';
@@ -17,6 +18,10 @@ export default function({data}) {
 
 	return (
 		<>
+		<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<Hero data={heroData} className="hero--reference" />
 			<div id="content" className="reference">
 

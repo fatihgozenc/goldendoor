@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Link from 'next/link'
 import Hero from '../../Hero'
 import parse from 'html-react-parser'
@@ -9,9 +10,12 @@ export default function ({ data, lang }) {
 	const philosophy = data.fields.uber_uns_philosophy;
 	const extra_text_1 = data.fields.uber_uns_extra_text.extra_text_block_1;
 	const extra_text_2 = data.fields.uber_uns_extra_text.extra_text_block_2;
-	console.log(data.lang)
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<Hero data={data} entrance={data.fields.eroffnungstitel} />
 			<div id="content">
 

@@ -121,7 +121,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -339,20 +339,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dynamic */ "next/dynamic");
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Icon */ "./components/Icon.js");
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Breadcrumb__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Breadcrumb */ "./components/Breadcrumb.js");
-/* harmony import */ var pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! pure-react-carousel */ "pure-react-carousel");
-/* harmony import */ var pure_react_carousel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _slider_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./slider.scss */ "./components/templates/location/slider.scss");
-/* harmony import */ var _slider_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_slider_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.scss */ "./components/templates/location/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/dynamic */ "next/dynamic");
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Icon */ "./components/Icon.js");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Breadcrumb__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Breadcrumb */ "./components/Breadcrumb.js");
+/* harmony import */ var pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! pure-react-carousel */ "pure-react-carousel");
+/* harmony import */ var pure_react_carousel__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _slider_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./slider.scss */ "./components/templates/location/slider.scss");
+/* harmony import */ var _slider_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_slider_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style.scss */ "./components/templates/location/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_10__);
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -364,7 +366,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../../MapContainer */ "./components/MapContainer.js")), {
+
+const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../../MapContainer */ "./components/MapContainer.js")), {
   ssr: false,
   loadableGenerated: {
     webpack: () => [/*require.resolve*/(/*! ../../MapContainer */ "./components/MapContainer.js")],
@@ -390,11 +393,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => _
     karteWrapper.current.classList.remove('openKarte');
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("h1", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_2__["NextSeo"], {
+    title: data.fields.seo.title,
+    description: data.fields.seo.description
+  }), __jsx("h1", {
     className: "seo__hidden"
   }, data.title), __jsx("div", {
     className: "page__title page__title--singleloc"
-  }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
     slug: data.slug,
     title: data.title
   }), __jsx("h1", null, data.title)), __jsx("div", {
@@ -414,25 +420,25 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => _
     className: "singleloc__info--type"
   }, data.fields.subtitel), __jsx("div", {
     className: "singleloc__info--buttons"
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/kontakt"
   }, __jsx("a", {
     className: "singleloc__button"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "anfragen",
     name: data.fields.buttongroup.anfragen
   }))), __jsx("a", {
     href: data.fields.location_info.location_factsheet,
     target: "_blank",
     className: "singleloc__button"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "factsheet",
     name: data.fields.buttongroup.datenblatt
   })), __jsx("a", {
     href: "#karte",
     onClick: openMap,
     className: "singleloc__button"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "karte",
     name: data.fields.buttongroup.karte
   }))), __jsx("div", {
@@ -440,12 +446,12 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => _
   }, __jsx("a", {
     href: data.fields.social_media.facebook,
     className: "socialmedia__button"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "facebook"
   })), __jsx("a", {
     href: data.fields.social_media.instagram,
     className: "socialmedia__button"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "instagram"
   }))), __jsx("a", {
     href: `http://${data.fields.location_info.location_webseite}`,
@@ -458,34 +464,34 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => _
     className: "singleloc__info--desc singleloc__gallerybutton"
   }, "\u25BE")), __jsx("div", {
     className: "singleloc__info--side"
-  }, __jsx("p", null, html_react_parser__WEBPACK_IMPORTED_MODULE_5___default()(data.content)), __jsx("div", {
+  }, __jsx("p", null, html_react_parser__WEBPACK_IMPORTED_MODULE_6___default()(data.content)), __jsx("div", {
     className: "singleloc__info--bullets"
-  }, html_react_parser__WEBPACK_IMPORTED_MODULE_5___default()(data.fields.location_info.bulletpoints)), __jsx("button", {
+  }, html_react_parser__WEBPACK_IMPORTED_MODULE_6___default()(data.fields.location_info.bulletpoints)), __jsx("button", {
     onClick: changePanel,
     className: "singleloc__info--desc"
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "back"
   }))))), __jsx("div", {
     className: "singleloc__detail",
     id: "gallery"
   }, __jsx("div", {
     className: "singleloc__gallery"
-  }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__["CarouselProvider"], {
+  }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["CarouselProvider"], {
     naturalSlideWidth: 220,
     naturalSlideHeight: 120,
     totalSlides: data.fields.location_gallery.length,
     isPlaying: true,
     interval: 5000,
     infinite: true
-  }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__["Slider"], {
+  }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["Slider"], {
     className: "singleloc__gallery--wrapper"
-  }, data.fields.location_gallery.map((item, imageKey) => __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__["Slide"], {
+  }, data.fields.location_gallery.map((item, imageKey) => __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["Slide"], {
     key: imageKey,
     index: imageKey
   }, __jsx("img", {
     width: "100%",
     src: item
-  })))), __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_7__["DotGroup"], {
+  })))), __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["DotGroup"], {
     className: "gallery--nav gallery--nav-location"
   }))), __jsx("div", {
     className: "singleloc__detail--data"
@@ -506,7 +512,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_2___default()(() => _
   }), __jsx("div", {
     className: "location__karte--close",
     onClick: closeMap
-  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "cross"
   })))));
 });
@@ -2391,7 +2397,7 @@ LocationPage.getInitialProps = async context => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***************************************!*\
   !*** multi ./pages/locations/[id].js ***!
   \***************************************/
@@ -2576,6 +2582,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("html-react-parser");
+
+/***/ }),
+
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 

@@ -2636,7 +2636,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -2657,13 +2659,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 function GoldenDoor({
   Component,
   pageProps,
   layoutData,
-  pathname
+  pathname,
+  lang
 }) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null, __jsx("link", {
+  console.log(lang);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_12__["DefaultSeo"], {
+    openGraph: {
+      type: 'website',
+      locale: lang === 'de' ? 'de_DE' : 'en_IE',
+      url: 'http://goldendoor.group/',
+      site_name: 'Golden Door Group'
+    }
+  }), __jsx("link", {
     href: "https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css",
     rel: "stylesheet"
   })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -2675,12 +2687,13 @@ function GoldenDoor({
 GoldenDoor.getInitialProps = async appContext => {
   const pathname = appContext.ctx.asPath;
   const lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
-  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()(`${_config__WEBPACK_IMPORTED_MODULE_12__["API_HOST"]}${lang}/layout`);
+  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()(`${_config__WEBPACK_IMPORTED_MODULE_13__["API_HOST"]}${lang}/layout`);
   const data = await response.json();
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_8___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {
     layoutData: data,
-    pathname
+    pathname,
+    lang
   });
 };
 
@@ -2884,6 +2897,17 @@ module.exports = require("html-react-parser");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 

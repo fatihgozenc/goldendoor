@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -427,12 +427,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _MehrLesen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../MehrLesen */ "./components/MehrLesen.js");
-/* harmony import */ var _opening__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../opening */ "./components/opening/index.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./components/templates/home/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _MehrLesen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../MehrLesen */ "./components/MehrLesen.js");
+/* harmony import */ var _opening__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../opening */ "./components/opening/index.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./components/templates/home/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_6__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -442,7 +445,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   data
 }) {
   const paragraphs = data.content.split("\n\r");
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_opening__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_3__["NextSeo"], {
+    title: data.fields.seo.title,
+    description: data.fields.seo.description
+  }), __jsx(_opening__WEBPACK_IMPORTED_MODULE_5__["default"], {
     data: data.fields.text_slider
   }), __jsx("div", {
     className: "preface"
@@ -470,7 +476,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     className: "title__lg"
   }, route.titel), html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(route.inhalt), __jsx("span", {
     className: "home__route--link"
-  }, __jsx(_MehrLesen__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_MehrLesen__WEBPACK_IMPORTED_MODULE_4__["default"], {
     name: route.titel
   })))))))));
 });
@@ -2340,7 +2346,7 @@ Index.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 7:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2481,6 +2487,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("html-react-parser");
+
+/***/ }),
+
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 

@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 import Icon from '../../Icon';
@@ -30,6 +31,10 @@ export default function({data}) {
 
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<h1 className="seo__hidden">{data.title}</h1>
 			<div className="page__title page__title--singleloc">
 				<Breadcrumb slug={data.slug} title={data.title} />

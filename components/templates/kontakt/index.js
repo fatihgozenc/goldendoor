@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 import Breadcrumb from '../../Breadcrumb';
+import Obfuscate from 'react-obfuscate';
 import parse from 'html-react-parser';
 import { useForm } from "react-hook-form";
 import DatePicker from 'react-datepicker';
@@ -10,8 +12,6 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 });
 
 export default ({ data, layout }) => {
-
-	console.log(data.fields.karte_koordinaten)
 
 	const contactInfo = layout.footer.info
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
@@ -117,6 +117,10 @@ export default ({ data, layout }) => {
 
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<div className="page__title page__title--contact">
 				<Breadcrumb slug={data.slug} title={data.title} />
 				<h1>{data.title}</h1>
@@ -229,8 +233,6 @@ export default ({ data, layout }) => {
 								</div>
 
 							</div>
-
-
 
 							<a
 								href="#"
@@ -378,8 +380,8 @@ export default ({ data, layout }) => {
 					{Object.values(contactInfo.address).map((item, key) => (
 						<div key={key}>{parse(item)}</div>
 					))}
-					<a href={`tel:${contactInfo.telefon}`}>{contactInfo.telefon}</a>
-					<a href={`mailto:${contactInfo.email.toLowerCase()}`}>{contactInfo.email}</a>
+					<Obfuscate tel={contactInfo.telefon.split('T:')[1]} />
+					<Obfuscate email={contactInfo.email.toLowerCase()} />
 				</div>
 
 			</div>

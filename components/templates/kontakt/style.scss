@@ -195,15 +195,21 @@
         color: $gold;
         outline: none;
     }
+
+    @include xxl {
+      font-size: 1.4rem;
+    }
   }
 
   & textarea {
     background: transparent;
-    border: 1px solid $gold;
+    border-top: 1px solid $gold;
+    border-bottom: 1px solid $gold;
+
     color: $gold;
     font-family: "Noto Serif";
     font-size: 1.4rem;
-    border-radius: 5px;
+    border-radius: 0;
     width: 100%;
     margin-top: 1rem;
     padding: 1.6rem;
@@ -441,6 +447,7 @@
 
   a {
     display: block;
+    float: left;
   }
 
   @include md {

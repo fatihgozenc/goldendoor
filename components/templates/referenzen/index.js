@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Hero from '../../Hero';
 import MehrLesen from '../../MehrLesen';
@@ -7,6 +8,10 @@ export default function ({ data }) {
 
 	return (
 		<>
+			<NextSeo
+				title={data.fields.seo.title}
+				description={data.fields.seo.description}
+			/>
 			<Hero data={data.main} />
 			<div id="content" className="pool pool--home">
 				{data.children.map((route, key) => (
