@@ -1,9 +1,15 @@
+import dynamic from 'next/dynamic';
+import Link from 'next/link'
 import Icon from '../../Icon';
 import parse from 'html-react-parser';
 import Breadcrumb from '../../Breadcrumb';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import './slider.scss';
 import './style.scss';
+
+const MapContainer = dynamic(() => import('../../MapContainer'), {
+	ssr: false
+});
 
 export default function({data}) {
 
@@ -12,8 +18,14 @@ export default function({data}) {
 		infoPanel.current.classList.toggle('changePanel');
 	}
 
+	const karteWrapper = React.useRef();
+
 	const openMap = (e) => {
-		console.log(e.currentTarget)
+		karteWrapper.current.classList.add('openKarte')
+	}
+
+	const closeMap = (e) => {
+		karteWrapper.current.classList.remove('openKarte')
 	}
 
 	return (
@@ -34,11 +46,13 @@ export default function({data}) {
 							<img src={data.fields.location_info.location_logo} alt={`${data.title} Logo`} className="singleloc__info--img" />
 							<span className="singleloc__info--type">{data.fields.subtitel}</span>
 							<div className="singleloc__info--buttons">
-								<a href="/kontakt" className="singleloc__button"><Icon type="anfragen" name={data.fields.buttongroup.anfragen} /></a>
-								<a href={data.fields.location_info.location_factsheet} className="singleloc__button"><Icon type="factsheet" name={data.fields.buttongroup.datenblatt} /></a>
-								<a href="#karte" onClick={openMap} className="singleloc__button">
-									<Icon type="karte" name={data.fields.buttongroup.karte} />
-								</a>
+								<Link href="/kontakt">
+									<a className="singleloc__button"><Icon type="anfragen" name={data.fields.buttongroup.anfragen} /></a>
+								</Link>
+									<a href={data.fields.location_info.location_factsheet} target="_blank" className="singleloc__button"><Icon type="factsheet" name={data.fields.buttongroup.datenblatt} /></a>
+									<a href="#karte" onClick={openMap} className="singleloc__button">
+										<Icon type="karte" name={data.fields.buttongroup.karte} />
+									</a>
 							</div>
 							<div className="singleloc__info--socialmedia">
 								<a href={data.fields.social_media.facebook} className="socialmedia__button"><Icon type="facebook" /></a>
@@ -58,7 +72,9 @@ export default function({data}) {
 							<div className="singleloc__info--bullets">
 								{parse(data.fields.location_info.bulletpoints)}
 							</div>
-							<button onClick={changePanel} className="singleloc__info--desc"> <Icon type="back" /> </button>
+							<button onClick={changePanel} className="singleloc__info--desc"> 
+								<Icon type="back" /> 
+							</button>
 						</div>
 
 					</div>
@@ -106,6 +122,15 @@ export default function({data}) {
 
 				</div>
 
+			</div>
+
+			<div ref={karteWrapper} className="location__karte--wrapper">
+				<div className="location__karte">
+					<MapContainer data={data.fields.karte_koordinaten}/>
+					<div className="location__karte--close" onClick={closeMap}>
+							<Icon type="cross"/>
+						</div>
+				</div>
 			</div>
 		</>
 	)

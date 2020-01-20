@@ -11,6 +11,8 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 
 export default ({ data, layout }) => {
 
+	console.log(data.fields.karte_koordinaten)
+
 	const contactInfo = layout.footer.info
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
 
@@ -366,7 +368,7 @@ export default ({ data, layout }) => {
 
 			<div className="contact__info">
 				<div className="contact__info--map">
-					<MapContainer />
+					<MapContainer data={data.fields.karte_koordinaten} />
 				</div>
 
 				<div className="contact__info--address">
