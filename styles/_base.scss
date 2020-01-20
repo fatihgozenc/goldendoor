@@ -97,3 +97,26 @@ input {
 		padding-top: 8%;
 	}
 }
+
+.errorpage {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	p {
+		text-align: center;
+		@include display_text;
+		a{
+			margin: 2rem 0;
+			font-weight: bold;
+			display: block;
+		}
+	}
+}
+
+.errorpage__code {
+	font-family: "Noto Serif";
+	font-weight: bold;
+	font-size: 9rem;
+}

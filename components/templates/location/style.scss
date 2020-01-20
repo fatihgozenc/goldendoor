@@ -205,9 +205,6 @@
 
   @include md {
     height: initial;
-    border-bottom: 1px solid $gold;
-    border-right: 1px solid $gold;
-    border-top: 1px solid $gold;
   }
 
   @include xl {

@@ -19,7 +19,12 @@ module.exports = withSass(
 			NEWSLETTER_USER: 'marketing@goldendoor.group',
 			NEWSLETTER_PASS: '&n2go@GD',
 			NEWSLETTER_API_HOST: 'https://api.newsletter2go.com',
-			NEWSLETTER_API_KEY: 't4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav'
+			NEWSLETTER_API_KEY: 't4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav',
+			SMTP_HOST: 'w018aa9c.kasserver.com',
+			SMTP_USER: 'w018aa9c',
+			SMTP_PASSWD: 'ho7yZrChhnT6CgYF', 
+			SMTP_FROM: 'hallo@goldendoor.group',
+			SMTP_TO: 'hallo@goldendoor.group',
 		}
 	},
 	withFonts(),

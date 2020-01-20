@@ -1,0 +1,24 @@
+.impressum {
+  margin: 8%;
+  
+  p {
+    line-height: 1.6;
+    font-family:"Noto Serif";
+  }
+
+  @include xl {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-family:"Noto Serif";
+  }
+  
+  strong {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    display: block;
+  }
+}
