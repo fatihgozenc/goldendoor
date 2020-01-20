@@ -3783,7 +3783,7 @@ LocationPage.getInitialProps = function _callee(context) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 2:
 /*!*****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js ***!
   \*****************************************************************************************************************************************************************/
@@ -3806,5 +3806,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=[id].js.map
