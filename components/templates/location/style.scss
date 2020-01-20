@@ -298,6 +298,18 @@
     height: 550px;
     width: 1000px;
   }
+
+  @include xxl {
+    margin: 8% auto;
+    height: 750px;
+    width: 1600px;
+  }
+
+  @include huge {
+    margin: 8% auto;
+    height: 850px;
+    width: 1800px;
+  }
 }
 
 .openKarte {
@@ -310,4 +322,10 @@
   cursor: pointer;
   text-align: center;
   padding: 3rem;
+  transition: .5s all ease;
+
+  &:hover {
+    transition: .5s all ease;
+    transform: scale(.7);
+  }
 }
