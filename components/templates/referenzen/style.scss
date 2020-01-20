@@ -69,6 +69,20 @@
 
 }
 
+.home__route--img {
+	height: 30vh;
+
+	@include md {
+			border: 1px solid $gold;
+			border-left: none;
+	}
+
+	@include lg {
+		height: 50vh;
+		padding: 4% 0;
+	}
+}
+
 .home__route--content {
 	margin: 0 8%;
 

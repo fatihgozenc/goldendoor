@@ -54,11 +54,11 @@ export default function ({ data, lang }) {
 							lang === 'de'
 								? (
 									<a href="/kontakt">
-										<MehrLesen name={`ZUM KONTAKT`} />
+										<MehrLesen name={`FRAGEN SIE UNS AN!`} />
 									</a>
 								) : (
 									<a href="/en/kontakt">
-										<MehrLesen name={`TO CONTACT`} />
+										<MehrLesen name={`ASK US!`} />
 									</a>
 								)
 						}

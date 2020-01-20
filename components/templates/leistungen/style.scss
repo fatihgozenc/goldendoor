@@ -97,13 +97,15 @@
 	}
 }
 
-.services__route--content > ul{
-	column-count: 2;
-	font-family: "Noto Serif";
-	letter-spacing: initial;
-	text-transform: initial;
-	padding: 0;
-}
+.services__route--content {
+	ul{
+		column-count: 2;
+		font-family: "Noto Serif";
+		letter-spacing: initial;
+		text-transform: initial;
+		padding: 0;
+	}
+} 
 
 .services__route--content {
 
