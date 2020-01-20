@@ -70,7 +70,7 @@ $lightBlend: #fcfae4;
 
 .card2 {
 	will-change: transform;
-	background-image: url('/layered-lions.png');
+	background-image: url('/lions-web.png');
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 160%;
@@ -145,14 +145,14 @@ $lightBlend: #fcfae4;
 	}
 
 	canvas{
-		background-image: url('/nebula-opt-2.jpg');
+		background-image: url('/bg_nebula.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 100vh !important;
 	}
 
 	.scene-landscape {
-		background-image: url('/layered-landscape.png');
+		background-image: url('/bg_landscape-web.png');
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -161,16 +161,5 @@ $lightBlend: #fcfae4;
 		width: 100%;
 		position: absolute;
 		filter: blur(1px);
-	}
-
-	.scene-lions {
-		background-image: url('/layered-lions.png');
-		background-repeat: no-repeat;
-		background-position: center bottom;
-		background-size: contain;
-		height: 70%;
-		bottom: 0;
-		width: 100%;
-		position: absolute;
 	}
 }

@@ -12967,7 +12967,6 @@ function GoldenDoor(_ref) {
       layoutData = _ref.layoutData,
       pathname = _ref.pathname,
       lang = _ref.lang;
-  console.log(lang);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_13__["DefaultSeo"], {
     openGraph: {
       type: 'website',

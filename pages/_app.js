@@ -6,7 +6,6 @@ import { DefaultSeo } from 'next-seo';
 import { API_HOST } from '../config';
 
 function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
-	console.log(lang)
 	return (
 		<>
 			<Head>
