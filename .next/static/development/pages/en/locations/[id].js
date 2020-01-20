@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/locations/[id].js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/en/locations/[id].js"],{
 
 /***/ "./components/Breadcrumb.js":
 /*!**********************************!*\
@@ -2224,21 +2224,21 @@ function trim(str) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js!./":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js ***!
-  \*************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Flocations%2F%5Bid%5D.js!./":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Flocations%2F%5Bid%5D.js ***!
+  \***********************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/locations/[id]", function() {
-      var mod = __webpack_require__(/*! ./pages/locations/[id].js */ "./pages/locations/[id].js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/en/locations/[id]", function() {
+      var mod = __webpack_require__(/*! ./pages/en/locations/[id].js */ "./pages/en/locations/[id].js")
       if(true) {
-        module.hot.accept(/*! ./pages/locations/[id].js */ "./pages/locations/[id].js", function() {
-          if(!next.router.components["/locations/[id]"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/locations/[id].js */ "./pages/locations/[id].js")
-          next.router.update("/locations/[id]", updatedPage)
+        module.hot.accept(/*! ./pages/en/locations/[id].js */ "./pages/en/locations/[id].js", function() {
+          if(!next.router.components["/en/locations/[id]"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/en/locations/[id].js */ "./pages/en/locations/[id].js")
+          next.router.update("/en/locations/[id]", updatedPage)
         })
       }
       return mod
@@ -3722,10 +3722,10 @@ module.exports = StyleToObject;
 
 /***/ }),
 
-/***/ "./pages/locations/[id].js":
-/*!*********************************!*\
-  !*** ./pages/locations/[id].js ***!
-  \*********************************/
+/***/ "./pages/en/locations/[id].js":
+/*!************************************!*\
+  !*** ./pages/en/locations/[id].js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3735,8 +3735,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config */ "./config/index.js");
-/* harmony import */ var _components_templates_location__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/templates/location */ "./components/templates/location/index.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config */ "./config/index.js");
+/* harmony import */ var _components_templates_location__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/templates/location */ "./components/templates/location/index.js");
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -3758,7 +3758,7 @@ LocationPage.getInitialProps = function _callee(context) {
         case 0:
           id = context.query.id;
           _context.next = 3;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_2__["API_HOST"], "de/locations/").concat(id)));
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_2__["API_HOST"], "en/locations/").concat(id)));
 
         case 3:
           res = _context.sent;
@@ -3783,14 +3783,14 @@ LocationPage.getInitialProps = function _callee(context) {
 
 /***/ }),
 
-/***/ 2:
-/*!*****************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js ***!
-  \*****************************************************************************************************************************************************************/
+/***/ 1:
+/*!***************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fen%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Flocations%2F%5Bid%5D.js ***!
+  \***************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Flocations%2F%5Bid%5D.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fen%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Flocations%2F%5Bid%5D.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Flocations%2F%5Bid%5D&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Flocations%2F%5Bid%5D.js!./");
 
 
 /***/ }),
@@ -3806,5 +3806,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=[id].js.map

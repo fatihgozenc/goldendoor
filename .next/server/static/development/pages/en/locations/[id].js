@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -496,10 +496,10 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/values */ "co
 
 /***/ }),
 
-/***/ "./pages/locations/[id].js":
-/*!*********************************!*\
-  !*** ./pages/locations/[id].js ***!
-  \*********************************/
+/***/ "./pages/en/locations/[id].js":
+/*!************************************!*\
+  !*** ./pages/en/locations/[id].js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -507,8 +507,8 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/values */ "co
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../config */ "./config/index.js");
-/* harmony import */ var _components_templates_location__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/templates/location */ "./components/templates/location/index.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../config */ "./config/index.js");
+/* harmony import */ var _components_templates_location__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/templates/location */ "./components/templates/location/index.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -524,7 +524,7 @@ LocationPage.getInitialProps = async context => {
   const {
     id
   } = context.query;
-  const res = await fetch(`${_config__WEBPACK_IMPORTED_MODULE_1__["API_HOST"]}de/locations/${id}`);
+  const res = await fetch(`${_config__WEBPACK_IMPORTED_MODULE_1__["API_HOST"]}en/locations/${id}`);
   const json = await res.json();
   return {
     data: json
@@ -535,14 +535,14 @@ LocationPage.getInitialProps = async context => {
 
 /***/ }),
 
-/***/ 4:
-/*!***************************************!*\
-  !*** multi ./pages/locations/[id].js ***!
-  \***************************************/
+/***/ 3:
+/*!******************************************!*\
+  !*** multi ./pages/en/locations/[id].js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/fatih/repos/goldendoor-next/pages/locations/[id].js */"./pages/locations/[id].js");
+module.exports = __webpack_require__(/*! /Users/fatih/repos/goldendoor-next/pages/en/locations/[id].js */"./pages/en/locations/[id].js");
 
 
 /***/ }),

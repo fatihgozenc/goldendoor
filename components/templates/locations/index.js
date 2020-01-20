@@ -1,8 +1,10 @@
+import Link from 'next/link';
 import Breadcrumb from '../../Breadcrumb';
 import './style.scss'
 
-export default function({data}){
-  const pageUrl = document.location.pathname;
+export default function({data, lang}){
+  // const pageUrl = window.location.pathname;
+  console.log(lang)
 
   return (
     <>
@@ -15,15 +17,15 @@ export default function({data}){
       {data.fields.location_infos.map((location, key) => (
         (location.location_info.sublocations === false)
         ? (
-          <a key={key} 
-            href={`/locations/${(location.location_info.location_name).toLowerCase()}`} 
-            className="location__item">
-            <h2>{location.location_info.location_name}</h2>
-            <div className="location__item--wrapper">
-            <div className="location__item--img backgroundImg" 
-              style={{backgroundImage: "url(" + location.location_info.location_bild + ")"}}/>
-              </div>
-          </a>
+          <Link key={key} href={`/locations/${(location.location_info.location_name).toLowerCase()}`} >
+            <a className="location__item">
+              <h2>{location.location_info.location_name}</h2>
+              <div className="location__item--wrapper">
+              <div className="location__item--img backgroundImg" 
+                style={{backgroundImage: "url(" + location.location_info.location_bild + ")"}}/>
+                </div>
+            </a>
+          </Link>
         ) : (
           <button key={key}
             className="location__item">
@@ -34,9 +36,9 @@ export default function({data}){
               <div className="location__item--subitemwrapper">
                 {
                   location.location_info.sublocations.map((item, subKey) => (
-                    <a key={subKey}
-                      className="location__item--subitem"
-                      href={`${pageUrl}${item.link}`}>{item.name}</a>
+                    <Link key={subKey} href={lang === 'en' ? `/en/locations${item.link}`: `/locations${item.link}`}>
+                      <a className="location__item--subitem">{item.name}</a>
+                    </Link>
                   ))
                 }
               </div>
