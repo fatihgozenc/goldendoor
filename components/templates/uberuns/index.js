@@ -9,10 +9,10 @@ export default function ({ data, lang }) {
 	const philosophy = data.fields.uber_uns_philosophy;
 	const extra_text_1 = data.fields.uber_uns_extra_text.extra_text_block_1;
 	const extra_text_2 = data.fields.uber_uns_extra_text.extra_text_block_2;
-
+	console.log(data.lang)
 	return (
 		<>
-			<Hero data={data} />
+			<Hero data={data} entrance={data.fields.eroffnungstitel} />
 			<div id="content">
 
 				<div className="story story--right">

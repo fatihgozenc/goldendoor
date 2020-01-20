@@ -2,6 +2,7 @@ import Icon from '../../Icon';
 import parse from 'html-react-parser';
 import Breadcrumb from '../../Breadcrumb';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
+import './slider.scss';
 import './style.scss';
 
 export default function({data}) {

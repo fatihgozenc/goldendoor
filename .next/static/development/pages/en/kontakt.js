@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/Breadcrumb.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/Breadcrumb.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -68,8 +68,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -94,7 +94,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/templates/kontakt/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
 
@@ -211,6 +210,11 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
       register = _useForm.register,
       errors = _useForm.errors;
 
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_10___default.a.useState(false),
+      _React$useState10 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_9__["default"])(_React$useState9, 2),
+      submitted = _React$useState10[0],
+      setSubmitted = _React$useState10[1];
+
   var onSubmit = function onSubmit(values) {
     var dates = {
       eventdatum: eventDate.toDateString(),
@@ -221,346 +225,134 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
 
     var finalForm = _objectSpread({}, values, {}, dates);
 
-    console.log(finalForm);
-  };
-
-  var getFormData = function getFormData(e) {
-    var formElement = e.currentTarget.parentElement.parentElement.parentElement;
-
-    var inputs = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default()(formElement.getElementsByTagName('input'));
-
-    var selects = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default()(formElement.getElementsByTagName('select'));
-
-    var textArea = formElement.getElementsByTagName('textarea');
-    var textAreaValue = ['nachricht', textArea[0].value];
-    var selectValues = selects.map(function (item, key) {
-      return [item.getAttribute('name'), item.value];
+    fetch('/api/contact', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7___default()(finalForm)
+    }).then(function (res) {
+      res.status === 200 ? setSubmitted(!submitted) : '';
     });
-    var inputValues = inputs.map(function (item, key) {
-      if (item.type === 'radio' && item.checked === true) {
-        return [item.getAttribute('name'), item.value];
-      } else if (item.type !== 'radio') {
-        return [item.getAttribute('name'), item.value];
-      }
-    });
-    console.log(inputValues.concat(selectValues, ['nachricht', textArea[0].value]));
   };
 
   react__WEBPACK_IMPORTED_MODULE_10___default.a.useEffect(function () {
-    stepSlider.current.firstElementChild.classList.add('activeStep'); // dates.current.classList.add('hideDates')
+    stepSlider.current.firstElementChild.classList.add('activeStep');
   }, []);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_10___default.a.Fragment, null, __jsx("div", {
-    className: "page__title page__title--contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: this
+    className: "page__title page__title--contact"
   }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_12__["default"], {
     slug: data.slug,
-    title: data.title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: this
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 127
-    },
-    __self: this
-  }, data.title)), __jsx("div", {
-    className: "contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129
-    },
-    __self: this
+    title: data.title
+  }), __jsx("h1", null, data.title)), __jsx("div", {
+    className: "contact"
   }, __jsx("div", {
     ref: stepSlider,
-    className: "contact__stepslider",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 131
-    },
-    __self: this
+    className: "contact__stepslider"
   }, steps.map(function (item, key) {
     return __jsx("div", {
       key: key,
-      className: "contact__stepslider--ellipse",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 134
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 136
-      },
-      __self: this
-    }, key + 1));
+      className: "contact__stepslider--ellipse"
+    }, __jsx("span", null, key + 1));
   })), __jsx("div", {
-    className: "contact--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142
-    },
-    __self: this
+    className: "contact--wrapper"
   }, __jsx("form", {
     className: "contact__steps",
     ref: formSteps,
-    onSubmit: handleSubmit(onSubmit),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: this
+    onSubmit: handleSubmit(onSubmit)
   }, __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 146
-    },
-    __self: this
+    className: "contact__step"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: this
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 150
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_type",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 151
-    },
-    __self: this
+    className: "label__select"
   }, steps[0].kontakt_frage_1.frage), __jsx("select", {
     name: "event_type",
-    ref: register,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152
-    },
-    __self: this
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 153
-    },
-    __self: this
-  }, steps[0].kontakt_frage_1.optionen.map(function (item, key) {
+    ref: register
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_1.optionen.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 155
-      },
-      __self: this
+      value: item.option
     }, item.option);
   })))), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 161
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_location",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 162
-    },
-    __self: this
+    className: "label__select"
   }, steps[0].kontakt_frage_2.frage), __jsx("select", {
     ref: register,
-    name: "event_location",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: this
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 164
-    },
-    __self: this
-  }, steps[0].kontakt_frage_2.optionen.map(function (item, key) {
+    name: "event_location"
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_2.optionen.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 166
-      },
-      __self: this
+      value: item.option
     }, item.option);
   }))))), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 174
-    },
-    __self: this
+    className: "contact__step--flexWrapper-xl"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 176
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: firstStepLock,
     htmlFor: "event_date_answer",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 177
-    },
-    __self: this
+    className: "contact__stepblock--inner"
   }, steps[0].kontakt_frage_3.frage), steps[0].kontakt_frage_3.optionen.map(function (item, key) {
     return __jsx("p", {
       className: "contact__stepblock--inner",
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 182
-      },
-      __self: this
+      key: key
     }, __jsx("input", {
       onClick: hideDates,
       ref: register,
       className: "input__radio",
       type: "radio",
       name: "event_date_answer",
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 183
-      },
-      __self: this
+      value: item.option
     }), __jsx("span", {
-      className: "label__radio",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 184
-      },
-      __self: this
+      className: "label__radio"
     }, item.option));
   })), __jsx("div", {
     className: "contact__stepblock",
-    ref: dateRange,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 189
-    },
-    __self: this
+    ref: dateRange
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "date_range",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: this
+    htmlFor: "date_range"
   }, steps[0].kontakt_frage_5), __jsx("input", {
     className: "input__text",
     name: "date_range",
     ref: register,
-    type: "text",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 191
-    },
-    __self: this
+    type: "text"
   })), __jsx("div", {
     ref: dates,
-    className: "contact__stepblock contact__stepblock--datewrapper hidden",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 194
-    },
-    __self: this
+    className: "contact__stepblock contact__stepblock--datewrapper hidden"
   }, __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 197
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_event",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 198
-    },
-    __self: this
+    htmlFor: "date_of_event"
   }, steps[0].kontakt_frage_6.datum), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_15___default.a, {
     selected: eventDate,
     name: "eventdatum",
     ref: register,
     onChange: function onChange(date) {
       return setEventDate(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 199
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 202
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 203
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ausweichtermin), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_15___default.a, {
     selected: elusiveDate,
     name: "ausweichtermin",
     ref: register,
     onChange: function onChange(date) {
       return setElusiveDate(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 204
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 207
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 208
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.beginn), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_15___default.a, {
     ref: register,
     name: "event_beginn_zeit",
@@ -572,26 +364,11 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
     selected: beginTime,
     onChange: function onChange(date) {
       return setBeginTime(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 209
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 221
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 222
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ende), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_15___default.a, {
     name: "event_end_zeit",
     showTimeSelect: true,
@@ -602,64 +379,23 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
     selected: endTime,
     onChange: function onChange(date) {
       return setEndTime(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 223
-    },
-    __self: this
+    }
   })))), __jsx("a", {
     href: "#",
     className: "golden__button golden__button--center",
-    onClick: changeStep,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 240
-    },
-    __self: this
+    onClick: changeStep
   }, data.fields.buttonfelder.prufen)), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 249
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 251
-    },
-    __self: this
-  }, steps[1].feld_1.titel), __jsx("div", {
-    className: "contact__step--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 253
-    },
-    __self: this
+    className: "contact__step"
+  }, __jsx("h3", null, steps[1].feld_1.titel), __jsx("div", {
+    className: "contact__step--wrapper"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 255
-    },
-    __self: this
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 257
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: secondStepLock,
     className: "label__text",
-    htmlFor: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 258
-    },
-    __self: this
+    htmlFor: "personenzahl"
   }, steps[1].feld_1.frage_1), __jsx("input", {
     onChange: removeUnchecked,
     type: "text",
@@ -667,337 +403,127 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
       required: true
     }),
     className: "input__text",
-    name: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 259
-    },
-    __self: this
+    name: "personenzahl"
   })), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 262
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_max_budget",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 263
-    },
-    __self: this
+    className: "contact__stepblock--inner"
   }, steps[1].feld_1.frage_2.fragefeld), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_1.frage_2.optionen).map(function (item, key) {
     return __jsx("p", {
       className: "contact__stepblock--inner",
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 266
-      },
-      __self: this
+      key: key
     }, __jsx("input", {
       ref: register,
       type: "radio",
       className: "input__radio",
       name: "event_max_budget",
-      value: item,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 267
-      },
-      __self: this
+      value: item
     }), __jsx("span", {
-      className: "label__radio",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 268
-      },
-      __self: this
+      className: "label__radio"
     }, item));
-  }))), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 275
-    },
-    __self: this
-  }, steps[1].feld_2.titel), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 277
-    },
-    __self: this
+  }))), __jsx("h3", null, steps[1].feld_2.titel), __jsx("div", {
+    className: "contact__step--flexWrapper-xl"
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_2).slice(1).map(function (item, key) {
     return __jsx("div", {
       key: key,
-      className: "contact__stepblock",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 281
-      },
-      __self: this
+      className: "contact__stepblock"
     }, __jsx("label", {
       htmlFor: "event_".concat(item.fragefeld.toLowerCase()),
-      className: "label__select",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 282
-      },
-      __self: this
+      className: "label__select"
     }, item.fragefeld), __jsx("select", {
       ref: register,
-      name: "event_".concat(item.fragefeld.toLowerCase()),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 283
-      },
-      __self: this
+      name: "event_".concat(item.fragefeld.toLowerCase())
     }, item.optionen.map(function (subItem, subKey) {
       return __jsx("option", {
         key: subKey,
-        value: subItem.option,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 286
-        },
-        __self: this
+        value: subItem.option
       }, subItem.option);
     })));
   }))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 297
-    },
-    __self: this
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goFirst",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 298
-    },
-    __self: this
+    className: "golden__button goFirst"
   }, data.fields.buttonfelder.zuruck), __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goNext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 302
-    },
-    __self: this
+    className: "golden__button goNext"
   }, data.fields.buttonfelder.weiter))), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 310
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 312
-    },
-    __self: this
-  }, steps[2].titel), __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 314
-    },
-    __self: this
+    className: "contact__step"
+  }, __jsx("h3", null, steps[2].titel), __jsx("div", {
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 316
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "kontakt_anrede",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 317
-    },
-    __self: this
+    className: "label__select"
   }, steps[2].anredefeld.frage), __jsx("select", {
     ref: register,
-    name: "kontakt_anrede",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 318
-    },
-    __self: this
+    name: "kontakt_anrede"
   }, steps[2].anredefeld.sex.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 320
-      },
-      __self: this
+      value: item.option
     }, item.option);
   }))), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[2].andere_fragen).map(function (item, key) {
     return __jsx("div", {
       key: key,
-      className: "contact__stepblock",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 327
-      },
-      __self: this
+      className: "contact__stepblock"
     }, __jsx("label", {
       className: "label__text",
-      htmlFor: "kontakt_".concat(item),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 328
-      },
-      __self: this
+      htmlFor: "kontakt_".concat(item)
     }, item), key === 0 | 4 ? __jsx("input", {
       ref: register,
       className: "input__text",
       type: "text",
-      id: "kontakt_".concat(item.toLowerCase()),
-      name: "kontakt_".concat(item.toLowerCase()),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 331
-      },
-      __self: this
+      name: "kontakt_".concat(item.toLowerCase())
     }) : __jsx("input", {
       ref: register({
         required: true
       }),
       className: "input__text",
       type: "text",
-      id: "kontakt_".concat(item.toLowerCase()),
-      name: "kontakt_".concat(item.toLowerCase()),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 337
-      },
-      __self: this
+      name: "kontakt_".concat(item.toLowerCase())
     }));
   }), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 348
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
-    htmlFor: "event_nachricht",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 349
-    },
-    __self: this
+    htmlFor: "event_nachricht"
   }, steps[0].kontakt_frage_4), __jsx("textarea", {
     ref: register,
     name: "event_nachricht",
     cols: "30",
-    rows: "5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 350
-    },
-    __self: this
+    rows: "5"
   }))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 356
-    },
-    __self: this
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goSecond",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 358
-    },
-    __self: this
+    className: "golden__button goSecond"
   }, data.fields.buttonfelder.zuruck), __jsx("button", {
     type: "submit",
-    className: "golden__button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 363
-    },
-    __self: this
+    className: "golden__button"
   }, data.fields.buttonfelder.senden)))))), __jsx("div", {
-    className: "contact__info",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 374
-    },
-    __self: this
+    className: "contact__info"
   }, __jsx("div", {
-    className: "contact__info--map",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 375
-    },
-    __self: this
-  }, __jsx(MapContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 376
-    },
-    __self: this
-  })), __jsx("div", {
-    className: "contact__info--address",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 379
-    },
-    __self: this
+    className: "contact__info--map"
+  }, __jsx(MapContainer, null)), __jsx("div", {
+    className: "contact__info--address"
   }, __jsx("div", {
-    className: "contact__info--logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 380
-    },
-    __self: this
+    className: "contact__info--logo"
   }, __jsx("img", {
     src: contactInfo.logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 381
-    },
-    __self: this
+    alt: "Golden Door Logo"
   })), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(contactInfo.address).map(function (item, key) {
     return __jsx("div", {
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 384
-      },
-      __self: this
+      key: key
     }, html_react_parser__WEBPACK_IMPORTED_MODULE_13___default()(item));
   }), __jsx("a", {
-    href: "tel:".concat(contactInfo.telefon),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 386
-    },
-    __self: this
+    href: "tel:".concat(contactInfo.telefon)
   }, contactInfo.telefon), __jsx("a", {
-    href: "mailto:".concat(contactInfo.email.toLowerCase()),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 387
-    },
-    __self: this
+    href: "mailto:".concat(contactInfo.email.toLowerCase())
   }, contactInfo.email))));
 });
 
@@ -1014,17 +540,6 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_11___default()(function
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
 var API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "./node_modules/core-js/library/fn/array/from.js");
 
 /***/ }),
 
@@ -1058,6 +573,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./n
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "./node_modules/core-js/library/fn/json/stringify.js");
 
 /***/ }),
 
@@ -1533,20 +1059,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/array/from.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/library/fn/array/from.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
-__webpack_require__(/*! ../../modules/es6.array.from */ "./node_modules/core-js/library/modules/es6.array.from.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Array.from;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/array/is-array.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/fn/array/is-array.js ***!
@@ -1584,6 +1096,22 @@ module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/json/stringify.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/json/stringify.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js");
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
 
 
 /***/ }),
@@ -4047,55 +3575,6 @@ module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/libr
     // eslint-disable-next-line no-prototype-builtins
     || Iterators.hasOwnProperty(classof(O));
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.array.from.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.array.from.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/library/modules/_ctx.js");
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/library/modules/_to-object.js");
-var call = __webpack_require__(/*! ./_iter-call */ "./node_modules/core-js/library/modules/_iter-call.js");
-var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ "./node_modules/core-js/library/modules/_is-array-iter.js");
-var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/library/modules/_to-length.js");
-var createProperty = __webpack_require__(/*! ./_create-property */ "./node_modules/core-js/library/modules/_create-property.js");
-var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ "./node_modules/core-js/library/modules/core.get-iterator-method.js");
-
-$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ "./node_modules/core-js/library/modules/_iter-detect.js")(function (iter) { Array.from(iter); }), 'Array', {
-  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
-  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject(arrayLike);
-    var C = typeof this == 'function' ? this : Array;
-    var aLen = arguments.length;
-    var mapfn = aLen > 1 ? arguments[1] : undefined;
-    var mapping = mapfn !== undefined;
-    var index = 0;
-    var iterFn = getIterFn(O);
-    var length, result, step, iterator;
-    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
-    // if object isn't iterable or it's array with default iterator - use simple case
-    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
-      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
-        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
-      }
-    } else {
-      length = toLength(O.length);
-      for (result = new C(length); length > index; index++) {
-        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
-      }
-    }
-    result.length = index;
-    return result;
-  }
-});
 
 
 /***/ }),
@@ -15273,10 +14752,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2Fhome%2Furbandruid%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js!./":
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2Fhome%2Furbandruid%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js ***!
-  \*************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js!./":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js ***!
+  \***********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24000,7 +23479,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config */ "./config/index.js");
 /* harmony import */ var _components_templates_kontakt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/templates/kontakt */ "./components/templates/kontakt/index.js");
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/en/kontakt.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -24011,12 +23489,7 @@ var KontaktPage = function KontaktPage(_ref) {
       layout = _ref.layout;
   return __jsx(_components_templates_kontakt__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: data,
-    layout: layout,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
+    layout: layout
   });
 };
 
@@ -24063,14 +23536,14 @@ KontaktPage.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 19:
-/*!*****************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fen%2Fkontakt&absolutePagePath=%2Fhome%2Furbandruid%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js ***!
-  \*****************************************************************************************************************************************************/
+/***/ 11:
+/*!***************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fen%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fen%2Fkontakt&absolutePagePath=%2Fhome%2Furbandruid%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2Fhome%2Furbandruid%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fen%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fen%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fkontakt.js!./");
 
 
 /***/ }),
@@ -24086,5 +23559,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[19,"static/runtime/webpack.js","styles"]]]);
+},[[11,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=kontakt.js.map

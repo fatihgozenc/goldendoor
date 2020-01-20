@@ -143,7 +143,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-obfuscate */ "react-obfuscate");
 /* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -154,290 +153,102 @@ const Footer = ({
   data
 }) => {
   return __jsx("footer", {
-    className: "footer",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
+    className: "footer"
   }, __jsx("div", {
-    className: "footer__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
+    className: "footer__block"
   }, __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
+    className: "footer__block__item"
   }, __jsx("img", {
     id: "footer--logo",
     src: data.info.logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
+    alt: "Golden Door Logo"
   })), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
+    className: "footer__block__item"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.berlin)), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
+    className: "footer__block__item"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.dresden)), __jsx("div", {
-    className: "footer__block__item footer__block__item--numbers",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
+    className: "footer__block__item footer__block__item--numbers"
   }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    tel: data.info.telefon.split('T:')[1],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
+    tel: data.info.telefon.split('T:')[1]
   }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    email: data.info.email.toLowerCase(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
+    email: data.info.email.toLowerCase()
   })), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
+    className: "footer__block__item"
   }, __jsx("div", {
-    className: "footer__routes",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
+    className: "footer__routes"
   }, __jsx("div", {
-    className: "footer__routes--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
+    className: "footer__routes--block"
   }, data.routes.map((route, key) => {
     while (key <= 3) {
       return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        href: route.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: undefined
+        href: route.url
       }, __jsx("a", {
-        className: "footer__routes--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: undefined
+        className: "footer__routes--item"
       }, route.title));
     }
   })), __jsx("div", {
-    className: "footer__routes--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
+    className: "footer__routes--block"
   }, data.routes.map((route, key) => {
     while (key >= 4) {
       return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        href: route.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: undefined
+        href: route.url
       }, __jsx("a", {
-        className: "footer__routes--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: undefined
+        className: "footer__routes--item"
       }, route.title));
     }
   }), __jsx("div", {
-    className: "footer__routes--item copyright",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
+    className: "footer__routes--item copyright"
   }, data.info.copyright))))), __jsx("div", {
-    className: "footer__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
+    className: "footer__block"
   }, __jsx("div", {
-    className: "footer__submarken",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
+    className: "footer__submarken"
   }, __jsx("div", {
     id: "submarken--text",
-    className: "footer__submarken--item ",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
+    className: "footer__submarken--item "
   }, data.submarken.submarke_text), __jsx("div", {
-    className: "footer__submarken--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
+    className: "footer__submarken--wrapper"
   }, __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key < 4) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: undefined
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        },
-        __self: undefined
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: undefined
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: undefined
+        alt: "Submarke Logo"
       }))));
     }
   })), __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key > 3 && key < 8) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        },
-        __self: undefined
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: undefined
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: undefined
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: undefined
+        alt: "Submarke Logo"
       }))));
     }
   }))), __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key > 7) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        },
-        __self: undefined
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103
-        },
-        __self: undefined
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 104
-        },
-        __self: undefined
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: undefined
+        alt: "Submarke Logo"
       }))));
     }
   })))));
@@ -464,7 +275,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -518,227 +328,74 @@ const Header = ({
   };
 
   return __jsx("header", {
-    className: "header",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
+    className: "header"
   }, __jsx("nav", {
     className: "nav",
-    ref: navigation,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
+    ref: navigation
   }, __jsx("div", {
-    className: "nav__wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
+    className: "nav__wrapper"
   }, data.map(item => {
     return __jsx("ul", {
-      key: item.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: undefined
+      key: item.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: item.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: undefined
+      href: item.url
     }, __jsx("a", {
       onClick: toggleMenu,
-      className: "nav__parent",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: undefined
+      className: "nav__parent"
     }, item.title)), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
-      key: subItem.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: undefined
+      key: subItem.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItem.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: undefined
+      href: subItem.url
     }, __jsx("a", {
       onClick: toggleMenu,
-      className: "nav__child",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: undefined
+      className: "nav__child"
     }, subItem.title)), subItem.children.map(subItemChild => __jsx("li", {
-      key: subItemChild.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68
-      },
-      __self: undefined
+      key: subItemChild.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItemChild.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: undefined
+      href: subItemChild.url
     }, __jsx("a", {
       onClick: toggleMenu,
-      className: "nav__child nav__child--sub",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: undefined
+      className: "nav__child nav__child--sub"
     }, subItemChild.title))))) : __jsx("li", {
-      key: subItem.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: undefined
+      key: subItem.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItem.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: undefined
+      href: subItem.url
     }, __jsx("a", {
       onClick: toggleMenu,
-      className: "nav__child",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: undefined
+      className: "nav__child"
     }, subItem.title)))));
   }))), __jsx("div", {
-    className: "frame",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
+    className: "frame"
   }, __jsx("div", {
-    className: "logoarea",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
+    className: "logoarea"
   }, __jsx("div", {
-    className: "panel panel__lang",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94
-    },
-    __self: undefined
+    className: "panel panel__lang"
   }, __jsx("button", {
     className: "panel__lang-selector",
-    onClick: changeLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
+    onClick: changeLang
   }, `${lang.toUpperCase()}▾`), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: setPathLang(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
+    href: setPathLang()
   }, __jsx("a", {
     ref: langSelection,
     className: "panel__lang-selected",
-    onClick: setLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
-  }, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: lang === 'de' ? '/' : '/en',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
+    onClick: setLang
+  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: lang === 'de' ? '/' : '/en'
   }, __jsx("a", {
-    id: "logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: undefined
+    id: "logo"
   }, __jsx("img", {
     src: logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
+    alt: "Golden Door Logo"
   }))), __jsx("div", {
-    className: "panel panel__menu",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114
-    },
-    __self: undefined
+    className: "panel panel__menu"
   }, __jsx("button", {
     className: "menutoggler__button",
     ref: menuToggler,
-    onClick: toggleMenu,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: undefined
-  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: undefined
-  })))), __jsx("a", {
+    onClick: toggleMenu
+  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), __jsx("a", {
     href: "#newsletter",
-    className: "menuMailer",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: undefined
-  }))));
+    className: "menuMailer"
+  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -762,7 +419,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/layout/Footer.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./components/layout/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -782,26 +438,11 @@ const Layout = props => {
     logo: props.data.footer.info.logo,
     data: props.data.header,
     lang: props.data.lang,
-    pathname: props.pathname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
+    pathname: props.pathname
   }), props.children, __jsx(Newsletter, {
-    data: props.data.newsletter,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
+    data: props.data.newsletter
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: props.data.footer,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
+    data: props.data.footer
   }));
 };
 
@@ -820,7 +461,7 @@ const Layout = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuMailer.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuMailer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -859,7 +500,7 @@ const MenuMailer = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuToggler.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuToggler.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1152,39 +793,6 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
 }
 
 /***/ }),
@@ -3051,17 +2659,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -3070,9 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/_app.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -3090,43 +2695,21 @@ function GoldenDoor({
   layoutData,
   pathname
 }) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, __jsx("link", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null, __jsx("link", {
     href: "https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css",
-    rel: "stylesheet",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    rel: "stylesheet"
+  })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
     data: layoutData,
-    pathname: pathname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, pageProps, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }))));
+    pathname: pathname
+  }, __jsx(Component, pageProps)));
 }
 
 GoldenDoor.getInitialProps = async appContext => {
   const pathname = appContext.ctx.asPath;
   const lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
-  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()(`${_config__WEBPACK_IMPORTED_MODULE_13__["API_HOST"]}${lang}/layout`);
+  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()(`${_config__WEBPACK_IMPORTED_MODULE_12__["API_HOST"]}${lang}/layout`);
   const data = await response.json();
-  const appProps = await next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext);
+  const appProps = await next_app__WEBPACK_IMPORTED_MODULE_8___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {
     layoutData: data,
     pathname

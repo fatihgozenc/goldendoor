@@ -1,4 +1,5 @@
 const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-sass');
 const withFonts = require('nextjs-fonts');
 
 module.exports = withSass(
@@ -21,5 +22,5 @@ module.exports = withSass(
 			NEWSLETTER_API_KEY: 't4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav'
 		}
 	},
-	withFonts()
+	withFonts(),
 )

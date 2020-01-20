@@ -160,3 +160,32 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
+.singleloc__gallery--wrapper {
+  height: 30vh;
+
+  @include md {
+    height: initial;
+    border-bottom: 1px solid $gold;
+    border-right: 1px solid $gold;
+    border-top: 1px solid $gold;
+  }
+
+  @include xl {
+    height: 42vh;
+  }
+
+  @include xxl {
+    height: 50vh;
+  }
+
+  img {
+    // @include xl {
+    //   height: 42vh;
+    // }
+  
+    // @include xxl {
+    //   height: 50vh;
+    // }
+  }
+}

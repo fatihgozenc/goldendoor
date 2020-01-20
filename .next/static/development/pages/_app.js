@@ -17,7 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-obfuscate */ "./node_modules/react-obfuscate/dist/obfuscate.js");
 /* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -27,290 +26,102 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Footer = function Footer(_ref) {
   var data = _ref.data;
   return __jsx("footer", {
-    className: "footer",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
+    className: "footer"
   }, __jsx("div", {
-    className: "footer__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
+    className: "footer__block"
   }, __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
+    className: "footer__block__item"
   }, __jsx("img", {
     id: "footer--logo",
     src: data.info.logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
+    alt: "Golden Door Logo"
   })), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    className: "footer__block__item"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.berlin)), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
+    className: "footer__block__item"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.dresden)), __jsx("div", {
-    className: "footer__block__item footer__block__item--numbers",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
+    className: "footer__block__item footer__block__item--numbers"
   }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    tel: data.info.telefon.split('T:')[1],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
+    tel: data.info.telefon.split('T:')[1]
   }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    email: data.info.email.toLowerCase(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
+    email: data.info.email.toLowerCase()
   })), __jsx("div", {
-    className: "footer__block__item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
+    className: "footer__block__item"
   }, __jsx("div", {
-    className: "footer__routes",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
+    className: "footer__routes"
   }, __jsx("div", {
-    className: "footer__routes--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
+    className: "footer__routes--block"
   }, data.routes.map(function (route, key) {
     while (key <= 3) {
       return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        href: route.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
+        href: route.url
       }, __jsx("a", {
-        className: "footer__routes--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
+        className: "footer__routes--item"
       }, route.title));
     }
   })), __jsx("div", {
-    className: "footer__routes--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
+    className: "footer__routes--block"
   }, data.routes.map(function (route, key) {
     while (key >= 4) {
       return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         key: route.id,
-        href: route.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
+        href: route.url
       }, __jsx("a", {
-        className: "footer__routes--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
+        className: "footer__routes--item"
       }, route.title));
     }
   }), __jsx("div", {
-    className: "footer__routes--item copyright",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
+    className: "footer__routes--item copyright"
   }, data.info.copyright))))), __jsx("div", {
-    className: "footer__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
+    className: "footer__block"
   }, __jsx("div", {
-    className: "footer__submarken",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
+    className: "footer__submarken"
   }, __jsx("div", {
     id: "submarken--text",
-    className: "footer__submarken--item ",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
+    className: "footer__submarken--item "
   }, data.submarken.submarke_text), __jsx("div", {
-    className: "footer__submarken--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
+    className: "footer__submarken--wrapper"
   }, __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
     while (key < 4) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        },
-        __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: this
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
+        alt: "Submarke Logo"
       }))));
     }
   })), __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: this
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
     while (key > 3 && key < 8) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        },
-        __self: this
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: this
+        alt: "Submarke Logo"
       }))));
     }
   }))), __jsx("div", {
-    className: "footer__submarken--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: this
+    className: "footer__submarken--block"
   }, data.submarken.submarke_logogroup.map(function (marke, key) {
     while (key > 7) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        },
-        __self: this
+        className: "footer__submarken--item"
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103
-        },
-        __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 104
-        },
-        __self: this
-      }, __jsx("img", {
+        href: marke.route
+      }, __jsx("a", null, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: this
+        alt: "Submarke Logo"
       }))));
     }
   })))));
@@ -337,7 +148,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -390,231 +200,78 @@ var Header = function Header(_ref) {
   };
 
   return __jsx("header", {
-    className: "header",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
+    className: "header"
   }, __jsx("nav", {
     className: "nav",
-    ref: navigation,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
+    ref: navigation
   }, __jsx("div", {
-    className: "nav__wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
+    className: "nav__wrapper"
   }, data.map(function (item) {
     return __jsx("ul", {
-      key: item.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
+      key: item.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: item.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
+      href: item.url
     }, __jsx("a", {
       onClick: toggleMenu,
-      className: "nav__parent",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
+      className: "nav__parent"
     }, item.title)), item.children !== null && item.children.map(function (subItem) {
       return subItem.children !== null ? __jsx("ul", {
-        key: subItem.id,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        },
-        __self: this
+        key: subItem.id
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        href: subItem.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        },
-        __self: this
+        href: subItem.url
       }, __jsx("a", {
         onClick: toggleMenu,
-        className: "nav__child",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65
-        },
-        __self: this
+        className: "nav__child"
       }, subItem.title)), subItem.children.map(function (subItemChild) {
         return __jsx("li", {
-          key: subItemChild.id,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 68
-          },
-          __self: this
+          key: subItemChild.id
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          href: subItemChild.url,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 69
-          },
-          __self: this
+          href: subItemChild.url
         }, __jsx("a", {
           onClick: toggleMenu,
-          className: "nav__child nav__child--sub",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 70
-          },
-          __self: this
+          className: "nav__child nav__child--sub"
         }, subItemChild.title)));
       })) : __jsx("li", {
-        key: subItem.id,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: this
+        key: subItem.id
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        href: subItem.url,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79
-        },
-        __self: this
+        href: subItem.url
       }, __jsx("a", {
         onClick: toggleMenu,
-        className: "nav__child",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        },
-        __self: this
+        className: "nav__child"
       }, subItem.title)));
     }));
   }))), __jsx("div", {
-    className: "frame",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: this
+    className: "frame"
   }, __jsx("div", {
-    className: "logoarea",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: this
+    className: "logoarea"
   }, __jsx("div", {
-    className: "panel panel__lang",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94
-    },
-    __self: this
+    className: "panel panel__lang"
   }, __jsx("button", {
     className: "panel__lang-selector",
-    onClick: changeLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: this
+    onClick: changeLang
   }, "".concat(lang.toUpperCase(), "\u25BE")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: setPathLang(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: this
+    href: setPathLang()
   }, __jsx("a", {
     ref: langSelection,
     className: "panel__lang-selected",
-    onClick: setLang,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: this
-  }, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: lang === 'de' ? '/' : '/en',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: this
+    onClick: setLang
+  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: lang === 'de' ? '/' : '/en'
   }, __jsx("a", {
-    id: "logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: this
+    id: "logo"
   }, __jsx("img", {
     src: logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: this
+    alt: "Golden Door Logo"
   }))), __jsx("div", {
-    className: "panel panel__menu",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114
-    },
-    __self: this
+    className: "panel panel__menu"
   }, __jsx("button", {
     className: "menutoggler__button",
     ref: menuToggler,
-    onClick: toggleMenu,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: this
-  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: this
-  })))), __jsx("a", {
+    onClick: toggleMenu
+  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), __jsx("a", {
     href: "#newsletter",
-    className: "menuMailer",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: this
-  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: this
-  }))));
+    className: "menuMailer"
+  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -638,7 +295,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/layout/Footer.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./components/layout/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -662,26 +318,11 @@ var Layout = function Layout(props) {
     logo: props.data.footer.info.logo,
     data: props.data.header,
     lang: props.data.lang,
-    pathname: props.pathname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
+    pathname: props.pathname
   }), props.children, __jsx(Newsletter, {
-    data: props.data.newsletter,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
+    data: props.data.newsletter
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: props.data.footer,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
+    data: props.data.footer
   }));
 };
 
@@ -700,7 +341,7 @@ var Layout = function Layout(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuMailer.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuMailer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -739,7 +380,7 @@ var MenuMailer = function MenuMailer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/MenuToggler.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuToggler.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1260,39 +901,6 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
 }
 
 /***/ }),
@@ -13123,17 +12731,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -13143,9 +12750,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/_app.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -13162,35 +12767,13 @@ function GoldenDoor(_ref) {
       pageProps = _ref.pageProps,
       layoutData = _ref.layoutData,
       pathname = _ref.pathname;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, __jsx("link", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, null, __jsx("link", {
     href: "https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css",
-    rel: "stylesheet",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    rel: "stylesheet"
+  })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
     data: layoutData,
-    pathname: pathname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_8__["default"])({}, pageProps, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }))));
+    pathname: pathname
+  }, __jsx(Component, pageProps)));
 }
 
 GoldenDoor.getInitialProps = function _callee(appContext) {
@@ -13202,7 +12785,7 @@ GoldenDoor.getInitialProps = function _callee(appContext) {
           pathname = appContext.ctx.asPath;
           lang = appContext.ctx.asPath.split('/')[1] === 'en' ? 'en' : 'de';
           _context.next = 4;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("".concat(_config__WEBPACK_IMPORTED_MODULE_14__["API_HOST"]).concat(lang, "/layout")));
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("".concat(_config__WEBPACK_IMPORTED_MODULE_13__["API_HOST"]).concat(lang, "/layout")));
 
         case 4:
           response = _context.sent;
@@ -13212,7 +12795,7 @@ GoldenDoor.getInitialProps = function _callee(appContext) {
         case 7:
           data = _context.sent;
           _context.next = 10;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_10___default.a.getInitialProps(appContext));
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext));
 
         case 10:
           appProps = _context.sent;

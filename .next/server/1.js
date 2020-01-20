@@ -12,7 +12,7 @@ exports.modules = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/Icon.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/Icon.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -450,7 +450,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/MapContainer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
@@ -474,29 +473,14 @@ const MapContainer = ({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(react_map_gl__WEBPACK_IMPORTED_MODULE_9___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__["default"])({}, viewport, {
     mapStyle: "mapbox://styles/mapbox/streets-v9",
     mapboxApiAccessToken: "pk.eyJ1IjoiZmdvemVuYyIsImEiOiJjazVoMG9tMjUwY2p1M2xueHUzaXdyY2MzIn0.i6wqAEOUFdUyKEMcrUE__Q",
-    onViewportChange: viewport => setViewport(_objectSpread({}, viewport)),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
+    onViewportChange: viewport => setViewport(_objectSpread({}, viewport))
   }), __jsx(react_map_gl__WEBPACK_IMPORTED_MODULE_9__["Marker"], {
     latitude: 51.0706,
     longitude: 13.7125,
     offsetLeft: 0,
-    offsetTop: 0,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
+    offsetTop: 0
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    type: "mapMarker",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
+    type: "mapMarker"
   }))));
 };
 

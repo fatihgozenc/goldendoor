@@ -33,7 +33,7 @@ const Newsletter = ({ data }) => {
 	}
 
 	React.useEffect(() => {
-		localStorage.getItem('newsletter') === null &&
+		// localStorage.getItem('newsletter') === null &&
 			connectToNewsletter();
 	}, [])
 

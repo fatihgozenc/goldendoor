@@ -2,6 +2,7 @@ import Scene from './Scene';
 import Galaxy from './Galaxy';
 import parse from 'html-react-parser';
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import './slider.scss';
 import './style.scss';
 
 export default function({ data }) {

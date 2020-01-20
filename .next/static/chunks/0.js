@@ -19,7 +19,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/layout/Newsletter.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
@@ -62,7 +61,8 @@ var Newsletter = function Newsletter(_ref) {
   };
 
   react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
-    localStorage.getItem('newsletter') === null && connectToNewsletter();
+    // localStorage.getItem('newsletter') === null &&
+    connectToNewsletter();
   }, []);
 
   var registerNewsletterUser = function registerNewsletterUser(name, surname, email, gender, token) {
@@ -106,60 +106,18 @@ var Newsletter = function Newsletter(_ref) {
 
   return __jsx("div", {
     id: "newsletter",
-    className: "newsletter",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: this
+    className: "newsletter"
   }, __jsx("div", {
-    className: "newsletter__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: this
-  }, "Newsletter"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  }, data.subtitel)), __jsx("form", {
+    className: "newsletter__block"
+  }, __jsx("h3", null, "Newsletter"), __jsx("p", null, data.subtitel)), __jsx("form", {
     onSubmit: handleSubmit(onSubmit),
-    className: "newsletter__form",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: this
+    className: "newsletter__form"
   }, __jsx("div", {
-    className: "newsletter__form--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
+    className: "newsletter__form--block"
   }, __jsx("div", {
-    className: "newsletter__form--field",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85
-    },
-    __self: this
+    className: "newsletter__form--field"
   }, __jsx("label", {
-    htmlFor: "vorname",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: this
+    htmlFor: "vorname"
   }, data.vorname), __jsx("input", {
     name: "vorname",
     ref: register({
@@ -167,26 +125,11 @@ var Newsletter = function Newsletter(_ref) {
       validate: function validate(value) {
         return value !== "admin" || "Nice try!";
       }
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: this
+    })
   }), errors.vorname && errors.vorname.message), __jsx("div", {
-    className: "newsletter__form--field",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: this
+    className: "newsletter__form--field"
   }, __jsx("label", {
-    htmlFor: "name",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: this
+    htmlFor: "name"
   }, data.name), __jsx("input", {
     name: "name",
     ref: register({
@@ -194,75 +137,24 @@ var Newsletter = function Newsletter(_ref) {
       validate: function validate(value) {
         return value !== "admin" || "Nice try!";
       }
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: this
+    })
   }), errors.name && errors.name.message)), __jsx("div", {
-    className: "newsletter__form--block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: this
+    className: "newsletter__form--block"
   }, __jsx("div", {
-    className: "newsletter__form--field",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: this
+    className: "newsletter__form--field"
   }, __jsx("label", {
-    htmlFor: "anrede",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114
-    },
-    __self: this
+    htmlFor: "anrede"
   }, data.anrede.value), __jsx("select", {
     name: "anrede",
-    ref: register,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: this
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: this
-  }, __jsx("option", {
-    value: data.anrede.herr,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: this
+    ref: register
+  }, __jsx("optgroup", null, __jsx("option", {
+    value: data.anrede.herr
   }, data.anrede.herr), __jsx("option", {
-    value: data.anrede.frau,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 118
-    },
-    __self: this
+    value: data.anrede.frau
   }, data.anrede.frau))), errors.anrede && errors.anrede.message), __jsx("div", {
-    className: "newsletter__form--field",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: this
+    className: "newsletter__form--field"
   }, __jsx("label", {
-    htmlFor: "email",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: this
+    htmlFor: "email"
   }, data.email), __jsx("input", {
     name: "email",
     ref: register({
@@ -271,45 +163,20 @@ var Newsletter = function Newsletter(_ref) {
         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
         message: data.fehlerfelder.invalid
       }
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: this
+    })
   }), errors.email && errors.email.message)), __jsx("div", {
-    className: "newsletter__datenschutz",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 141
-    },
-    __self: this
+    className: "newsletter__datenschutz"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(data.datenschutz.text), __jsx("input", {
     className: "input__radio",
     type: "checkbox",
     required: true,
-    name: "acceptance",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 143
-    },
-    __self: this
+    name: "acceptance"
   }), __jsx("label", {
     className: "label__radio",
-    htmlFor: "acceptance",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: this
+    htmlFor: "acceptance"
   }, data.datenschutz.checkbox), html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(data.datenschutz.extra)), __jsx("button", {
     type: "submit",
-    className: "golden__button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: this
+    className: "golden__button"
   }, data.datenschutz.button)));
 };
 

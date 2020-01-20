@@ -85,6 +85,9 @@ export default ({ data, layout }) => {
 	}
 
 	const { handleSubmit, register, errors } = useForm();
+
+	const [submitted, setSubmitted] = React.useState(false);
+
 	const onSubmit = values => {
 		const dates = {
 			eventdatum: eventDate.toDateString(),
@@ -93,31 +96,21 @@ export default ({ data, layout }) => {
 			eventzeitend: endTime.toDateString()
 		};
 		const finalForm = { ...values, ...dates };
-		console.log(finalForm)
-	};
 
-	const getFormData = (e) => {
-		const formElement = e.currentTarget.parentElement.parentElement.parentElement;
-		const inputs = Array.from(formElement.getElementsByTagName('input'));
-		const selects = Array.from(formElement.getElementsByTagName('select'));
-		const textArea = formElement.getElementsByTagName('textarea');
-		const textAreaValue = ['nachricht', textArea[0].value];
-		const selectValues = selects.map((item, key) => (
-			[item.getAttribute('name'), item.value]
-		))
-		const inputValues = inputs.map((item, key) => {
-			if (item.type === 'radio' && item.checked === true) {
-				return [item.getAttribute('name'), item.value]
-			} else if (item.type !== 'radio') {
-				return [item.getAttribute('name'), item.value]
-			}
-		})
-		console.log(inputValues.concat(selectValues, ['nachricht', textArea[0].value]))
-	}
+		fetch('/api/contact', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(finalForm)
+    }).then((res) => {
+      res.status === 200 ? setSubmitted(!submitted) : ''
+    })
+	};
 
 	React.useEffect(() => {
 		stepSlider.current.firstElementChild.classList.add('activeStep')
-		// dates.current.classList.add('hideDates')
 	}, []);
 
 	return (
@@ -331,13 +324,13 @@ export default ({ data, layout }) => {
 												<input
 													ref={register}
 													className="input__text"
-													type="text" id={`kontakt_${item.toLowerCase()}`}
+													type="text"
 													name={`kontakt_${item.toLowerCase()}`} />
 											) : (
 												<input
 													ref={register({ required: true })}
 													className="input__text"
-													type="text" id={`kontakt_${item.toLowerCase()}`}
+													type="text"
 													name={`kontakt_${item.toLowerCase()}`} />
 											)
 										}

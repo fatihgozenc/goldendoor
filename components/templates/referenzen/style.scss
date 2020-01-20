@@ -12,3 +12,75 @@
   background: linear-gradient(to top, rgba(194, 172, 132, 0.3), transparent);
   font-weight: bold;
 }
+
+.home__route--wrapper{
+	display: flex;
+	flex-direction: column;
+	@include md {
+		flex-direction: row;
+		align-items: center;
+		.home__route--img {
+			flex: 1 0 65%;
+			@include lg {
+				flex: 1 0 55%;
+			}
+		}
+	}
+}
+
+.home__route{
+	margin: 0 0 8% 0;
+	display: block;
+
+	&:hover{
+		@include mehrlesen_hover;
+	}
+
+	&:nth-child(odd){
+		.home__route--wrapper {
+
+			@include md {
+				flex-direction: row-reverse;
+
+				.home__route--img {
+					border-right: none;
+					border-left: 1px solid $gold;
+				}
+
+				.home__route--content {
+					margin: 0 4% 0 8%;
+				}
+			}
+		}
+	}
+
+	&:nth-child(even){
+		.home__route--wrapper {
+
+			@include md {
+
+				.home__route--content {
+					margin: 0 8% 0 4%;
+				}
+
+			}
+		}
+	}
+
+}
+
+.home__route--content {
+	margin: 0 8%;
+
+	p {
+		@include display_text;
+		font-size: .9em;
+		line-height: 1.6;
+	}
+}
+
+.home__route--link {
+	@include display_text;
+	font-size: .8em;
+	font-weight: bold;
+}

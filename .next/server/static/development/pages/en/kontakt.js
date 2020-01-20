@@ -121,7 +121,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -137,7 +137,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/Breadcrumb.js";
+var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/Breadcrumb.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -195,8 +195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
@@ -220,7 +220,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/components/templates/kontakt/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
@@ -317,6 +316,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(() => 
     register,
     errors
   } = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_13__["useForm"])();
+  const [submitted, setSubmitted] = react__WEBPACK_IMPORTED_MODULE_9___default.a.useState(false);
 
   const onSubmit = values => {
     const dates = {
@@ -328,332 +328,122 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(() => 
 
     const finalForm = _objectSpread({}, values, {}, dates);
 
-    console.log(finalForm);
-  };
-
-  const getFormData = e => {
-    const formElement = e.currentTarget.parentElement.parentElement.parentElement;
-
-    const inputs = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default()(formElement.getElementsByTagName('input'));
-
-    const selects = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_7___default()(formElement.getElementsByTagName('select'));
-
-    const textArea = formElement.getElementsByTagName('textarea');
-    const textAreaValue = ['nachricht', textArea[0].value];
-    const selectValues = selects.map((item, key) => [item.getAttribute('name'), item.value]);
-    const inputValues = inputs.map((item, key) => {
-      if (item.type === 'radio' && item.checked === true) {
-        return [item.getAttribute('name'), item.value];
-      } else if (item.type !== 'radio') {
-        return [item.getAttribute('name'), item.value];
-      }
+    fetch('/api/contact', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_7___default()(finalForm)
+    }).then(res => {
+      res.status === 200 ? setSubmitted(!submitted) : '';
     });
-    console.log(inputValues.concat(selectValues, ['nachricht', textArea[0].value]));
   };
 
   react__WEBPACK_IMPORTED_MODULE_9___default.a.useEffect(() => {
-    stepSlider.current.firstElementChild.classList.add('activeStep'); // dates.current.classList.add('hideDates')
+    stepSlider.current.firstElementChild.classList.add('activeStep');
   }, []);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx("div", {
-    className: "page__title page__title--contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
+    className: "page__title page__title--contact"
   }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_11__["default"], {
     slug: data.slug,
-    title: data.title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: undefined
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 127
-    },
-    __self: undefined
-  }, data.title)), __jsx("div", {
-    className: "contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129
-    },
-    __self: undefined
+    title: data.title
+  }), __jsx("h1", null, data.title)), __jsx("div", {
+    className: "contact"
   }, __jsx("div", {
     ref: stepSlider,
-    className: "contact__stepslider",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 131
-    },
-    __self: undefined
+    className: "contact__stepslider"
   }, steps.map((item, key) => __jsx("div", {
     key: key,
-    className: "contact__stepslider--ellipse",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 134
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 136
-    },
-    __self: undefined
-  }, key + 1)))), __jsx("div", {
-    className: "contact--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142
-    },
-    __self: undefined
+    className: "contact__stepslider--ellipse"
+  }, __jsx("span", null, key + 1)))), __jsx("div", {
+    className: "contact--wrapper"
   }, __jsx("form", {
     className: "contact__steps",
     ref: formSteps,
-    onSubmit: handleSubmit(onSubmit),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: undefined
+    onSubmit: handleSubmit(onSubmit)
   }, __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 146
-    },
-    __self: undefined
+    className: "contact__step"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: undefined
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 150
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_type",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 151
-    },
-    __self: undefined
+    className: "label__select"
   }, steps[0].kontakt_frage_1.frage), __jsx("select", {
     name: "event_type",
-    ref: register,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152
-    },
-    __self: undefined
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 153
-    },
-    __self: undefined
-  }, steps[0].kontakt_frage_1.optionen.map((item, key) => __jsx("option", {
+    ref: register
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_1.optionen.map((item, key) => __jsx("option", {
     key: key,
-    value: item.option,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 155
-    },
-    __self: undefined
+    value: item.option
   }, item.option))))), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 161
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_location",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 162
-    },
-    __self: undefined
+    className: "label__select"
   }, steps[0].kontakt_frage_2.frage), __jsx("select", {
     ref: register,
-    name: "event_location",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: undefined
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 164
-    },
-    __self: undefined
-  }, steps[0].kontakt_frage_2.optionen.map((item, key) => __jsx("option", {
+    name: "event_location"
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_2.optionen.map((item, key) => __jsx("option", {
     key: key,
-    value: item.option,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 166
-    },
-    __self: undefined
+    value: item.option
   }, item.option)))))), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 174
-    },
-    __self: undefined
+    className: "contact__step--flexWrapper-xl"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 176
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: firstStepLock,
     htmlFor: "event_date_answer",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 177
-    },
-    __self: undefined
+    className: "contact__stepblock--inner"
   }, steps[0].kontakt_frage_3.frage), steps[0].kontakt_frage_3.optionen.map((item, key) => __jsx("p", {
     className: "contact__stepblock--inner",
-    key: key,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 182
-    },
-    __self: undefined
+    key: key
   }, __jsx("input", {
     onClick: hideDates,
     ref: register,
     className: "input__radio",
     type: "radio",
     name: "event_date_answer",
-    value: item.option,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 183
-    },
-    __self: undefined
+    value: item.option
   }), __jsx("span", {
-    className: "label__radio",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 184
-    },
-    __self: undefined
+    className: "label__radio"
   }, item.option)))), __jsx("div", {
     className: "contact__stepblock",
-    ref: dateRange,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 189
-    },
-    __self: undefined
+    ref: dateRange
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "date_range",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: undefined
+    htmlFor: "date_range"
   }, steps[0].kontakt_frage_5), __jsx("input", {
     className: "input__text",
     name: "date_range",
     ref: register,
-    type: "text",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 191
-    },
-    __self: undefined
+    type: "text"
   })), __jsx("div", {
     ref: dates,
-    className: "contact__stepblock contact__stepblock--datewrapper hidden",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 194
-    },
-    __self: undefined
+    className: "contact__stepblock contact__stepblock--datewrapper hidden"
   }, __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 197
-    },
-    __self: undefined
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_event",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 198
-    },
-    __self: undefined
+    htmlFor: "date_of_event"
   }, steps[0].kontakt_frage_6.datum), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_14___default.a, {
     selected: eventDate,
     name: "eventdatum",
     ref: register,
-    onChange: date => setEventDate(date),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 199
-    },
-    __self: undefined
+    onChange: date => setEventDate(date)
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 202
-    },
-    __self: undefined
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 203
-    },
-    __self: undefined
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ausweichtermin), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_14___default.a, {
     selected: elusiveDate,
     name: "ausweichtermin",
     ref: register,
-    onChange: date => setElusiveDate(date),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 204
-    },
-    __self: undefined
+    onChange: date => setElusiveDate(date)
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 207
-    },
-    __self: undefined
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 208
-    },
-    __self: undefined
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.beginn), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_14___default.a, {
     ref: register,
     name: "event_beginn_zeit",
@@ -663,26 +453,11 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(() => 
     timeCaption: "Time",
     dateFormat: "h:mm aa",
     selected: beginTime,
-    onChange: date => setBeginTime(date),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 209
-    },
-    __self: undefined
+    onChange: date => setBeginTime(date)
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 221
-    },
-    __self: undefined
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 222
-    },
-    __self: undefined
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ende), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_14___default.a, {
     name: "event_end_zeit",
     showTimeSelect: true,
@@ -691,64 +466,23 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(() => 
     timeCaption: "Time",
     dateFormat: "h:mm aa",
     selected: endTime,
-    onChange: date => setEndTime(date),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 223
-    },
-    __self: undefined
+    onChange: date => setEndTime(date)
   })))), __jsx("a", {
     href: "#",
     className: "golden__button golden__button--center",
-    onClick: changeStep,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 240
-    },
-    __self: undefined
+    onClick: changeStep
   }, data.fields.buttonfelder.prufen)), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 249
-    },
-    __self: undefined
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 251
-    },
-    __self: undefined
-  }, steps[1].feld_1.titel), __jsx("div", {
-    className: "contact__step--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 253
-    },
-    __self: undefined
+    className: "contact__step"
+  }, __jsx("h3", null, steps[1].feld_1.titel), __jsx("div", {
+    className: "contact__step--wrapper"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 255
-    },
-    __self: undefined
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 257
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: secondStepLock,
     className: "label__text",
-    htmlFor: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 258
-    },
-    __self: undefined
+    htmlFor: "personenzahl"
   }, steps[1].feld_1.frage_1), __jsx("input", {
     onChange: removeUnchecked,
     type: "text",
@@ -756,325 +490,115 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(() => 
       required: true
     }),
     className: "input__text",
-    name: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 259
-    },
-    __self: undefined
+    name: "personenzahl"
   })), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 262
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_max_budget",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 263
-    },
-    __self: undefined
+    className: "contact__stepblock--inner"
   }, steps[1].feld_1.frage_2.fragefeld), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_1.frage_2.optionen).map((item, key) => __jsx("p", {
     className: "contact__stepblock--inner",
-    key: key,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 266
-    },
-    __self: undefined
+    key: key
   }, __jsx("input", {
     ref: register,
     type: "radio",
     className: "input__radio",
     name: "event_max_budget",
-    value: item,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 267
-    },
-    __self: undefined
+    value: item
   }), __jsx("span", {
-    className: "label__radio",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 268
-    },
-    __self: undefined
-  }, item))))), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 275
-    },
-    __self: undefined
-  }, steps[1].feld_2.titel), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 277
-    },
-    __self: undefined
+    className: "label__radio"
+  }, item))))), __jsx("h3", null, steps[1].feld_2.titel), __jsx("div", {
+    className: "contact__step--flexWrapper-xl"
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_2).slice(1).map((item, key) => __jsx("div", {
     key: key,
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 281
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: `event_${item.fragefeld.toLowerCase()}`,
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 282
-    },
-    __self: undefined
+    className: "label__select"
   }, item.fragefeld), __jsx("select", {
     ref: register,
-    name: `event_${item.fragefeld.toLowerCase()}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 283
-    },
-    __self: undefined
+    name: `event_${item.fragefeld.toLowerCase()}`
   }, item.optionen.map((subItem, subKey) => __jsx("option", {
     key: subKey,
-    value: subItem.option,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 286
-    },
-    __self: undefined
+    value: subItem.option
   }, subItem.option))))))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 297
-    },
-    __self: undefined
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goFirst",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 298
-    },
-    __self: undefined
+    className: "golden__button goFirst"
   }, data.fields.buttonfelder.zuruck), __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goNext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 302
-    },
-    __self: undefined
+    className: "golden__button goNext"
   }, data.fields.buttonfelder.weiter))), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 310
-    },
-    __self: undefined
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 312
-    },
-    __self: undefined
-  }, steps[2].titel), __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 314
-    },
-    __self: undefined
+    className: "contact__step"
+  }, __jsx("h3", null, steps[2].titel), __jsx("div", {
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 316
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "kontakt_anrede",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 317
-    },
-    __self: undefined
+    className: "label__select"
   }, steps[2].anredefeld.frage), __jsx("select", {
     ref: register,
-    name: "kontakt_anrede",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 318
-    },
-    __self: undefined
+    name: "kontakt_anrede"
   }, steps[2].anredefeld.sex.map((item, key) => __jsx("option", {
     key: key,
-    value: item.option,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 320
-    },
-    __self: undefined
+    value: item.option
   }, item.option)))), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[2].andere_fragen).map((item, key) => __jsx("div", {
     key: key,
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 327
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: `kontakt_${item}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 328
-    },
-    __self: undefined
+    htmlFor: `kontakt_${item}`
   }, item), key === 0 | 4 ? __jsx("input", {
     ref: register,
     className: "input__text",
     type: "text",
-    id: `kontakt_${item.toLowerCase()}`,
-    name: `kontakt_${item.toLowerCase()}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 331
-    },
-    __self: undefined
+    name: `kontakt_${item.toLowerCase()}`
   }) : __jsx("input", {
     ref: register({
       required: true
     }),
     className: "input__text",
     type: "text",
-    id: `kontakt_${item.toLowerCase()}`,
-    name: `kontakt_${item.toLowerCase()}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 337
-    },
-    __self: undefined
+    name: `kontakt_${item.toLowerCase()}`
   }))), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 348
-    },
-    __self: undefined
+    className: "contact__stepblock"
   }, __jsx("label", {
-    htmlFor: "event_nachricht",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 349
-    },
-    __self: undefined
+    htmlFor: "event_nachricht"
   }, steps[0].kontakt_frage_4), __jsx("textarea", {
     ref: register,
     name: "event_nachricht",
     cols: "30",
-    rows: "5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 350
-    },
-    __self: undefined
+    rows: "5"
   }))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 356
-    },
-    __self: undefined
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goSecond",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 358
-    },
-    __self: undefined
+    className: "golden__button goSecond"
   }, data.fields.buttonfelder.zuruck), __jsx("button", {
     type: "submit",
-    className: "golden__button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 363
-    },
-    __self: undefined
+    className: "golden__button"
   }, data.fields.buttonfelder.senden)))))), __jsx("div", {
-    className: "contact__info",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 374
-    },
-    __self: undefined
+    className: "contact__info"
   }, __jsx("div", {
-    className: "contact__info--map",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 375
-    },
-    __self: undefined
-  }, __jsx(MapContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 376
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "contact__info--address",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 379
-    },
-    __self: undefined
+    className: "contact__info--map"
+  }, __jsx(MapContainer, null)), __jsx("div", {
+    className: "contact__info--address"
   }, __jsx("div", {
-    className: "contact__info--logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 380
-    },
-    __self: undefined
+    className: "contact__info--logo"
   }, __jsx("img", {
     src: contactInfo.logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 381
-    },
-    __self: undefined
+    alt: "Golden Door Logo"
   })), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(contactInfo.address).map((item, key) => __jsx("div", {
-    key: key,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 384
-    },
-    __self: undefined
+    key: key
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_12___default()(item))), __jsx("a", {
-    href: `tel:${contactInfo.telefon}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 386
-    },
-    __self: undefined
+    href: `tel:${contactInfo.telefon}`
   }, contactInfo.telefon), __jsx("a", {
-    href: `mailto:${contactInfo.email.toLowerCase()}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 387
-    },
-    __self: undefined
+    href: `mailto:${contactInfo.email.toLowerCase()}`
   }, contactInfo.email))));
 });
 
@@ -1105,14 +629,14 @@ const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
-  \*******************************************************************/
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "core-js/library/fn/array/from");
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -1236,7 +760,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../config */ "./config/index.js");
 /* harmony import */ var _components_templates_kontakt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/templates/kontakt */ "./components/templates/kontakt/index.js");
-var _jsxFileName = "/home/urbandruid/repos/goldendoor-next/pages/en/kontakt.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1247,12 +770,7 @@ const KontaktPage = ({
   layout
 }) => __jsx(_components_templates_kontakt__WEBPACK_IMPORTED_MODULE_2__["default"], {
   data: data,
-  layout: layout,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
+  layout: layout
 });
 
 KontaktPage.getInitialProps = async () => {
@@ -1270,26 +788,26 @@ KontaktPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 13:
+/***/ 8:
 /*!***********************************!*\
   !*** multi ./pages/en/kontakt.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/urbandruid/repos/goldendoor-next/pages/en/kontakt.js */"./pages/en/kontakt.js");
+module.exports = __webpack_require__(/*! /Users/macbook/repos/goldendoor-next/pages/en/kontakt.js */"./pages/en/kontakt.js");
 
 
 /***/ }),
 
-/***/ "core-js/library/fn/array/from":
-/*!************************************************!*\
-  !*** external "core-js/library/fn/array/from" ***!
-  \************************************************/
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("core-js/library/fn/array/from");
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
