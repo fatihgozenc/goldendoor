@@ -483,8 +483,13 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   @include display_text;
+  @include xl {
+    align-items: initial;
+  }
 }
 
 .contact__success--wrapper {

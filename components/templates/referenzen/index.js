@@ -5,12 +5,12 @@ import MehrLesen from '../../MehrLesen';
 import './style.scss'
 
 export default function ({ data }) {
-
+	console.log(data)
 	return (
 		<>
 			<NextSeo
-				title={data.fields.seo.title}
-				description={data.fields.seo.description}
+				title={data.main.fields.seo.title}
+				description={data.main.fields.seo.description}
 			/>
 			<Hero data={data.main} />
 			<div id="content" className="pool pool--home">

@@ -1,8 +1,7 @@
-const withSass = require('@zeit/next-sass');
-const withCSS = require('@zeit/next-sass');
+const withSASS = require('@zeit/next-sass');
 const withFonts = require('nextjs-fonts');
 
-module.exports = withSass(
+module.exports = withSASS(
 	{
 		webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
 			config.module.rules.push({
@@ -22,9 +21,10 @@ module.exports = withSass(
 			NEWSLETTER_API_KEY: 't4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav',
 			SMTP_HOST: 'w018aa9c.kasserver.com',
 			SMTP_USER: 'w018aa9c',
-			SMTP_PASSWD: 'ho7yZrChhnT6CgYF', 
+			SMTP_PASS: 'ho7yZrChhnT6CgYF', 
 			SMTP_FROM: 'hallo@goldendoor.group',
 			SMTP_TO: 'hallo@goldendoor.group',
+			RECAPTCHA_SECRET: '6LejFI8UAAAAAEJm8Dlam0If-F5Uv3KkiLJAgKBX'
 		}
 	},
 	withFonts(),

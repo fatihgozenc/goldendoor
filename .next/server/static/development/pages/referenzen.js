@@ -88,10 +88,237 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Breadcrumb.js":
+/*!**********************************!*\
+  !*** ./components/Breadcrumb.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const Breadcrumb = ({
+  slug,
+  title
+}) => {
+  return __jsx("div", {
+    className: "hero__breadcrumb"
+  }, __jsx("a", {
+    href: "/"
+  }, "HOME"), " > ", __jsx("span", null, title));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Breadcrumb);
+
+/***/ }),
+
+/***/ "./components/Hero.js":
+/*!****************************!*\
+  !*** ./components/Hero.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Breadcrumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Breadcrumb */ "./components/Breadcrumb.js");
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/* harmony default export */ __webpack_exports__["default"] = (function ({
+  data,
+  className,
+  entrance
+}) {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: `hero ${className}`
+  }, __jsx("div", {
+    className: "hero__img backgroundImg",
+    style: {
+      backgroundImage: "url(" + data.image + ")"
+    }
+  }), __jsx("div", {
+    className: "hero__opening"
+  }, __jsx("div", {
+    className: "hero__opening--title"
+  }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    slug: data.slug,
+    title: data.title
+  }), __jsx("h1", null, entrance ? entrance : data.title)), __jsx("div", {
+    className: "hero__opening--excerpt"
+  }, __jsx("p", null, data.content), __jsx("a", {
+    className: "hero__scroll scroller",
+    href: "#content"
+  }, data.scroll, __jsx("span", null, "\u25BE"))))));
+});
+
+/***/ }),
+
+/***/ "./components/MehrLesen.js":
+/*!*********************************!*\
+  !*** ./components/MehrLesen.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const MehrLesen = ({
+  name
+}) => {
+  return __jsx("div", {
+    className: "mehrlesen"
+  }, __jsx("span", {
+    className: "mehrlesen_text"
+  }, name, "\xA0\xA0"), __jsx("div", {
+    className: "mehrlesen_graph"
+  }, __jsx("svg", {
+    x: "0px",
+    y: "0px",
+    width: "160px",
+    height: "6px",
+    viewBox: "0 0 160 6"
+  }, __jsx("rect", {
+    x: "-0.032",
+    y: "2.5",
+    fill: "#C2AC84",
+    width: "159",
+    height: "1"
+  }), __jsx("polygon", {
+    fill: "#C2AC84",
+    points: "154.979,6 158.682,3 154.979,0 156.392,0 160,3 156.633,6 "
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MehrLesen);
+
+/***/ }),
+
+/***/ "./components/templates/referenzen/index.js":
+/*!**************************************************!*\
+  !*** ./components/templates/referenzen/index.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Hero */ "./components/Hero.js");
+/* harmony import */ var _MehrLesen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../MehrLesen */ "./components/MehrLesen.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./components/templates/referenzen/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function ({
+  data
+}) {
+  console.log(data);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_1__["NextSeo"], {
+    title: data.main.fields.seo.title,
+    description: data.main.fields.seo.description
+  }), __jsx(_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: data.main
+  }), __jsx("div", {
+    id: "content",
+    className: "pool pool--home"
+  }, data.children.map((route, key) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    key: key,
+    href: route.lang === 'en' ? `/en/referenzen/${route.slug}` : `/referenzen/${route.slug}`
+  }, __jsx("a", {
+    className: "home__route"
+  }, __jsx("div", {
+    className: "home__route--wrapper"
+  }, __jsx("div", {
+    className: "home__route--img backgroundImg",
+    style: {
+      backgroundImage: "url(" + route.image + ")"
+    }
+  }), __jsx("div", {
+    className: "home__route--content"
+  }, __jsx("h3", {
+    className: "title__lg"
+  }, route.title), __jsx("p", null, route.excerpt), __jsx("span", {
+    className: "home__route--link"
+  }, __jsx(_MehrLesen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    name: data.read_more
+  }))))))), __jsx("div", {
+    className: "pool__pagination"
+  }, new Array(data.page_count + 1).fill(data.page_count).map((item, key) => {
+    if (key === 1) {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        key: key,
+        href: data.lang === 'en' ? `/en/referenzen` : `/referenzen`
+      }, __jsx("a", {
+        className: data.page_number == key ? 'pageActive' : null
+      }, key));
+    } else if (key > 1) {
+      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        key: key,
+        href: data.lang === 'en' ? `/en/referenzen/page/${key}` : `/referenzen/page/${key}`
+      }, __jsx("a", {
+        className: data.page_number == key ? 'pageActive' : null
+      }, key));
+    } else {
+      return null;
+    }
+  }))));
+});
+;
+
+/***/ }),
+
+/***/ "./components/templates/referenzen/style.scss":
+/*!****************************************************!*\
+  !*** ./components/templates/referenzen/style.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./config/index.js":
+/*!*************************!*\
+  !*** ./config/index.js ***!
+  \*************************/
+/*! exports provided: API_HOST */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
+const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
+
+/***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
@@ -1884,10 +2111,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/_error.js":
-/*!*************************!*\
-  !*** ./pages/_error.js ***!
-  \*************************/
+/***/ "./pages/referenzen/index.js":
+/*!***********************************!*\
+  !*** ./pages/referenzen/index.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1895,46 +2122,39 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../config */ "./config/index.js");
+/* harmony import */ var _components_templates_referenzen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/templates/referenzen */ "./components/templates/referenzen/index.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-function Error({
-  statusCode
-}) {
-  return __jsx("div", {
-    className: "errorpage"
-  }, __jsx("div", {
-    className: "errorpage__code"
-  }, statusCode), __jsx("p", null, "Angeforderte Seite nicht gefunden", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/"
-  }, __jsx("a", null, "\u2190\xA0\xA0Zur Startseite"))));
-}
 
-Error.getInitialProps = ({
-  res,
-  err
-}) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+const ReferenzenPage = ({
+  data
+}) => __jsx(_components_templates_referenzen__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  data: data
+});
+
+ReferenzenPage.getInitialProps = async () => {
+  const res = await fetch(`${_config__WEBPACK_IMPORTED_MODULE_1__["API_HOST"]}de/references/page/1`);
+  const json = await res.json();
   return {
-    statusCode
+    data: json
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Error);
+/* harmony default export */ __webpack_exports__["default"] = (ReferenzenPage);
 
 /***/ }),
 
-/***/ 5:
-/*!*******************************!*\
-  !*** multi ./pages/_error.js ***!
-  \*******************************/
+/***/ 4:
+/*!*****************************************!*\
+  !*** multi ./pages/referenzen/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/fatih/repos/goldendoor-next/pages/_error.js */"./pages/_error.js");
+module.exports = __webpack_require__(/*! /Users/fatih/repos/goldendoor-next/pages/referenzen/index.js */"./pages/referenzen/index.js");
 
 
 /***/ }),
@@ -2049,6 +2269,17 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "next-seo":
+/*!***************************!*\
+  !*** external "next-seo" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2105,4 +2336,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=_error.js.map
+//# sourceMappingURL=referenzen.js.map

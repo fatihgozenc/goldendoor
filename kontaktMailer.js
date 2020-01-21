@@ -29,9 +29,9 @@ const send = (props) => {
     Konkretes Datum?: ${props.event_date_answer}\r\n
     Zeitraum (Wenn es kein konkretes Datum gibt): ${props.date_range}\r\n
     Event Datum (Wenn es ein konkretes Datum gibt): ${props.eventdatum}\r\n
-    Event Ausweichtermin (Wenn es kein konkretes Datum gibt): ${props.ausweichtermin}\r\n
-    Event Beginn Zeit (Wenn es kein konkretes Datum gibt): ${props.eventzeitbeginn}\r\n
-    Event Ende Zeit (Wenn es kein konkretes Datum gibt): ${props.eventzeitend}\r\n
+    Event Ausweichtermin (Wenn es ein konkretes Datum gibt): ${props.ausweichtermin}\r\n
+    Event Beginn Zeit (Wenn es ein konkretes Datum gibt): ${props.eventzeitbeginn}\r\n
+    Event Ende Zeit (Wenn es ein konkretes Datum gibt): ${props.eventzeitend}\r\n
     \r\nZusatzinformationen\r\n
     Anzahl der Personen: ${props.personenzahl}\r\n
     Maximal Budget?: ${props.event_max_budget}\r\n
@@ -45,7 +45,7 @@ const send = (props) => {
   const sender = `${name} <${email}>`;
   const message = {
     from: 'f.gozenc@narciss-taurus.de',
-    to: 'm.buder@narciss-taurus.de',
+    to: 'f.gozenc@narciss-taurus.de',
     subject: `Neu Nachricht von ${sender}`,
     text,
     replyTo: sender
