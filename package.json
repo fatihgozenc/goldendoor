@@ -30,6 +30,7 @@
     "react-obfuscate": "^3.6.2",
     "react-particles-js": "^2.7.0",
     "react-spring": "^8.0.27",
-    "sass-resources-loader": "^2.0.1"
+    "sass-resources-loader": "^2.0.1",
+    "serialize-javascript": "^2.1.2"
   }
 }

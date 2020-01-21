@@ -331,12 +331,6 @@
       "publicPath": "static/chunks/2.js"
     },
     {
-      "id": "./node_modules/process/browser.js",
-      "name": "./node_modules/process/browser.js",
-      "file": "static/chunks/2.js",
-      "publicPath": "static/chunks/2.js"
-    },
-    {
       "id": "./node_modules/react-map-gl/dist/esm/components/base-control.js",
       "name": "./node_modules/react-map-gl/dist/esm/components/base-control.js",
       "file": "static/chunks/2.js",

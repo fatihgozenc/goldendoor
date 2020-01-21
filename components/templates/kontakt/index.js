@@ -1,18 +1,21 @@
 import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
+import serialize from 'serialize-javascript';
 import Breadcrumb from '../../Breadcrumb';
 import Obfuscate from 'react-obfuscate';
 import parse from 'html-react-parser';
 import { useForm } from "react-hook-form";
 import DatePicker from 'react-datepicker';
+import SendingQuery from '../../SendingQuery';
 import './style.scss';
 
 const MapContainer = dynamic(() => import('../../MapContainer'), {
 	ssr: false
 });
 
-export default ({ data, layout }) => {
+export default ({ data, layout, lang }) => {
 
+	console.log(data)
 	const contactInfo = layout.footer.info
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
 
@@ -27,6 +30,7 @@ export default ({ data, layout }) => {
 	const dates = React.useRef();
 	const firstStepLock = React.useRef();
 	const secondStepLock = React.useRef();
+	const successBlock = React.useRef();
 
 	const changeStep = (e) => {
 		const isDateAnswerOneChecked = firstStepLock.current.nextElementSibling.firstElementChild.checked;
@@ -92,10 +96,11 @@ export default ({ data, layout }) => {
 
 	const onSubmit = values => {
 		const dates = {
+			lang: lang,
 			eventdatum: eventDate.toDateString(),
 			ausweichtermin: elusiveDate.toDateString(),
-			eventzeitbeginn: beginTime.toDateString(),
-			eventzeitend: endTime.toDateString()
+			eventzeitbeginn: beginTime.toLocaleTimeString('de-DE'),
+			eventzeitend: endTime.toLocaleTimeString('de-DE')
 		};
 		const finalForm = { ...values, ...dates };
 
@@ -105,15 +110,23 @@ export default ({ data, layout }) => {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(finalForm)
+      body: serialize(finalForm)
     }).then((res) => {
       res.status === 200 ? setSubmitted(!submitted) : ''
-    })
+    }).catch((err) => console.log(err))
 	};
 
 	React.useEffect(() => {
 		stepSlider.current.firstElementChild.classList.add('activeStep')
 	}, []);
+
+	React.useEffect(() => {
+		console.log(submitted)
+		if (submitted){
+			formSteps.current.classList.add('hideForm');
+			successBlock.current.classList.add('showSuccess');
+		}
+	}, [submitted])
 
 	return (
 		<>
@@ -234,8 +247,7 @@ export default ({ data, layout }) => {
 
 							</div>
 
-							<a
-								href="#"
+							<a href="#"
 								className="golden__button golden__button--center"
 								onClick={changeStep} >
 								{data.fields.buttonfelder.prufen}
@@ -253,7 +265,13 @@ export default ({ data, layout }) => {
 
 									<div className="contact__stepblock">
 										<label ref={secondStepLock} className="label__text" htmlFor="personenzahl">{steps[1].feld_1.frage_1}</label>
-										<input onChange={removeUnchecked} type="text" ref={register({ required: true })} className="input__text" name="personenzahl" />
+										<input onChange={removeUnchecked} 
+										type="text" 
+										ref={register({ 
+											required: true,
+											maxLength: 30, 
+										})} 
+										className="input__text" name="personenzahl" />
 									</div>
 
 									<div className="contact__stepblock">
@@ -319,28 +337,81 @@ export default ({ data, layout }) => {
 									</select>
 								</div>
 
-								{Object.values(steps[2].andere_fragen).map((item, key) => (
+								<div className="contact__stepblock">
+									<label className="label__text" 
+										htmlFor={`kontakt_company`}>
+										{steps[2].andere_fragen.firma}</label>
+										<input
+											ref={register({ 
+												maxlength: 40, 
+											})}
+											className="input__text"
+											type="text"
+											name={`kontakt_company`} />
+								</div>
 
-									<div key={key} className="contact__stepblock">
-										<label className="label__text" htmlFor={`kontakt_${item}`}>{item}</label>
-										{key === 0 | 4
-											? (
-												<input
-													ref={register}
-													className="input__text"
-													type="text"
-													name={`kontakt_${item.toLowerCase()}`} />
-											) : (
-												<input
-													ref={register({ required: true })}
-													className="input__text"
-													type="text"
-													name={`kontakt_${item.toLowerCase()}`} />
-											)
-										}
-									</div>
+								<div className="contact__stepblock">
+									<label className="label__text" 
+										htmlFor={`kontakt_name`}>
+										{steps[2].andere_fragen.vorname}</label>
+										<input
+											ref={register({ 
+												required: true, 
+												maxlength: 20, 
+												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
+											})}
+											className="input__text"
+											type="text"
+											name={`kontakt_name`} />
+											{errors.kontakt_name && data.fields.fehlerfelder[1].text.toUpperCase()}
+								</div>
 
-								))}
+								<div className="contact__stepblock">
+									<label className="label__text" 
+										htmlFor={`kontakt_surname`}>
+										{steps[2].andere_fragen.nachname}</label>
+										<input
+											ref={register({ 
+												required: true, 
+												maxlength: 25, 
+												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
+											})}
+											className="input__text"
+											type="text"
+											name={`kontakt_surname`} />
+											{errors.kontakt_surname && data.fields.fehlerfelder[1].text.toUpperCase()}
+								</div>
+
+								<div className="contact__stepblock">
+									<label className="label__text" 
+										htmlFor={`kontakt_email`}>
+										{steps[2].andere_fragen.email}</label>
+										<input
+											ref={register({ 
+												required: true,
+												pattern: {
+													value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+													message: `UNGÜLTIGE E-MAIL-ADRESSE`
+												}
+											})}
+											className="input__text"
+											type="email"
+											name={`kontakt_email`} />
+											{errors.kontakt_email && errors.kontakt_email.message}
+								</div>
+
+								<div className="contact__stepblock">
+									<label className="label__text" 
+										htmlFor={`kontakt_phone`}>
+										{steps[2].andere_fragen.telefon}</label>
+										<input
+											ref={register({ 
+												maxlength: 35, 
+											})}
+											className="input__text"
+											type="tel"
+											name={`kontakt_phone`} />
+								</div>
 
 								<div className="contact__stepblock">
 									<label htmlFor="event_nachricht">{steps[0].kontakt_frage_4}</label>
@@ -361,8 +432,16 @@ export default ({ data, layout }) => {
 
 							</div>
 						</div>
-
+						
 					</form>
+
+					<div className="contact__success">
+						<div ref={successBlock} className="contact__success--wrapper">
+							{submitted &&
+								<SendingQuery color="#C2AC84" message={data.fields.fehlerfelder[2].text}/>
+							}
+						</div>
+					</div>
 
 				</div>
 

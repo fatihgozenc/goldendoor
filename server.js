@@ -18,19 +18,16 @@ app.prepare().then(() => {
   })
 
   server.post('/api/contact', (req, res) => {
-    const { email = '', name = '', message = '' } = req.body
-
-    kontaktMailer({ email, name, text: message }).then(() => {
-      console.log('success')
-      res.send('success')
+    kontaktMailer(req.body).then(() => {
+      res.send('Ihre Mail wurde verschickt, vielen Dank für Ihre Zeit.')
     }).catch((error) => {
       console.log('failed', error)
-      res.send('badddd')
+      res.send('Beim Versenden der E-Mail ist ein Problem aufgetreten. Wenden Sie sich an Ihren Administrator.')
     })
   })
 
   server.listen(3000, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Server ready on http://localhost:3000')
   })
 })

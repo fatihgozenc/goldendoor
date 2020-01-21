@@ -9,6 +9,7 @@
 
 .contact--wrapper {
   overflow: hidden;
+  position: relative;
 }
 
 .contact__steps {
@@ -375,13 +376,6 @@
   }
 }
 
-// .label__text {
-//   position: absolute;
-//   top: 0;
-//   transition: .25s all ease;
-//   z-index: -1;
-// }
-
 .input__text {
   position: relative;
   background: transparent;
@@ -397,12 +391,11 @@
 
   &:focus, &:valid {
     outline: none;
+  }
 
-    // & ~ .label__text {
-    //   transition: .25s all ease;
-    //   top: -1.6rem;
-    //   font-size: .8em;
-    // }
+  &:invalid {
+    outline: red;
+    animation: unchecked 1s linear infinite;
   }
 }
 
@@ -481,4 +474,30 @@
 	height: 100%;
   }
 }
+
+.contact__success {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  @include display_text;
+}
+
+.contact__success--wrapper {
+  display: none;
+}
+
+.hideForm {
+  opacity: 0;
+  transition: .25s all ease;
+}
+
+.showSuccess {
+  display: block;
+}
+
 
