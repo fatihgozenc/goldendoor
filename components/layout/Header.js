@@ -27,6 +27,8 @@ const Header = ({ data, logo, lang, pathname }) => {
 			return `/en`
 		} else if (lang === 'en' && pathname === '/en') {
 			return `/`
+		} else if (pathname === '/en/engagement' || pathname === '/engagement') {
+			return lang === 'de' ? `/en/engagement` : `/engagement`
 		} else if (lang === 'en') {
 			return pathname.split('/en')[1]
 		} else {

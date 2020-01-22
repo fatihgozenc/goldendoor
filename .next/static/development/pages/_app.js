@@ -161,6 +161,7 @@ var Header = function Header(_ref) {
       logo = _ref.logo,
       lang = _ref.lang,
       pathname = _ref.pathname;
+  console.log(pathname);
   var navigation = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
   var langSelection = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
   var menuToggler = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
@@ -181,6 +182,8 @@ var Header = function Header(_ref) {
       return "/en";
     } else if (lang === 'en' && pathname === '/en') {
       return "/";
+    } else if (pathname === '/en/engagement' || pathname === '/engagement') {
+      return lang === 'de' ? "/en/engagement" : "/engagement";
     } else if (lang === 'en') {
       return pathname.split('/en')[1];
     } else {

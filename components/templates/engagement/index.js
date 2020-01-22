@@ -5,8 +5,6 @@ import './style.scss';
 
 export default function({data}){
 
-  console.log(data)
-
 	return (
 		<>
     <NextSeo

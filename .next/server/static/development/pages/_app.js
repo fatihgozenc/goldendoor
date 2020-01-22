@@ -289,6 +289,7 @@ const Header = ({
   lang,
   pathname
 }) => {
+  console.log(pathname);
   const navigation = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
   const langSelection = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
   const menuToggler = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
@@ -309,6 +310,8 @@ const Header = ({
       return `/en`;
     } else if (lang === 'en' && pathname === '/en') {
       return `/`;
+    } else if (pathname === '/en/engagement' || pathname === '/engagement') {
+      return lang === 'de' ? `/en/engagement` : `/engagement`;
     } else if (lang === 'en') {
       return pathname.split('/en')[1];
     } else {
