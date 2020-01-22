@@ -453,7 +453,7 @@ const DURATION = 750;
     }
   };
 
-  const gapBetween = props.name === 'team' ? 4 : 4.4;
+  const gapBetween = props.name === 'team' ? 4.4 : 3.4;
 
   const constructVisibleItemsProps = () => {
     const visibleItemsProps = {}; // To store config for items that are visibile in the carousel
@@ -471,7 +471,7 @@ const DURATION = 750;
 
     let opacity = 1; // ARALIKLAR BURADA = 4
 
-    const division = img_width * (4.4 / elementsInLeft); // Specifies the length that next image has to move away from with respect to current image (1.6 times the current image)
+    const division = img_width * (gapBetween / elementsInLeft); // Specifies the length that next image has to move away from with respect to current image (1.6 times the current image)
 
     let opacityDivider = 1 / elementsInRight; // minimum opacity should be 0.3 (1-0.7)
 
