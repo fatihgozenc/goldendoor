@@ -5,6 +5,8 @@ import './style.scss';
 
 export default function({data}){
 
+  const breakAdded = data.content.replace(/\n/g, "<br />");
+
 	return (
 		<>
     <NextSeo
@@ -19,7 +21,7 @@ export default function({data}){
     </div>
 
     <div className="impressum">
-      {parse(data.content)}
+      {parse(breakAdded)}
     </div>
     
     </>

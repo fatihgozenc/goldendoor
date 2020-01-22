@@ -8336,7 +8336,7 @@ Error.getInitialProps = function (_ref2) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 1:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F_error&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2F_error.js ***!
   \*************************************************************************************************************************************/
@@ -8359,5 +8359,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map

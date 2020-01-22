@@ -502,6 +502,10 @@
 	}
 }
 
+.career__entry--info {
+  flex: 1 0 70%;
+}
+
 .openEntry {
 	height: auto;
 	transition: .5s all cubic-bezier(.49,.08,.23,.98);
