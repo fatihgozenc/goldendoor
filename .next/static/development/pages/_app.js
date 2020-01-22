@@ -319,7 +319,7 @@ var Layout = function Layout(props) {
     data: props.data.header,
     lang: props.data.lang,
     pathname: props.pathname
-  }), props.children, props.pathname !== '/en/datenschutz' || '/datenschutz' || '/impressum' ||  true && __jsx(Newsletter, {
+  }), props.children, props.pathname == '/en/datenschutz' || props.pathname == '/datenschutz' || props.pathname == '/impressum' || props.pathname == '/en/impressum' ? null : __jsx(Newsletter, {
     data: props.data.newsletter
   }), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: props.data.footer
