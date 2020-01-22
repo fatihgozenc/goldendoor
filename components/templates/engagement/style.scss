@@ -1,0 +1,62 @@
+.engagement {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+    margin: 0 8%;
+  }
+
+  @include xxl {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @include huge {
+    max-width: 1900px;
+    margin: 0 auto;
+  }
+}
+
+.engagement__item {
+  margin: 4% 8%;
+  border: 1px solid $gold;
+  border-radius: 7px;
+  overflow: hidden;
+
+  h3, h4 {
+    @include display_text;
+  }
+
+  h4 {
+    font-weight: normal;
+  }
+
+  p {
+    font-family: "Noto Serif";
+  }
+  
+  @include md {
+    margin: 1%;
+    flex: 0 47%;
+  }
+
+  @include xl {
+    margin: 0 1% 2% 1%;
+    flex: 1 0 27%;
+  }
+  
+}
+
+.engagement__item--img {
+  height: 25rem;
+
+  @include huge {
+    height: 35rem;
+  }
+}
+
+.engagement__item--info {
+  padding: 0 1.6rem 1.6rem 1.6rem;
+}

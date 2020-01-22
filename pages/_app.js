@@ -12,7 +12,7 @@ function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 				<DefaultSeo
 						openGraph={{
 							type: 'website',
-							locale: lang === 'de' ? 'de_DE' : 'en_IE',
+							locale: 'de_DE',
 							url: 'http://goldendoor.group/',
 							site_name: 'Golden Door Group',
 						}}

@@ -2670,7 +2670,7 @@ function GoldenDoor({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_12__["DefaultSeo"], {
     openGraph: {
       type: 'website',
-      locale: lang === 'de' ? 'de_DE' : 'en_IE',
+      locale: 'de_DE',
       url: 'http://goldendoor.group/',
       site_name: 'Golden Door Group'
     }

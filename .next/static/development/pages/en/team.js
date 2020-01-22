@@ -12171,7 +12171,7 @@ TeamPage.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 6:
 /*!*******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fen%2Fteam&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fen%2Fteam.js ***!
   \*******************************************************************************************************************************************/
@@ -12194,5 +12194,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=team.js.map
