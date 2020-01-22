@@ -18,3 +18,13 @@
 		}
 	}
 }
+
+.carousel__3D--team {
+  @include xl {
+    width: 1140px;
+
+    .carousel__infos{
+      flex: 1 0 20%;
+    }
+  }
+}

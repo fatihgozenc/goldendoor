@@ -65,7 +65,7 @@ export default function (props) {
 			setCurrFirstImg(currMiddleImgRef.current);
 		}
 	}
-
+	const gapBetween = props.name === 'team' ? 4 : 4.4 
 	const constructVisibleItemsProps = () => {
 		const visibleItemsProps = {};
 		// To store config for items that are visibile in the carousel

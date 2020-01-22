@@ -9,21 +9,6 @@
 		transition: .7s all cubic-bezier(.51,.09,.36,1.01);
 		fill: $gold;
 	}
-
-	// rect:first-child {
-	// 	fill: red;
-	// 	transform: rotate(45deg);
-  //   x: 0;
-  //   y: -2;
-	// }
-
-	// rect:last-child {
-	// 	fill: red;
-	// 	width: 30;
-  //   x: -18;
-  //   y: 10;
-  //   transform: rotate(-45deg);
-	// }
 }
 
 .toggleMenuIcon {
@@ -37,8 +22,8 @@
 
 		rect:first-child {
 			transform: rotate(45deg);
-			x: 0;
-			y: -3;
+			x: 0px;
+			y: -3px;
 			width: 22px;
 		}
 
@@ -48,8 +33,8 @@
 
 		rect:last-child {
 			width: 22px;
-			x: -9;
-			y: 10;
+			x: -9px;
+			y: 10px;
 			transform: rotate(-45deg);
 		}
 
@@ -69,6 +54,4 @@
 	svg{
 		width: 30px;
 	}
-	
-	
 }
