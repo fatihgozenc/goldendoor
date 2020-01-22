@@ -29,7 +29,7 @@ export default function ({ data, lang }) {
 								? (
 									<Link href="/referenzen">
 										<a>
-											<MehrLesen name={`ZUM REFERENZEN`} />
+											<MehrLesen name={`ZU DEN REFERENZEN`} />
 										</a>
 									</Link>
 								) : (

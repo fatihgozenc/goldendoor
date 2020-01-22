@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import serialize from 'serialize-javascript';
 import Breadcrumb from '../../Breadcrumb';
@@ -14,6 +15,11 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 });
 
 export default ({ data, layout, lang }) => {
+
+	const router = useRouter();
+	const requestedLocation = router.query.locationName !== undefined ? router.query.locationName : false;
+	console.log(requestedLocation)
+	const locationSelection = React.useRef();
 
 	const contactInfo = layout.footer.info
 	const steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
@@ -117,10 +123,12 @@ export default ({ data, layout, lang }) => {
 
 	React.useEffect(() => {
 		stepSlider.current.firstElementChild.classList.add('activeStep')
+		if (requestedLocation) {
+			locationSelection.current.lastElementChild.value = requestedLocation;
+		}
 	}, []);
 
 	React.useEffect(() => {
-		console.log(submitted)
 		if (submitted){
 			formSteps.current.classList.add('hideForm');
 			successBlock.current.classList.add('showSuccess');
@@ -169,7 +177,7 @@ export default ({ data, layout, lang }) => {
 									</select>
 								</div>
 
-								<div className="contact__stepblock">
+								<div className="contact__stepblock" ref={locationSelection}>
 									<label htmlFor="event_location" className="label__select">{steps[0].kontakt_frage_2.frage}</label>
 									<select ref={register} name="event_location">
 										<optgroup>
@@ -352,7 +360,7 @@ export default ({ data, layout, lang }) => {
 								<div className="contact__stepblock">
 									<label className="label__text" 
 										htmlFor={`kontakt_name`}>
-										{steps[2].andere_fragen.vorname}</label>
+										{steps[2].andere_fragen.vorname}*</label>
 										<input
 											ref={register({ 
 												required: true, 
@@ -368,7 +376,7 @@ export default ({ data, layout, lang }) => {
 								<div className="contact__stepblock">
 									<label className="label__text" 
 										htmlFor={`kontakt_surname`}>
-										{steps[2].andere_fragen.nachname}</label>
+										{steps[2].andere_fragen.nachname}*</label>
 										<input
 											ref={register({ 
 												required: true, 
@@ -384,7 +392,7 @@ export default ({ data, layout, lang }) => {
 								<div className="contact__stepblock">
 									<label className="label__text" 
 										htmlFor={`kontakt_email`}>
-										{steps[2].andere_fragen.email}</label>
+										{steps[2].andere_fragen.email}*</label>
 										<input
 											ref={register({ 
 												required: true,
@@ -417,6 +425,13 @@ export default ({ data, layout, lang }) => {
 									<textarea ref={register}
 										name="event_nachricht" cols="30" rows="5" />
 								</div>
+											{console.log(data)}
+								<div className="contact__stepblock contact__stepblock--acceptance">
+										<label htmlFor="acceptance" className="contact__stepblock--inner">
+											{lang === 'en' ? 'DATA PRIVACY' : 'DATENSCHUTZ'}*</label>
+												<input ref={register({required: true})} type="radio" className="input__radio" name="acceptance" />
+												<span className="label__radio">{parse(data.fields.kontakt_stufe_3.datenschutz)}</span>
+									</div>
 
 							</div>
 

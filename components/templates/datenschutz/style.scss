@@ -1,10 +1,7 @@
 .datenschutz {
   margin: 8%;
-  
-  p {
-    line-height: 1.6;
-    font-family:"Noto Serif";
-  }
+  line-height: 1.6;
+  font-family:"Noto Serif";
 
   @include lg {
     max-width: 1200px;
@@ -13,7 +10,6 @@
 
   h2 {
     font-size: 3rem;
-    font-family:"Noto Serif";
   }
   
   strong {

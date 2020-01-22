@@ -17,7 +17,9 @@ const Layout = (props) => {
 				pathname={props.pathname}
 			/>
 			{props.children}
-			<Newsletter data={props.data.newsletter} />
+			{ props.pathname !== '/en/datenschutz' || '/datenschutz' || '/impressum' || '/en/impressum' &&
+				<Newsletter data={props.data.newsletter} />
+			}
 			<Footer data={props.data.footer} />
 		</>
 	)

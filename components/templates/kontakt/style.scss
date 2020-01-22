@@ -214,7 +214,7 @@
     border-radius: 0;
     width: 100%;
     margin-top: 1rem;
-    padding: 1.6rem;
+    padding: 1.6rem 0 ;
 
     &:focus {
       outline: none;
@@ -235,6 +235,20 @@
   label {
     font-weight: bold;
     display: inline;
+  }
+}
+
+.contact__stepblock--acceptance {
+  label {
+    margin-bottom: 2rem;
+  }
+  span > p {
+    display: contents !important;
+    font-weight: normal;
+
+    a {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -318,6 +332,8 @@
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2;
+  letter-spacing: 2px;
+    text-transform: uppercase;
 
   &:hover{
     @include xl {

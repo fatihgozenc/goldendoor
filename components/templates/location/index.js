@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
+import {useRouter} from 'next/router'
 import Link from 'next/link'
 import Icon from '../../Icon';
 import parse from 'html-react-parser';
@@ -13,7 +14,7 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 });
 
 export default function({data}) {
-
+	console.log(data)
 	const infoPanel = React.useRef();
 	const changePanel = () => {
 		infoPanel.current.classList.toggle('changePanel');
@@ -27,6 +28,18 @@ export default function({data}) {
 
 	const closeMap = (e) => {
 		karteWrapper.current.classList.remove('openKarte')
+	}
+
+	const kontaktHref = data.lang === 'de' ? '/kontakt' : '/en/kontakt';
+	const router = useRouter();
+	const goToContact = e => {
+		e.preventDefault();
+    router.push({
+			pathname: kontaktHref,
+			query: {
+				locationName: data.title
+			}
+		})
 	}
 
 	return (
@@ -51,9 +64,7 @@ export default function({data}) {
 							<img src={data.fields.location_info.location_logo} alt={`${data.title} Logo`} className="singleloc__info--img" />
 							<span className="singleloc__info--type">{data.fields.subtitel}</span>
 							<div className="singleloc__info--buttons">
-								<Link href="/kontakt">
-									<a className="singleloc__button"><Icon type="anfragen" name={data.fields.buttongroup.anfragen} /></a>
-								</Link>
+									<a href={kontaktHref} onClick={goToContact} className="singleloc__button"><Icon type="anfragen" name={data.fields.buttongroup.anfragen} /></a>
 									<a href={data.fields.location_info.location_factsheet} target="_blank" className="singleloc__button"><Icon type="factsheet" name={data.fields.buttongroup.datenblatt} /></a>
 									<a href="#karte" onClick={openMap} className="singleloc__button">
 										<Icon type="karte" name={data.fields.buttongroup.karte} />
