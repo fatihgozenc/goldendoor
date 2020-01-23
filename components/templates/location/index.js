@@ -14,7 +14,6 @@ const MapContainer = dynamic(() => import('../../MapContainer'), {
 });
 
 export default function({data}) {
-	console.log(data)
 	const infoPanel = React.useRef();
 	const changePanel = () => {
 		infoPanel.current.classList.toggle('changePanel');
