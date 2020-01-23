@@ -64,6 +64,8 @@ const SendingQuery = (props) => {
         .sendingQuery-message {
           text-align: center;
           position: absolute;
+          text-transform: uppercase;
+          letter-spacing: 1.6px;
           left: 0;
           right: 0;
           opacity: 0;

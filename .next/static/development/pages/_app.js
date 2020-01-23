@@ -343,27 +343,16 @@ var Layout = function Layout(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuMailer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var MenuMailer = function MenuMailer() {
   return __jsx("svg", {
     className: "menuMailer",
-    viewBox: "0 0 30 22.48",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
+    viewBox: "0 0 30 22.48"
   }, __jsx("path", {
     fill: "#c2ac84",
-    d: "M29.7,0,.47,10.58a.7.7,0,0,0-.16,1.24l4.37,3L24.51,4.35,7.72,16.88V22a.44.44,0,0,0,.68.37l3.7-2.46,3.64,2.49a.71.71,0,0,0,1-.22L30,.34A.23.23,0,0,0,29.7,0Z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
+    d: "M29.7,0,.47,10.58a.7.7,0,0,0-.16,1.24l4.37,3L24.51,4.35,7.72,16.88V22a.44.44,0,0,0,.68.37l3.7-2.46,3.64,2.49a.71.71,0,0,0,1-.22L30,.34A.23.23,0,0,0,29.7,0Z"
   }));
 };
 
@@ -382,7 +371,6 @@ var MenuMailer = function MenuMailer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/layout/MenuToggler.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -391,40 +379,20 @@ var MenuToggler = function MenuToggler() {
     className: "menutoggler",
     height: "30",
     width: "45",
-    viewBox: "0 0 30 12",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
+    viewBox: "0 0 30 12"
   }, __jsx("rect", {
     width: "30",
-    height: "2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
+    height: "2"
   }), __jsx("rect", {
     x: "8",
     y: "6",
     width: "22",
-    height: "2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
+    height: "2"
   }), __jsx("rect", {
     x: "18",
     y: "12",
     width: "12",
-    height: "2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
+    height: "2"
   }));
 };
 

@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 import { useForm } from "react-hook-form";
+import SendingQuery from '../SendingQuery';
 
 const Newsletter = ({ data }) => {
 
@@ -37,6 +38,9 @@ const Newsletter = ({ data }) => {
 			connectToNewsletter();
 	}, [])
 
+	const [registerResponse, setRegisterResponse] = React.useState({});
+	const newsletterForm = React.useRef();
+
 	const registerNewsletterUser = (name, surname, email, gender, token) => {
 		const n2goRegisterHeaders = new Headers();
 		n2goRegisterHeaders.append("Content-Type", "application/json");
@@ -61,9 +65,16 @@ const Newsletter = ({ data }) => {
 
 		fetch(`${process.env.NEWSLETTER_API_HOST}/recipients`, registerRequestOpts)
 			.then(response => response.text())
-			.then(result => console.log(result))
+			.then(result => {
+				setRegisterResponse(JSON.parse(result))
+			})
 			.catch(error => console.log('error', error));
 	}
+
+	React.useEffect(() => {
+		registerResponse.status === 200 &&
+			newsletterForm.current.classList.add('newsletterHide');
+	}, [registerResponse, setRegisterResponse])
 
 	const { handleSubmit, register, errors } = useForm();
 	const onSubmit = values => {
@@ -78,7 +89,7 @@ const Newsletter = ({ data }) => {
 				<p>{data.subtitel}</p>
 			</div>
 
-			<form onSubmit={handleSubmit(onSubmit)} className="newsletter__form">
+			<form onSubmit={handleSubmit(onSubmit)} ref={newsletterForm} className="newsletter__form">
 
 				<div className="newsletter__form--block">
 
@@ -148,6 +159,11 @@ const Newsletter = ({ data }) => {
 				<button type="submit" className="golden__button">{data.datenschutz.button}</button>
 
 			</form>
+
+			{
+				registerResponse.status === 200 &&
+				 <SendingQuery color="#C2AC84" message={`Danke für die Registrierung.`} />
+			}
 
 		</div>
 	)

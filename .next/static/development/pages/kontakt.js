@@ -11,7 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/Breadcrumb.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -19,26 +18,10 @@ var Breadcrumb = function Breadcrumb(_ref) {
   var slug = _ref.slug,
       title = _ref.title;
   return __jsx("div", {
-    className: "hero__breadcrumb",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: this
+    className: "hero__breadcrumb"
   }, __jsx("a", {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, "HOME"), " > ", __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, title));
+    href: "/"
+  }, "HOME"), " > ", __jsx("span", null, title));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Breadcrumb);
@@ -58,7 +41,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/SendingQuery.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -75,28 +57,13 @@ var SendingQuery = function SendingQuery(props) {
     }, 2000);
   }, []);
   return __jsx("div", {
-    className: "jsx-3539097141" + " " + "sendingQuery",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    className: "jsx-2703489858" + " " + "sendingQuery"
   }, __jsx("svg", {
     ref: ellipse,
     viewBox: "0 0 244 244",
-    className: "jsx-3539097141" + " " + "sendingQuery-ellipse",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
+    className: "jsx-2703489858" + " " + "sendingQuery-ellipse"
   }, __jsx("defs", {
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
+    className: "jsx-2703489858"
   }, __jsx("linearGradient", {
     id: "sendingGradient",
     x1: "33.68",
@@ -104,130 +71,64 @@ var SendingQuery = function SendingQuery(props) {
     x2: "206.22",
     y2: "206.22",
     gradientUnits: "userSpaceOnUse",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
+    className: "jsx-2703489858"
   }, __jsx("stop", {
     offset: "0.15",
     stopColor: props.color,
     stopOpacity: "0",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.25",
     stopColor: props.color,
     stopOpacity: "0.22",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.38",
     stopColor: props.color,
     stopOpacity: "0.45",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.51",
     stopColor: props.color,
     stopOpacity: "0.65",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.64",
     stopColor: props.color,
     stopOpacity: "0.8",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.76",
     stopColor: props.color,
     stopOpacity: "0.91",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "0.88",
     stopColor: props.color,
     stopOpacity: "0.98",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
+    className: "jsx-2703489858"
   }), __jsx("stop", {
     offset: "1",
     stopColor: props.color,
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
+    className: "jsx-2703489858"
   }))), __jsx("path", {
     fill: "url(#sendingGradient)",
     d: "M122,0A122,122,0,1,0,244,122,122,122,0,0,0,122,0Zm0,236.5A114.5,114.5,0,1,1,236.5,122,114.5,114.5,0,0,1,122,236.5Z",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
+    className: "jsx-2703489858"
   })), __jsx("svg", {
     ref: tick,
     viewBox: "0 0 138.35 99.15",
-    className: "jsx-3539097141" + " " + "sendingQuery-tick",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
+    className: "jsx-2703489858" + " " + "sendingQuery-tick"
   }, __jsx("path", {
     fill: props.color,
     d: "M.85,42.5c2.41,1.55,4.74,3.17,7,4.84s4.57,3.34,6.79,5.08c4.47,3.45,8.82,7,13.09,10.66s8.45,7.38,12.57,11.18S48.42,82,52.27,86.07h-8.7c7.75-7.25,15.81-14.19,23.5-21.5S82.54,50,90.37,42.87l11.71-10.79,11.76-10.74Q125.62,10.61,137.5,0l.85.85Q127.73,12.73,117,24.51L106.27,36.27,95.48,48C88.31,55.81,81,63.51,73.78,71.28S59.53,87,52.27,94.77l-4.09,4.38-4.61-4.38c-4.06-3.85-8-7.81-11.81-11.93s-7.54-8.29-11.18-12.57S13.37,61.65,9.92,57.18C8.18,55,6.5,52.68,4.84,50.39s-3.29-4.63-4.84-7Z",
-    className: "jsx-3539097141",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
+    className: "jsx-2703489858"
   })), __jsx("p", {
     ref: text,
-    className: "jsx-3539097141" + " " + "sendingQuery-message",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
+    className: "jsx-2703489858" + " " + "sendingQuery-message"
   }, props.message), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "3539097141",
-    __self: this
-  }, "@-webkit-keyframes rotate-jsx-3539097141{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes rotate-jsx-3539097141{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}.sendingQuery.jsx-3539097141{width:200px;position:relative;}.sendingQuery-ellipse.jsx-3539097141{-webkit-transition:.5s all;transition:.5s all;-webkit-animation:rotate-jsx-3539097141 1s linear infinite;animation:rotate-jsx-3539097141 1s linear infinite;}.sendingQuery-tick.jsx-3539097141{position:absolute;-webkit-transition:.5s all;transition:.5s all;width:0;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}.sendingQuery-message.jsx-3539097141{text-align:center;position:absolute;left:0;right:0;opacity:0;-webkit-transition:.5s all;transition:.5s all;bottom:-60%;}.stopEllipse.jsx-3539097141{opacity:0;-webkit-transition:.5s all;transition:.5s all;}.showTick.jsx-3539097141{-webkit-transition:.5s all ease-out;transition:.5s all ease-out;width:100px;}.showText.jsx-3539097141{-webkit-transition:.5s all;transition:.5s all;opacity:1;bottom:-50%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tYWNib29rL3JlcG9zL2dvbGRlbmRvb3ItbmV4dC9jb21wb25lbnRzL1NlbmRpbmdRdWVyeS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQ2tCLEFBSW9DLEFBR0UsQUFJZixBQUlPLEFBSUQsQUFRQSxBQVNSLEFBSWtCLEFBSVQsVUFQQSxFQXpCRCxNQVFDLEFBUUQsWUFmcEIsTUFnQlMsT0FDQyxHQWQ0QixBQTZCMUIsS0FkQSxLQU9aLEFBUWMsS0FkTyxHQVhYLEFBb0JJLElBTWQsSUF6QlUsSUFvQlYsSUFuQlcsQ0FsQlQsTUFHQSxFQWdCZ0Msa0JBU3BCLFlBQ2QscUNBakJBLHNDQVFBIiwiZmlsZSI6Ii9Vc2Vycy9tYWNib29rL3JlcG9zL2dvbGRlbmRvb3ItbmV4dC9jb21wb25lbnRzL1NlbmRpbmdRdWVyeS5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFNlbmRpbmdRdWVyeSA9IChwcm9wcykgPT4ge1xuICBjb25zdCBlbGxpcHNlID0gUmVhY3QudXNlUmVmKCk7XG4gIGNvbnN0IHRpY2sgPSBSZWFjdC51c2VSZWYoKTtcbiAgY29uc3QgdGV4dCA9IFJlYWN0LnVzZVJlZigpO1xuXG4gIFJlYWN0LnVzZUVmZmVjdCgoKSA9PiB7XG4gICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICBlbGxpcHNlLmN1cnJlbnQuY2xhc3NMaXN0LmFkZCgnc3RvcEVsbGlwc2UnKTtcbiAgICAgIHRpY2suY3VycmVudC5jbGFzc0xpc3QuYWRkKCdzaG93VGljaycpO1xuICAgICAgdGV4dC5jdXJyZW50LmNsYXNzTGlzdC5hZGQoJ3Nob3dUZXh0Jyk7XG4gICAgfSwgMjAwMCk7XG4gIH0sIFtdKVxuXG4gIHJldHVybihcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeVwiPlxuXG4gICAgICA8c3ZnIHJlZj17ZWxsaXBzZX0gY2xhc3NOYW1lPVwic2VuZGluZ1F1ZXJ5LWVsbGlwc2VcIiB2aWV3Qm94PVwiMCAwIDI0NCAyNDRcIj5cbiAgICAgICAgPGRlZnM+XG4gICAgICAgICAgPGxpbmVhckdyYWRpZW50IGlkPVwic2VuZGluZ0dyYWRpZW50XCIgeDE9XCIzMy42OFwiIHkxPVwiMzMuNjhcIiB4Mj1cIjIwNi4yMlwiIHkyPVwiMjA2LjIyXCIgZ3JhZGllbnRVbml0cz1cInVzZXJTcGFjZU9uVXNlXCI+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIwLjE1XCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0gc3RvcE9wYWNpdHk9XCIwXCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC4yNVwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC4yMlwiLz5cbiAgICAgICAgICAgIDxzdG9wIG9mZnNldD1cIjAuMzhcIiBzdG9wQ29sb3I9e3Byb3BzLmNvbG9yfSBzdG9wT3BhY2l0eT1cIjAuNDVcIi8+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIwLjUxXCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0gc3RvcE9wYWNpdHk9XCIwLjY1XCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC42NFwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC44XCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC43NlwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC45MVwiLz5cbiAgICAgICAgICAgIDxzdG9wIG9mZnNldD1cIjAuODhcIiBzdG9wQ29sb3I9e3Byb3BzLmNvbG9yfSBzdG9wT3BhY2l0eT1cIjAuOThcIi8+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0vPlxuICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+XG4gICAgICAgIDwvZGVmcz5cbiAgICAgICAgPHBhdGggZmlsbD1cInVybCgjc2VuZGluZ0dyYWRpZW50KVwiIGQ9XCJNMTIyLDBBMTIyLDEyMiwwLDEsMCwyNDQsMTIyLDEyMiwxMjIsMCwwLDAsMTIyLDBabTAsMjM2LjVBMTE0LjUsMTE0LjUsMCwxLDEsMjM2LjUsMTIyLDExNC41LDExNC41LDAsMCwxLDEyMiwyMzYuNVpcIi8+XG4gICAgICA8L3N2Zz5cblxuICAgICAgPHN2ZyByZWY9e3RpY2t9IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeS10aWNrXCIgdmlld0JveD1cIjAgMCAxMzguMzUgOTkuMTVcIj5cbiAgICAgICAgPHBhdGggZmlsbD17cHJvcHMuY29sb3J9IGQ9XCJNLjg1LDQyLjVjMi40MSwxLjU1LDQuNzQsMy4xNyw3LDQuODRzNC41NywzLjM0LDYuNzksNS4wOGM0LjQ3LDMuNDUsOC44Miw3LDEzLjA5LDEwLjY2czguNDUsNy4zOCwxMi41NywxMS4xOFM0OC40Miw4Miw1Mi4yNyw4Ni4wN2gtOC43YzcuNzUtNy4yNSwxNS44MS0xNC4xOSwyMy41LTIxLjVTODIuNTQsNTAsOTAuMzcsNDIuODdsMTEuNzEtMTAuNzksMTEuNzYtMTAuNzRRMTI1LjYyLDEwLjYxLDEzNy41LDBsLjg1Ljg1UTEyNy43MywxMi43MywxMTcsMjQuNTFMMTA2LjI3LDM2LjI3LDk1LjQ4LDQ4Qzg4LjMxLDU1LjgxLDgxLDYzLjUxLDczLjc4LDcxLjI4UzU5LjUzLDg3LDUyLjI3LDk0Ljc3bC00LjA5LDQuMzgtNC42MS00LjM4Yy00LjA2LTMuODUtOC03LjgxLTExLjgxLTExLjkzcy03LjU0LTguMjktMTEuMTgtMTIuNTdTMTMuMzcsNjEuNjUsOS45Miw1Ny4xOEM4LjE4LDU1LDYuNSw1Mi42OCw0Ljg0LDUwLjM5cy0zLjI5LTQuNjMtNC44NC03WlwiLz5cbiAgICAgIDwvc3ZnPlxuXG4gICAgICA8cCByZWY9e3RleHR9IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeS1tZXNzYWdlXCIgPntwcm9wcy5tZXNzYWdlfTwvcD5cblxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBAa2V5ZnJhbWVzIHJvdGF0ZSB7XG4gICAgICAgICAgMCUge1xuICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gICAgICAgICAgfVxuICAgICAgICAgIHRvIHtcbiAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnkge1xuICAgICAgICAgIHdpZHRoOiAyMDBweDtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIH1cbiAgICAgICAgLnNlbmRpbmdRdWVyeS1lbGxpcHNle1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgICAgYW5pbWF0aW9uOiByb3RhdGUgMXMgbGluZWFyIGluZmluaXRlO1xuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnktdGljayB7XG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgICAgd2lkdGg6IDA7XG4gICAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgICAgbGVmdDogNTAlO1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnktbWVzc2FnZSB7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgIHJpZ2h0OiAwO1xuICAgICAgICAgIG9wYWNpdHk6IDA7XG4gICAgICAgICAgdHJhbnNpdGlvbjogLjVzIGFsbDtcbiAgICAgICAgICBib3R0b206IC02MCU7XG4gICAgICAgIH1cbiAgICAgICAgLnN0b3BFbGxpcHNlIHtcbiAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgIH1cbiAgICAgICAgLnNob3dUaWNrIHtcbiAgICAgICAgICB0cmFuc2l0aW9uOiAuNXMgYWxsIGVhc2Utb3V0O1xuICAgICAgICAgIHdpZHRoOiAxMDBweDtcbiAgICAgICAgfVxuICAgICAgICAuc2hvd1RleHR7XG4gICAgICAgICAgdHJhbnNpdGlvbjogLjVzIGFsbDtcbiAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIGJvdHRvbTogLTUwJTtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuXG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgU2VuZGluZ1F1ZXJ5OyJdfQ== */\n/*@ sourceURL=/Users/macbook/repos/goldendoor-next/components/SendingQuery.js */"));
+    id: "2703489858"
+  }, "@-webkit-keyframes rotate-jsx-2703489858{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes rotate-jsx-2703489858{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}.sendingQuery.jsx-2703489858{width:200px;position:relative;}.sendingQuery-ellipse.jsx-2703489858{-webkit-transition:.5s all;transition:.5s all;-webkit-animation:rotate-jsx-2703489858 1s linear infinite;animation:rotate-jsx-2703489858 1s linear infinite;}.sendingQuery-tick.jsx-2703489858{position:absolute;-webkit-transition:.5s all;transition:.5s all;width:0;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}.sendingQuery-message.jsx-2703489858{text-align:center;position:absolute;text-transform:uppercase;-webkit-letter-spacing:1.6px;-moz-letter-spacing:1.6px;-ms-letter-spacing:1.6px;letter-spacing:1.6px;left:0;right:0;opacity:0;-webkit-transition:.5s all;transition:.5s all;bottom:-60%;}.stopEllipse.jsx-2703489858{opacity:0;-webkit-transition:.5s all;transition:.5s all;}.showTick.jsx-2703489858{-webkit-transition:.5s all ease-out;transition:.5s all ease-out;width:100px;}.showText.jsx-2703489858{-webkit-transition:.5s all;transition:.5s all;opacity:1;bottom:-50%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mYXRpaC9yZXBvcy9nb2xkZW5kb29yLW5leHQvY29tcG9uZW50cy9TZW5kaW5nUXVlcnkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBc0NrQixBQUlvQyxBQUdFLEFBSWYsQUFJTyxBQUlELEFBUUEsQUFXUixBQUlrQixBQUlULFVBUEEsRUEzQkQsTUFRQyxBQVFELFlBZnBCLE1BZ0IyQixVQWJXLEFBK0IxQixVQVBaLEFBUWMsS0FsQlMsR0FUYixBQXNCSSxJQU1kLElBM0JVLElBc0JWLElBckJXLENBbEJULE1BR0EsRUFnQmdDLG1FQVBsQyxNQWNTLE9BQ0MsUUFDRSxVQUNTLE9BVHJCLHVDQVVjLFlBQ2QiLCJmaWxlIjoiL1VzZXJzL2ZhdGloL3JlcG9zL2dvbGRlbmRvb3ItbmV4dC9jb21wb25lbnRzL1NlbmRpbmdRdWVyeS5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFNlbmRpbmdRdWVyeSA9IChwcm9wcykgPT4ge1xuICBjb25zdCBlbGxpcHNlID0gUmVhY3QudXNlUmVmKCk7XG4gIGNvbnN0IHRpY2sgPSBSZWFjdC51c2VSZWYoKTtcbiAgY29uc3QgdGV4dCA9IFJlYWN0LnVzZVJlZigpO1xuXG4gIFJlYWN0LnVzZUVmZmVjdCgoKSA9PiB7XG4gICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICBlbGxpcHNlLmN1cnJlbnQuY2xhc3NMaXN0LmFkZCgnc3RvcEVsbGlwc2UnKTtcbiAgICAgIHRpY2suY3VycmVudC5jbGFzc0xpc3QuYWRkKCdzaG93VGljaycpO1xuICAgICAgdGV4dC5jdXJyZW50LmNsYXNzTGlzdC5hZGQoJ3Nob3dUZXh0Jyk7XG4gICAgfSwgMjAwMCk7XG4gIH0sIFtdKVxuXG4gIHJldHVybihcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeVwiPlxuXG4gICAgICA8c3ZnIHJlZj17ZWxsaXBzZX0gY2xhc3NOYW1lPVwic2VuZGluZ1F1ZXJ5LWVsbGlwc2VcIiB2aWV3Qm94PVwiMCAwIDI0NCAyNDRcIj5cbiAgICAgICAgPGRlZnM+XG4gICAgICAgICAgPGxpbmVhckdyYWRpZW50IGlkPVwic2VuZGluZ0dyYWRpZW50XCIgeDE9XCIzMy42OFwiIHkxPVwiMzMuNjhcIiB4Mj1cIjIwNi4yMlwiIHkyPVwiMjA2LjIyXCIgZ3JhZGllbnRVbml0cz1cInVzZXJTcGFjZU9uVXNlXCI+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIwLjE1XCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0gc3RvcE9wYWNpdHk9XCIwXCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC4yNVwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC4yMlwiLz5cbiAgICAgICAgICAgIDxzdG9wIG9mZnNldD1cIjAuMzhcIiBzdG9wQ29sb3I9e3Byb3BzLmNvbG9yfSBzdG9wT3BhY2l0eT1cIjAuNDVcIi8+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIwLjUxXCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0gc3RvcE9wYWNpdHk9XCIwLjY1XCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC42NFwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC44XCIvPlxuICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PVwiMC43NlwiIHN0b3BDb2xvcj17cHJvcHMuY29sb3J9IHN0b3BPcGFjaXR5PVwiMC45MVwiLz5cbiAgICAgICAgICAgIDxzdG9wIG9mZnNldD1cIjAuODhcIiBzdG9wQ29sb3I9e3Byb3BzLmNvbG9yfSBzdG9wT3BhY2l0eT1cIjAuOThcIi8+XG4gICAgICAgICAgICA8c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPXtwcm9wcy5jb2xvcn0vPlxuICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+XG4gICAgICAgIDwvZGVmcz5cbiAgICAgICAgPHBhdGggZmlsbD1cInVybCgjc2VuZGluZ0dyYWRpZW50KVwiIGQ9XCJNMTIyLDBBMTIyLDEyMiwwLDEsMCwyNDQsMTIyLDEyMiwxMjIsMCwwLDAsMTIyLDBabTAsMjM2LjVBMTE0LjUsMTE0LjUsMCwxLDEsMjM2LjUsMTIyLDExNC41LDExNC41LDAsMCwxLDEyMiwyMzYuNVpcIi8+XG4gICAgICA8L3N2Zz5cblxuICAgICAgPHN2ZyByZWY9e3RpY2t9IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeS10aWNrXCIgdmlld0JveD1cIjAgMCAxMzguMzUgOTkuMTVcIj5cbiAgICAgICAgPHBhdGggZmlsbD17cHJvcHMuY29sb3J9IGQ9XCJNLjg1LDQyLjVjMi40MSwxLjU1LDQuNzQsMy4xNyw3LDQuODRzNC41NywzLjM0LDYuNzksNS4wOGM0LjQ3LDMuNDUsOC44Miw3LDEzLjA5LDEwLjY2czguNDUsNy4zOCwxMi41NywxMS4xOFM0OC40Miw4Miw1Mi4yNyw4Ni4wN2gtOC43YzcuNzUtNy4yNSwxNS44MS0xNC4xOSwyMy41LTIxLjVTODIuNTQsNTAsOTAuMzcsNDIuODdsMTEuNzEtMTAuNzksMTEuNzYtMTAuNzRRMTI1LjYyLDEwLjYxLDEzNy41LDBsLjg1Ljg1UTEyNy43MywxMi43MywxMTcsMjQuNTFMMTA2LjI3LDM2LjI3LDk1LjQ4LDQ4Qzg4LjMxLDU1LjgxLDgxLDYzLjUxLDczLjc4LDcxLjI4UzU5LjUzLDg3LDUyLjI3LDk0Ljc3bC00LjA5LDQuMzgtNC42MS00LjM4Yy00LjA2LTMuODUtOC03LjgxLTExLjgxLTExLjkzcy03LjU0LTguMjktMTEuMTgtMTIuNTdTMTMuMzcsNjEuNjUsOS45Miw1Ny4xOEM4LjE4LDU1LDYuNSw1Mi42OCw0Ljg0LDUwLjM5cy0zLjI5LTQuNjMtNC44NC03WlwiLz5cbiAgICAgIDwvc3ZnPlxuXG4gICAgICA8cCByZWY9e3RleHR9IGNsYXNzTmFtZT1cInNlbmRpbmdRdWVyeS1tZXNzYWdlXCIgPntwcm9wcy5tZXNzYWdlfTwvcD5cblxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBAa2V5ZnJhbWVzIHJvdGF0ZSB7XG4gICAgICAgICAgMCUge1xuICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gICAgICAgICAgfVxuICAgICAgICAgIHRvIHtcbiAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnkge1xuICAgICAgICAgIHdpZHRoOiAyMDBweDtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIH1cbiAgICAgICAgLnNlbmRpbmdRdWVyeS1lbGxpcHNle1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgICAgYW5pbWF0aW9uOiByb3RhdGUgMXMgbGluZWFyIGluZmluaXRlO1xuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnktdGljayB7XG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgICAgd2lkdGg6IDA7XG4gICAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgICAgbGVmdDogNTAlO1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgICAgICB9XG4gICAgICAgIC5zZW5kaW5nUXVlcnktbWVzc2FnZSB7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICAgIGxldHRlci1zcGFjaW5nOiAxLjZweDtcbiAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgIHJpZ2h0OiAwO1xuICAgICAgICAgIG9wYWNpdHk6IDA7XG4gICAgICAgICAgdHJhbnNpdGlvbjogLjVzIGFsbDtcbiAgICAgICAgICBib3R0b206IC02MCU7XG4gICAgICAgIH1cbiAgICAgICAgLnN0b3BFbGxpcHNlIHtcbiAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgIHRyYW5zaXRpb246IC41cyBhbGw7XG4gICAgICAgIH1cbiAgICAgICAgLnNob3dUaWNrIHtcbiAgICAgICAgICB0cmFuc2l0aW9uOiAuNXMgYWxsIGVhc2Utb3V0O1xuICAgICAgICAgIHdpZHRoOiAxMDBweDtcbiAgICAgICAgfVxuICAgICAgICAuc2hvd1RleHR7XG4gICAgICAgICAgdHJhbnNpdGlvbjogLjVzIGFsbDtcbiAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIGJvdHRvbTogLTUwJTtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuXG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgU2VuZGluZ1F1ZXJ5OyJdfQ== */\n/*@ sourceURL=/Users/fatih/repos/goldendoor-next/components/SendingQuery.js */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SendingQuery);
@@ -289,7 +190,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/components/templates/kontakt/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
@@ -309,7 +209,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function () {
-  return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../../MapContainer */ "./components/MapContainer.js"));
+  return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../../MapContainer */ "./components/MapContainer.js"));
 }, {
   ssr: false,
   loadableGenerated: {
@@ -325,7 +225,6 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
       lang = _ref.lang;
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_11__["useRouter"])();
   var requestedLocation = router.query.locationName !== undefined ? router.query.locationName : false;
-  console.log(requestedLocation);
   var locationSelection = react__WEBPACK_IMPORTED_MODULE_9___default.a.useRef();
   var contactInfo = layout.footer.info;
   var steps = [data.fields.kontakt_stufe_1, data.fields.kontakt_stufe_2, data.fields.kontakt_stufe_3];
@@ -462,325 +361,121 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
   }, [submitted]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_12__["NextSeo"], {
     title: data.fields.seo.title,
-    description: data.fields.seo.description,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 140
-    },
-    __self: this
+    description: data.fields.seo.description
   }), __jsx("div", {
-    className: "page__title page__title--contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: this
+    className: "page__title page__title--contact"
   }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_14__["default"], {
     slug: data.slug,
-    title: data.title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: this
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 146
-    },
-    __self: this
-  }, data.title)), __jsx("div", {
-    className: "contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: this
+    title: data.title
+  }), __jsx("h1", null, data.title)), __jsx("div", {
+    className: "contact"
   }, __jsx("div", {
     ref: stepSlider,
-    className: "contact__stepslider",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 150
-    },
-    __self: this
+    className: "contact__stepslider"
   }, steps.map(function (item, key) {
     return __jsx("div", {
       key: key,
-      className: "contact__stepslider--ellipse",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 153
-      },
-      __self: this
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 155
-      },
-      __self: this
-    }, key + 1));
+      className: "contact__stepslider--ellipse"
+    }, __jsx("span", null, key + 1));
   })), __jsx("div", {
-    className: "contact--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 161
-    },
-    __self: this
+    className: "contact--wrapper"
   }, __jsx("form", {
     className: "contact__steps",
     ref: formSteps,
-    onSubmit: handleSubmit(onSubmit),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: this
+    onSubmit: handleSubmit(onSubmit)
   }, __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 165
-    },
-    __self: this
+    className: "contact__step"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 167
-    },
-    __self: this
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 169
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_type",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 170
-    },
-    __self: this
+    className: "label__select"
   }, steps[0].kontakt_frage_1.frage), __jsx("select", {
     name: "event_type",
-    ref: register,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 171
-    },
-    __self: this
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 172
-    },
-    __self: this
-  }, steps[0].kontakt_frage_1.optionen.map(function (item, key) {
+    ref: register
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_1.optionen.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 174
-      },
-      __self: this
+      value: item.option
     }, item.option);
   })))), __jsx("div", {
     className: "contact__stepblock",
-    ref: locationSelection,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 180
-    },
-    __self: this
+    ref: locationSelection
   }, __jsx("label", {
     htmlFor: "event_location",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 181
-    },
-    __self: this
+    className: "label__select"
   }, steps[0].kontakt_frage_2.frage), __jsx("select", {
     ref: register,
-    name: "event_location",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 182
-    },
-    __self: this
-  }, __jsx("optgroup", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 183
-    },
-    __self: this
-  }, steps[0].kontakt_frage_2.optionen.map(function (item, key) {
+    name: "event_location"
+  }, __jsx("optgroup", null, steps[0].kontakt_frage_2.optionen.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 185
-      },
-      __self: this
+      value: item.option
     }, item.option);
   }))))), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 193
-    },
-    __self: this
+    className: "contact__step--flexWrapper-xl"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 195
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: firstStepLock,
     htmlFor: "event_date_answer",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 196
-    },
-    __self: this
+    className: "contact__stepblock--inner"
   }, steps[0].kontakt_frage_3.frage), steps[0].kontakt_frage_3.optionen.map(function (item, key) {
     return __jsx("p", {
       className: "contact__stepblock--inner",
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 201
-      },
-      __self: this
+      key: key
     }, __jsx("input", {
       onClick: hideDates,
       ref: register,
       className: "input__radio",
       type: "radio",
       name: "event_date_answer",
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 202
-      },
-      __self: this
+      value: item.option
     }), __jsx("span", {
-      className: "label__radio",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 203
-      },
-      __self: this
+      className: "label__radio"
     }, item.option));
   })), __jsx("div", {
     className: "contact__stepblock",
-    ref: dateRange,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 208
-    },
-    __self: this
+    ref: dateRange
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "date_range",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 209
-    },
-    __self: this
+    htmlFor: "date_range"
   }, steps[0].kontakt_frage_5), __jsx("input", {
     className: "input__text",
     name: "date_range",
     ref: register,
-    type: "text",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 210
-    },
-    __self: this
+    type: "text"
   })), __jsx("div", {
     ref: dates,
-    className: "contact__stepblock contact__stepblock--datewrapper hidden",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 213
-    },
-    __self: this
+    className: "contact__stepblock contact__stepblock--datewrapper hidden"
   }, __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 216
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_event",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 217
-    },
-    __self: this
+    htmlFor: "date_of_event"
   }, steps[0].kontakt_frage_6.datum), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_18___default.a, {
     selected: eventDate,
     name: "eventdatum",
     ref: register,
     onChange: function onChange(date) {
       return setEventDate(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 218
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 221
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 222
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ausweichtermin), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_18___default.a, {
     selected: elusiveDate,
     name: "ausweichtermin",
     ref: register,
     onChange: function onChange(date) {
       return setElusiveDate(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 223
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 226
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 227
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.beginn), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_18___default.a, {
     ref: register,
     name: "event_beginn_zeit",
@@ -792,26 +487,11 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
     selected: beginTime,
     onChange: function onChange(date) {
       return setBeginTime(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 228
-    },
-    __self: this
+    }
   })), __jsx("div", {
-    className: "contact__stepblock--date",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 240
-    },
-    __self: this
+    className: "contact__stepblock--date"
   }, __jsx("label", {
-    htmlFor: "date_of_elusive",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 241
-    },
-    __self: this
+    htmlFor: "date_of_elusive"
   }, steps[0].kontakt_frage_6.ende), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_18___default.a, {
     name: "event_end_zeit",
     showTimeSelect: true,
@@ -822,64 +502,23 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
     selected: endTime,
     onChange: function onChange(date) {
       return setEndTime(date);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 242
-    },
-    __self: this
+    }
   })))), __jsx("a", {
     href: "#",
     className: "golden__button golden__button--center",
-    onClick: changeStep,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 257
-    },
-    __self: this
+    onClick: changeStep
   }, data.fields.buttonfelder.prufen)), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 265
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 267
-    },
-    __self: this
-  }, steps[1].feld_1.titel), __jsx("div", {
-    className: "contact__step--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 269
-    },
-    __self: this
+    className: "contact__step"
+  }, __jsx("h3", null, steps[1].feld_1.titel), __jsx("div", {
+    className: "contact__step--wrapper"
   }, __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 271
-    },
-    __self: this
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 273
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     ref: secondStepLock,
     className: "label__text",
-    htmlFor: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 274
-    },
-    __self: this
+    htmlFor: "personenzahl"
   }, steps[1].feld_1.frage_1), __jsx("input", {
     onChange: removeUnchecked,
     type: "text",
@@ -888,224 +527,87 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
       maxLength: 30
     }),
     className: "input__text",
-    name: "personenzahl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 275
-    },
-    __self: this
+    name: "personenzahl"
   })), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 284
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "event_max_budget",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 285
-    },
-    __self: this
+    className: "contact__stepblock--inner"
   }, steps[1].feld_1.frage_2.fragefeld), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_1.frage_2.optionen).map(function (item, key) {
     return __jsx("p", {
       className: "contact__stepblock--inner",
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 288
-      },
-      __self: this
+      key: key
     }, __jsx("input", {
       ref: register,
       type: "radio",
       className: "input__radio",
       name: "event_max_budget",
-      value: item,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 289
-      },
-      __self: this
+      value: item
     }), __jsx("span", {
-      className: "label__radio",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 290
-      },
-      __self: this
+      className: "label__radio"
     }, item));
-  }))), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 297
-    },
-    __self: this
-  }, steps[1].feld_2.titel), __jsx("div", {
-    className: "contact__step--flexWrapper-xl",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 299
-    },
-    __self: this
+  }))), __jsx("h3", null, steps[1].feld_2.titel), __jsx("div", {
+    className: "contact__step--flexWrapper-xl"
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(steps[1].feld_2).slice(1).map(function (item, key) {
     return __jsx("div", {
       key: key,
-      className: "contact__stepblock",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 303
-      },
-      __self: this
+      className: "contact__stepblock"
     }, __jsx("label", {
       htmlFor: "event_".concat(item.fragefeld.toLowerCase()),
-      className: "label__select",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 304
-      },
-      __self: this
+      className: "label__select"
     }, item.fragefeld), __jsx("select", {
       ref: register,
-      name: "event_".concat(item.fragefeld.toLowerCase()),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 305
-      },
-      __self: this
+      name: "event_".concat(item.fragefeld.toLowerCase())
     }, item.optionen.map(function (subItem, subKey) {
       return __jsx("option", {
         key: subKey,
-        value: subItem.option,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 308
-        },
-        __self: this
+        value: subItem.option
       }, subItem.option);
     })));
   }))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 319
-    },
-    __self: this
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goFirst",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 320
-    },
-    __self: this
+    className: "golden__button goFirst"
   }, data.fields.buttonfelder.zuruck), __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goNext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 324
-    },
-    __self: this
+    className: "golden__button goNext"
   }, data.fields.buttonfelder.weiter))), __jsx("div", {
-    className: "contact__step",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 332
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 334
-    },
-    __self: this
-  }, steps[2].titel), __jsx("div", {
-    className: "contact__step--flexWrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 336
-    },
-    __self: this
+    className: "contact__step"
+  }, __jsx("h3", null, steps[2].titel), __jsx("div", {
+    className: "contact__step--flexWrapper"
   }, __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 338
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     htmlFor: "kontakt_anrede",
-    className: "label__select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 339
-    },
-    __self: this
+    className: "label__select"
   }, steps[2].anredefeld.frage), __jsx("select", {
     ref: register,
-    name: "kontakt_anrede",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 340
-    },
-    __self: this
+    name: "kontakt_anrede"
   }, steps[2].anredefeld.sex.map(function (item, key) {
     return __jsx("option", {
       key: key,
-      value: item.option,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 342
-      },
-      __self: this
+      value: item.option
     }, item.option);
   }))), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 347
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "kontakt_company",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 348
-    },
-    __self: this
+    htmlFor: "kontakt_company"
   }, steps[2].andere_fragen.firma), __jsx("input", {
     ref: register({
       maxlength: 40
     }),
     className: "input__text",
     type: "text",
-    name: "kontakt_company",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 351
-    },
-    __self: this
+    name: "kontakt_company"
   })), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 360
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "kontakt_name",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 361
-    },
-    __self: this
+    htmlFor: "kontakt_name"
   }, steps[2].andere_fragen.vorname, "*"), __jsx("input", {
     ref: register({
       required: true,
@@ -1114,27 +616,12 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
     }),
     className: "input__text",
     type: "text",
-    name: "kontakt_name",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 364
-    },
-    __self: this
+    name: "kontakt_name"
   }), errors.kontakt_name && data.fields.fehlerfelder[1].text.toUpperCase()), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 376
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "kontakt_surname",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 377
-    },
-    __self: this
+    htmlFor: "kontakt_surname"
   }, steps[2].andere_fragen.nachname, "*"), __jsx("input", {
     ref: register({
       required: true,
@@ -1143,27 +630,12 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
     }),
     className: "input__text",
     type: "text",
-    name: "kontakt_surname",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 380
-    },
-    __self: this
+    name: "kontakt_surname"
   }), errors.kontakt_surname && data.fields.fehlerfelder[1].text.toUpperCase()), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 392
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "kontakt_email",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 393
-    },
-    __self: this
+    htmlFor: "kontakt_email"
   }, steps[2].andere_fragen.email, "*"), __jsx("input", {
     ref: register({
       required: true,
@@ -1174,210 +646,80 @@ var MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_10___default()(function
     }),
     className: "input__text",
     type: "email",
-    name: "kontakt_email",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 396
-    },
-    __self: this
+    name: "kontakt_email"
   }), errors.kontakt_email && errors.kontakt_email.message), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 410
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
     className: "label__text",
-    htmlFor: "kontakt_phone",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 411
-    },
-    __self: this
+    htmlFor: "kontakt_phone"
   }, steps[2].andere_fragen.telefon), __jsx("input", {
     ref: register({
       maxlength: 35
     }),
     className: "input__text",
     type: "tel",
-    name: "kontakt_phone",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 414
-    },
-    __self: this
+    name: "kontakt_phone"
   })), __jsx("div", {
-    className: "contact__stepblock",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 423
-    },
-    __self: this
+    className: "contact__stepblock"
   }, __jsx("label", {
-    htmlFor: "event_nachricht",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 424
-    },
-    __self: this
+    htmlFor: "event_nachricht"
   }, steps[0].kontakt_frage_4), __jsx("textarea", {
     ref: register,
     name: "event_nachricht",
     cols: "30",
-    rows: "5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 425
-    },
-    __self: this
-  })), console.log(data), __jsx("div", {
-    className: "contact__stepblock contact__stepblock--acceptance",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 429
-    },
-    __self: this
+    rows: "5"
+  })), __jsx("div", {
+    className: "contact__stepblock contact__stepblock--acceptance"
   }, __jsx("label", {
     htmlFor: "acceptance",
-    className: "contact__stepblock--inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 430
-    },
-    __self: this
+    className: "contact__stepblock--inner"
   }, lang === 'en' ? 'DATA PRIVACY' : 'DATENSCHUTZ', "*"), __jsx("input", {
     ref: register({
       required: true
     }),
     type: "radio",
     className: "input__radio",
-    name: "acceptance",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 432
-    },
-    __self: this
+    name: "acceptance"
   }), __jsx("span", {
-    className: "label__radio",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 433
-    },
-    __self: this
+    className: "label__radio"
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_16___default()(data.fields.kontakt_stufe_3.datenschutz)))), __jsx("div", {
-    className: "contact__buttongroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 438
-    },
-    __self: this
+    className: "contact__buttongroup"
   }, __jsx("a", {
     href: "#",
     onClick: changeStep,
-    className: "golden__button goSecond",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 440
-    },
-    __self: this
+    className: "golden__button goSecond"
   }, data.fields.buttonfelder.zuruck), __jsx("button", {
     type: "submit",
-    className: "golden__button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 445
-    },
-    __self: this
+    className: "golden__button"
   }, data.fields.buttonfelder.senden)))), __jsx("div", {
-    className: "contact__success",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 452
-    },
-    __self: this
+    className: "contact__success"
   }, __jsx("div", {
     ref: successBlock,
-    className: "contact__success--wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 453
-    },
-    __self: this
+    className: "contact__success--wrapper"
   }, submitted && __jsx(_SendingQuery__WEBPACK_IMPORTED_MODULE_19__["default"], {
     color: "#C2AC84",
-    message: data.fields.fehlerfelder[2].text,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 455
-    },
-    __self: this
+    message: data.fields.fehlerfelder[2].text
   }))))), __jsx("div", {
-    className: "contact__info",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 464
-    },
-    __self: this
+    className: "contact__info"
   }, __jsx("div", {
-    className: "contact__info--map",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 465
-    },
-    __self: this
+    className: "contact__info--map"
   }, __jsx(MapContainer, {
-    data: data.fields.karte_koordinaten,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 466
-    },
-    __self: this
+    data: data.fields.karte_koordinaten
   })), __jsx("div", {
-    className: "contact__info--address",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 469
-    },
-    __self: this
+    className: "contact__info--address"
   }, __jsx("div", {
-    className: "contact__info--logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 470
-    },
-    __self: this
+    className: "contact__info--logo"
   }, __jsx("img", {
     src: contactInfo.logo,
-    alt: "Golden Door Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 471
-    },
-    __self: this
+    alt: "Golden Door Logo"
   })), _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_6___default()(contactInfo.address).map(function (item, key) {
     return __jsx("div", {
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 474
-      },
-      __self: this
+      key: key
     }, html_react_parser__WEBPACK_IMPORTED_MODULE_16___default()(item));
   }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_15___default.a, {
-    tel: contactInfo.telefon.split('T:')[1],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 476
-    },
-    __self: this
+    tel: contactInfo.telefon.split('T:')[1]
   }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_15___default.a, {
-    email: contactInfo.email.toLowerCase(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 477
-    },
-    __self: this
+    email: contactInfo.email.toLowerCase()
   }))));
 });
 
@@ -17047,10 +16389,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js!./":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js!./":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29047,7 +28389,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config */ "./config/index.js");
 /* harmony import */ var _components_templates_kontakt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/templates/kontakt */ "./components/templates/kontakt/index.js");
 
-var _jsxFileName = "/Users/macbook/repos/goldendoor-next/pages/kontakt.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -29060,12 +28401,7 @@ var KontaktPage = function KontaktPage(_ref) {
   return __jsx(_components_templates_kontakt__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: data,
     lang: lang,
-    layout: layout,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
+    layout: layout
   });
 };
 
@@ -29114,14 +28450,14 @@ KontaktPage.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 8:
-/*!*****************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js ***!
-  \*****************************************************************************************************************************************/
+/***/ 6:
+/*!***************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fkontakt&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Fmacbook%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fkontakt&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fkontakt&absolutePagePath=%2FUsers%2Ffatih%2Frepos%2Fgoldendoor-next%2Fpages%2Fkontakt.js!./");
 
 
 /***/ }),
@@ -29137,5 +28473,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=kontakt.js.map
