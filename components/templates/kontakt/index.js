@@ -101,6 +101,7 @@ export default ({ data, layout, lang }) => {
 	const onSubmit = values => {
 		const dates = {
 			lang: lang,
+			contactType: 'contactForm',
 			eventdatum: eventDate.toDateString(),
 			ausweichtermin: elusiveDate.toDateString(),
 			eventzeitbeginn: beginTime.toLocaleTimeString('de-DE'),
@@ -108,7 +109,7 @@ export default ({ data, layout, lang }) => {
 		};
 		const finalForm = { ...values, ...dates };
 
-		fetch('/api/contact', {
+		fetch('/api/kontakt', {
       method: 'post',
       headers: {
         'Accept': 'application/json, text/plain, */*',

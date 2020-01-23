@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer')
-
+const fs = require('fs');
 const transporter = nodemailer.createTransport({
   pool: true,
   host: "smtprelaypool.ispgateway.de",
@@ -12,9 +12,10 @@ const transporter = nodemailer.createTransport({
 });
 
 const send = (props) => {
-  const name = props.kontakt_name + " " + props.kontakt_surname;
-  const email = props.kontakt_email;
-  const text = `
+  console.log(props)
+  const name = props.contactType == 'contactForm' ? (props.kontakt_name + " " + props.kontakt_surname) : props.name + ' ' + props.surname;
+  const email = props.contactType == 'contactForm' ? props.kontakt_email : props.email;
+  const text = props.contactType == 'contactForm' ? (`
     \r\nKontaktdaten\r\n
     Anrede: ${props.kontakt_anrede}\r\n
     Vorname: ${props.kontakt_name}\r\n
@@ -41,13 +42,25 @@ const send = (props) => {
     Technikauswahl: ${props.lang === 'de' ? props.event_technik : props.event_technique}\r\n
     Dekoauswahl: ${props.lang === 'de' ? props.event_deko : props.event_decoration}\r\n
     Musikauswahl: ${props.lang === 'de' ? props.event_musik : props.event_music}\r\n
-  `;
+  `) : ( `
+    \r\nKarriere Bewerbung\r\n
+    Vorname: ${props.name}\r\n
+    Nachname: ${props.surname}\r\n
+    E-Mail: ${props.email}\r\n
+    Berufliche Stellung: ${props.position}\r\n
+    Aktueller Jobsstatus: ${props.jobstatus}\r\n
+    Mögliches Start-Datum: ${props.startdate}\r\n
+    Nachricht: ${props.message}\r\n
+  `
+  );
+  const uploadedFile = props.contactType == 'contactForm' ? null : [{filename: props.attachment.filename, path: fs.createReadStream(props.attachment.path), content: fs.createReadStream(props.attachment.path) }]
   const sender = `${name} <${email}>`;
   const message = {
     from: 'f.gozenc@narciss-taurus.de',
     to: 'f.gozenc@narciss-taurus.de',
     subject: `Neu Nachricht von ${sender}`,
     text,
+    attachments: uploadedFile,
     replyTo: sender
   }
 

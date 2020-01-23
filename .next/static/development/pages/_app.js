@@ -146,11 +146,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -211,36 +208,32 @@ var Header = function Header(_ref) {
   }, data.map(function (item) {
     return __jsx("ul", {
       key: item.id
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: item.url
     }, __jsx("a", {
+      href: item.url,
       onClick: toggleMenu,
       className: "nav__parent"
-    }, item.title)), item.children !== null && item.children.map(function (subItem) {
+    }, item.title), item.children !== null && item.children.map(function (subItem) {
       return subItem.children !== null ? __jsx("ul", {
         key: subItem.id
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        href: subItem.url
       }, __jsx("a", {
+        href: subItem.url,
         onClick: toggleMenu,
         className: "nav__child"
-      }, subItem.title)), subItem.children.map(function (subItemChild) {
+      }, subItem.title), subItem.children.map(function (subItemChild) {
         return __jsx("li", {
           key: subItemChild.id
-        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          href: subItemChild.url
         }, __jsx("a", {
+          href: subItemChild.url,
           onClick: toggleMenu,
           className: "nav__child nav__child--sub"
-        }, subItemChild.title)));
+        }, subItemChild.title));
       })) : __jsx("li", {
         key: subItem.id
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        href: subItem.url
       }, __jsx("a", {
+        href: subItem.url,
         onClick: toggleMenu,
         className: "nav__child"
-      }, subItem.title)));
+      }, subItem.title));
     }));
   }))), __jsx("div", {
     className: "frame"
@@ -251,20 +244,18 @@ var Header = function Header(_ref) {
   }, __jsx("button", {
     className: "panel__lang-selector",
     onClick: changeLang
-  }, "".concat(lang.toUpperCase(), "\u25BE")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: setPathLang()
-  }, __jsx("a", {
+  }, "".concat(lang.toUpperCase(), "\u25BE")), __jsx("a", {
+    href: setPathLang(),
     ref: langSelection,
     className: "panel__lang-selected",
     onClick: setLang
-  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: lang === 'de' ? '/' : '/en'
-  }, __jsx("a", {
+  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+    href: lang === 'de' ? '/' : '/en',
     id: "logo"
   }, __jsx("img", {
     src: logo,
     alt: "Golden Door Logo"
-  }))), __jsx("div", {
+  })), __jsx("div", {
     className: "panel panel__menu"
   }, __jsx("button", {
     className: "menutoggler__button",
@@ -12991,7 +12982,7 @@ GoldenDoor.getInitialProps = function _callee(appContext) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          pathname = appContext.ctx.asPath;
+          pathname = appContext.router.route;
           lang = appContext.router.route.split('/')[1] === 'en' ? 'en' : 'de';
           _context.next = 4;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("".concat(_config__WEBPACK_IMPORTED_MODULE_14__["API_HOST"]).concat(lang, "/layout")));

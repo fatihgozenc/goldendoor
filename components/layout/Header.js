@@ -1,7 +1,6 @@
 import Cookie from 'cookie-universal';
 import MenuToggler from './MenuToggler';
 import MenuMailer from './MenuMailer';
-import Link from 'next/link';
 
 const cookies = Cookie();
 
@@ -55,32 +54,24 @@ const Header = ({ data, logo, lang, pathname }) => {
 						data.map(item => {
 							return (
 								<ul key={item.id}>
-									<Link href={item.url}>
-										<a onClick={toggleMenu} className="nav__parent">{item.title}</a>
-									</Link>
+										<a href={item.url} onClick={toggleMenu} className="nav__parent">{item.title}</a>
 									{item.children !== null &&
 										item.children.map(subItem => (
 											(subItem.children !== null)
 												? (
 													<ul key={subItem.id}>
-														<Link href={subItem.url} >
-															<a onClick={toggleMenu} className="nav__child">{subItem.title}</a>
-														</Link>
+															<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 														{subItem.children.map(subItemChild => (
 															<li key={subItemChild.id}>
-																<Link href={subItemChild.url}>
-																	<a onClick={toggleMenu} className="nav__child nav__child--sub">
+																	<a href={subItemChild.url} onClick={toggleMenu} className="nav__child nav__child--sub">
 																		{subItemChild.title}
 																	</a>
-																</Link>
 															</li>
 														))}
 													</ul>
 												) : (
 													<li key={subItem.id}>
-														<Link href={subItem.url}>
-															<a onClick={toggleMenu} className="nav__child">{subItem.title}</a>
-														</Link>
+															<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 													</li>
 												)
 										))
@@ -99,20 +90,16 @@ const Header = ({ data, logo, lang, pathname }) => {
 							onClick={changeLang}>
 							{`${lang.toUpperCase()}▾`}
 						</button>
-						<Link href={setPathLang()}>
-							<a
+							<a href={setPathLang()}
 								ref={langSelection}
 								className="panel__lang-selected"
 								onClick={setLang}>
 								<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
 							</a>
-						</Link>
 					</div>
-					<Link href={lang === 'de' ? '/' : '/en'}>
-						<a id="logo" >
+						<a href={lang === 'de' ? '/' : '/en'} id="logo" >
 							<img src={logo} alt="Golden Door Logo" />
 						</a>
-					</Link>
 					<div className="panel panel__menu">
 						<button className="menutoggler__button" ref={menuToggler} onClick={toggleMenu}>
 							<MenuToggler />

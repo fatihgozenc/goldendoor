@@ -2,12 +2,13 @@ import parse from 'html-react-parser';
 import DatePicker from 'react-datepicker';
 import {useForm} from 'react-hook-form';
 import { NextSeo } from 'next-seo';
+import { useDropzone } from 'react-dropzone';
 import Breadcrumb from '../../Breadcrumb';
-import DragNDrop from '../../DragNDrop';
+import serialize from 'serialize-javascript';
 import Icon from '../../Icon';
 import './style.scss';
 
-export default ({data}) => {
+export default ({data, language}) => {
 
 	const formFields = data.fields.karriere_bewerbung;
 
@@ -52,6 +53,63 @@ export default ({data}) => {
 		e.currentTarget.firstElementChild.classList.toggle('rotateSymbol');
 	}
 
+	const uploadText = formFields.bewerbung_hochladen;
+	const uploadMessages = formFields.formnachrichten;
+	const [uploadedFile, setUploadedFile] = React.useState({
+		file: '',
+		buffer: {}
+	});
+
+	const onDrop = React.useCallback((acceptedFiles) => {
+		acceptedFiles.forEach((file) => {
+			const reader = new FileReader()
+			reader.onabort = () => console.log(uploadMessages[1].text)
+			reader.onerror = () => console.log(uploadMessages[1].text)
+			reader.onload = () => {
+				// Do whatever you want with the file contents
+				const binaryStr = reader.result
+				setUploadedFile({buffer: binaryStr})
+			}
+			reader.readAsArrayBuffer(file)
+			console.log(file)
+			setUploadedFile({file: file})
+		})
+
+	}, [])
+	
+	const { getRootProps, getInputProps } = useDropzone({ onDrop })
+	const uploadTextParts = uploadText.split(' ');
+	const [submitted, setSubmitted] = React.useState(false);
+	const { handleSubmit, register, errors } = useForm();
+
+	const onSubmit = data => { 
+		const formData = {
+			lang: language,
+			contactType: "jobApplication",
+			name: language === 'de' ? data.bewerbung_vorname : data.bewerbung_name,
+			surname: language === 'de' ? data.bewerbung_name : data.bewerbung_surname,
+			email: data.bewerbung_email,
+			position: data.job_position,
+			jobstatus: data.job_status,
+			startdate : jobStartDate.toDateString(),
+			message: data.job_message,
+			attachment: uploadedFile
+		}
+
+		fetch('/api/kontakt', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+				'Content-Type': 'application/json',
+				'Content-Disposition': 'attachment'
+      },
+      body: serialize(formData)
+    }).then((res) => {
+      res.status === 200 ? setSubmitted(!submitted) : ''
+    }).catch((err) => console.log(err))
+	};
+
+
 	return (
 		<>
 			<NextSeo
@@ -90,7 +148,7 @@ export default ({data}) => {
 					))
 				}
 			</div>
-			<form action="#" id="bewerbung" className="career__application">
+			<form onSubmit={handleSubmit(onSubmit)} id="bewerbung" className="career__application">
 
 				<h2>{formFields.bewerbung_titel}</h2>
 
@@ -111,7 +169,11 @@ export default ({data}) => {
 								) : (
 									<label className="label__text" htmlFor={`bewerbung_${item}`}>{`${item}*`}
 										<input
-											required
+											ref={register({ 
+												required: true, 
+												maxlength: 20, 
+												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
+											})}
 											className="input__text"
 											type="text" id={`bewerbung_${item.toLowerCase()}`}
 											name={`bewerbung_${item.toLowerCase()}`} />
@@ -123,7 +185,7 @@ export default ({data}) => {
 
 					<div className="contact__stepblock">
 						<label htmlFor="job_position" className="label__select">{formFields.bewerbung_frage_1}</label>
-						<select id="job_position">
+						<select name="job_position" ref={register}>
 							<optgroup>
 								{data.fields.karriere_eintrage.map((item, key) => (
 									<option key={key} value={item.info.titel}>{item.info.titel}, {item.info.standort}</option>
@@ -133,9 +195,12 @@ export default ({data}) => {
 					</div>
 
 					<div className="contact__stepblock uploadcv">
-						<DragNDrop
-							text={formFields.bewerbung_hochladen}
-							messages={formFields.formnachrichten} />
+						<div {...getRootProps()}>
+							<input name="uploadedfile" ref={register} {...getInputProps()} />
+							<span>{uploadTextParts[0]}</span>
+							<span>{uploadTextParts[1]}</span>
+							<span>{`${uploadTextParts[2]} ${uploadTextParts[3]}`}</span>
+						</div>
 					</div>
 
 					<div className="contact__stepblock">
@@ -143,7 +208,7 @@ export default ({data}) => {
 							className="contact__stepblock--inner">{formFields.bewerbung_frage_2.frage}</label>
 						{formFields.bewerbung_frage_2.job_status.map((item, key) => (
 							<p className="contact__stepblock--inner contact__stepblock--career" key={key}>
-								<input className="input__radio" type="radio" name="job_status" value={item.status} />
+								<input ref={register} className="input__radio" type="radio" name="job_status" value={item.status} />
 								<span className="label__radio">{item.status}</span>
 							</p>
 						))}
@@ -151,12 +216,13 @@ export default ({data}) => {
 
 					<div className="contact__stepblock contact__stepblock--date">
 						<label className="contact__stepblock--inner" htmlFor="job_start_date">{formFields.bewerbung_zeit}</label>
-						<DatePicker selected={jobStartDate} onChange={date => setEventDate(date)} />
+						<DatePicker selected={jobStartDate} onChange={date => setJobStartDate(date)} />
 					</div>
 
 					<div className="contact__stepblock">
 						<label htmlFor="job_message">{formFields.bewerbung_nachricht}</label>
 						<textarea
+							ref={register}
 							name="job_message"
 							id="job_message" cols="30" rows="5" />
 					</div>
@@ -172,4 +238,4 @@ export default ({data}) => {
 			</form>
 		</>
 	)
-};
+}

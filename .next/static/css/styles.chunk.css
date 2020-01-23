@@ -1556,9 +1556,6 @@ input {
   justify-content: center;
   letter-spacing: 2px;
   text-transform: uppercase; }
-  @media (min-width: 1200px) {
-    .contact__success {
-      align-items: initial; } }
 
 .contact__success--wrapper {
   display: none; }

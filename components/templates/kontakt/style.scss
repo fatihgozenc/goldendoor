@@ -506,9 +506,6 @@
   align-items: center;
   justify-content: center;
   @include display_text;
-  @include xl {
-    align-items: initial;
-  }
 }
 
 .contact__success--wrapper {

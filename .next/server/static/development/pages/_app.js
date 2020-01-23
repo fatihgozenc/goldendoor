@@ -273,11 +273,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -339,33 +336,29 @@ const Header = ({
   }, data.map(item => {
     return __jsx("ul", {
       key: item.id
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: item.url
     }, __jsx("a", {
+      href: item.url,
       onClick: toggleMenu,
       className: "nav__parent"
-    }, item.title)), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
+    }, item.title), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
       key: subItem.id
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItem.url
     }, __jsx("a", {
+      href: subItem.url,
       onClick: toggleMenu,
       className: "nav__child"
-    }, subItem.title)), subItem.children.map(subItemChild => __jsx("li", {
+    }, subItem.title), subItem.children.map(subItemChild => __jsx("li", {
       key: subItemChild.id
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItemChild.url
     }, __jsx("a", {
+      href: subItemChild.url,
       onClick: toggleMenu,
       className: "nav__child nav__child--sub"
-    }, subItemChild.title))))) : __jsx("li", {
+    }, subItemChild.title)))) : __jsx("li", {
       key: subItem.id
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: subItem.url
     }, __jsx("a", {
+      href: subItem.url,
       onClick: toggleMenu,
       className: "nav__child"
-    }, subItem.title)))));
+    }, subItem.title))));
   }))), __jsx("div", {
     className: "frame"
   }, __jsx("div", {
@@ -375,20 +368,18 @@ const Header = ({
   }, __jsx("button", {
     className: "panel__lang-selector",
     onClick: changeLang
-  }, `${lang.toUpperCase()}▾`), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: setPathLang()
-  }, __jsx("a", {
+  }, `${lang.toUpperCase()}▾`), __jsx("a", {
+    href: setPathLang(),
     ref: langSelection,
     className: "panel__lang-selected",
     onClick: setLang
-  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE')))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: lang === 'de' ? '/' : '/en'
-  }, __jsx("a", {
+  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+    href: lang === 'de' ? '/' : '/en',
     id: "logo"
   }, __jsx("img", {
     src: logo,
     alt: "Golden Door Logo"
-  }))), __jsx("div", {
+  })), __jsx("div", {
     className: "panel panel__menu"
   }, __jsx("button", {
     className: "menutoggler__button",
@@ -2686,15 +2677,15 @@ function GoldenDoor({
 }
 
 GoldenDoor.getInitialProps = async appContext => {
-  const pathname = appContext.ctx.asPath;
+  const pathname = appContext.router.route;
   const lang = appContext.router.route.split('/')[1] === 'en' ? 'en' : 'de';
   const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default()(`${_config__WEBPACK_IMPORTED_MODULE_13__["API_HOST"]}${lang}/layout`);
   const data = await response.json();
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_8___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {
     layoutData: data,
-    pathname,
-    lang
+    pathname: pathname,
+    lang: lang
   });
 };
 

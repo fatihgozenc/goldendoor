@@ -27,12 +27,12 @@ function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 }
 
 GoldenDoor.getInitialProps = async (appContext) => {
-	const pathname = appContext.ctx.asPath
+	const pathname = appContext.router.route
 	const lang = appContext.router.route.split('/')[1] === 'en' ? 'en' : 'de';
 	const response = await fetch(`${API_HOST}${lang}/layout`)
 	const data = await response.json()
 	const appProps = await App.getInitialProps(appContext);
-	return { ...appProps, layoutData: data, pathname, lang }
+	return { ...appProps, layoutData: data, pathname: pathname, lang: lang }
 }
 
 export default GoldenDoor;
