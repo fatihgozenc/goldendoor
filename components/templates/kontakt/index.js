@@ -18,7 +18,6 @@ export default ({ data, layout, lang }) => {
 
 	const router = useRouter();
 	const requestedLocation = router.query.locationName !== undefined ? router.query.locationName : false;
-	console.log(requestedLocation)
 	const locationSelection = React.useRef();
 
 	const contactInfo = layout.footer.info
@@ -425,7 +424,6 @@ export default ({ data, layout, lang }) => {
 									<textarea ref={register}
 										name="event_nachricht" cols="30" rows="5" />
 								</div>
-											{console.log(data)}
 								<div className="contact__stepblock contact__stepblock--acceptance">
 										<label htmlFor="acceptance" className="contact__stepblock--inner">
 											{lang === 'en' ? 'DATA PRIVACY' : 'DATENSCHUTZ'}*</label>

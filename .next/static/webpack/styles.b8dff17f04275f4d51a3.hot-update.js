@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
-/***/ "./components/layout/style.scss":
-/*!**************************************!*\
-  !*** ./components/layout/style.scss ***!
-  \**************************************/
+/***/ "./components/opening/slider.scss":
+/*!****************************************!*\
+  !*** ./components/opening/slider.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29,7 +29,7 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1579739945628");
+            injectCss(link, link.href.split("?")[0] + "?unix=1579739948967");
           });
       }
     }
@@ -37,10 +37,10 @@
 
 /***/ }),
 
-/***/ "./components/templates/kontakt/style.scss":
-/*!*************************************************!*\
-  !*** ./components/templates/kontakt/style.scss ***!
-  \*************************************************/
+/***/ "./components/opening/style.scss":
+/*!***************************************!*\
+  !*** ./components/opening/style.scss ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66,7 +66,7 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1579740006918");
+            injectCss(link, link.href.split("?")[0] + "?unix=1579739949179");
           });
       }
     }
@@ -74,10 +74,10 @@
 
 /***/ }),
 
-/***/ "./components/templates/location/slider.scss":
-/*!***************************************************!*\
-  !*** ./components/templates/location/slider.scss ***!
-  \***************************************************/
+/***/ "./components/templates/home/style.scss":
+/*!**********************************************!*\
+  !*** ./components/templates/home/style.scss ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -103,44 +103,7 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1579739969907");
-          });
-      }
-    }
-  
-
-/***/ }),
-
-/***/ "./components/templates/location/style.scss":
-/*!**************************************************!*\
-  !*** ./components/templates/location/style.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1579739970278");
+            injectCss(link, link.href.split("?")[0] + "?unix=1579739948299");
           });
       }
     }
@@ -148,5 +111,5 @@
 
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.b8dff17f04275f4d51a3.hot-update.js.map
