@@ -29,6 +29,8 @@ export default function({data}) {
 		karteWrapper.current.classList.remove('openKarte')
 	}
 
+	console.log(data.slug)
+
 	const kontaktHref = data.lang === 'de' ? '/kontakt' : '/en/kontakt';
 	const router = useRouter();
 	const goToContact = e => {
@@ -64,7 +66,12 @@ export default function({data}) {
 							<span className="singleloc__info--type">{data.fields.subtitel}</span>
 							<div className="singleloc__info--buttons">
 									<a href={kontaktHref} onClick={goToContact} className="singleloc__button"><Icon type="anfragen" name={data.fields.buttongroup.anfragen} /></a>
-									<a href={data.fields.location_info.location_factsheet} target="_blank" className="singleloc__button"><Icon type="factsheet" name={data.fields.buttongroup.datenblatt} /></a>
+									{
+										data.slug != 'burgermeister' &&
+											<a href={data.fields.location_info.location_factsheet} target="_blank" className="singleloc__button">
+												<Icon type="factsheet" name={data.fields.buttongroup.datenblatt} />
+											</a>
+									}
 									<a href="#karte" onClick={openMap} className="singleloc__button">
 										<Icon type="karte" name={data.fields.buttongroup.karte} />
 									</a>
@@ -84,9 +91,13 @@ export default function({data}) {
 
 						<div className="singleloc__info--side">
 							<p>{parse(data.content)}</p>
-							<div className="singleloc__info--bullets">
-								{parse(data.fields.location_info.bulletpoints)}
-							</div>
+							{
+								data.slug != 'burgermeister' &&
+
+								<div className="singleloc__info--bullets">
+									{parse(data.fields.location_info.bulletpoints)}
+								</div>
+							}
 							<button onClick={changePanel} className="singleloc__info--desc"> 
 								<Icon type="back" /> 
 							</button>
@@ -124,16 +135,22 @@ export default function({data}) {
 						</CarouselProvider>
 					</div>
 
-					<div className="singleloc__detail--data">
-						{
-							Object.values(data.fields.technische_daten).map((locData, key) => (
-								<div key={key} className="singleloc__detail--dataitem">
-									<span className="dataitem--key">{locData.name}</span>
-									<span className="dataitem--value">{locData.option}</span>
-								</div>
-							))
-						}
-					</div>
+					{
+						data.slug != 'burgermeister' &&
+
+							<div className="singleloc__detail--data">
+								{
+									Object.values(data.fields.technische_daten).map((locData, key) => (
+										<div key={key} className="singleloc__detail--dataitem">
+											<span className="dataitem--key">{locData.name}</span>
+											<span className="dataitem--value">{locData.option}</span>
+										</div>
+									))
+								}
+							</div>
+					}
+
+					
 
 				</div>
 
