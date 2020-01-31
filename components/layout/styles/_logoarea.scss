@@ -26,6 +26,24 @@
 	}
 }
 
+.additional_menu-item {
+	display: none;
+
+	@include xl {
+		pointer-events: all;
+		cursor: pointer;
+		display: block;
+		@include display_text;
+		padding: 0 5vw;
+	}
+}
+
+.langselection {
+	@include xl {
+		padding-top: 2rem;
+	}
+}
+
 .panel {
 	flex: .48;
 	height: 100%;
@@ -34,6 +52,13 @@
 	
 	@include lg {
 		padding: 1.6%;
+	}
+
+	@include xl {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 30%;
 	}
 
 	button, a {

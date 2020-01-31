@@ -468,12 +468,19 @@ var Header = function Header(_ref) {
       lineNumber: 87
     },
     __self: this
+  }, __jsx("div", {
+    className: "langselection",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: this
   }, __jsx("button", {
     className: "panel__lang-selector",
     onClick: changeLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: this
   }, "".concat(lang.toUpperCase(), "\u25BE")), __jsx("a", {
@@ -483,21 +490,37 @@ var Header = function Header(_ref) {
     onClick: setLang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 98
     },
     __self: this
-  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("div", {
+    className: "additional_menu-item",
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: this
+  }, lang === 'de' ? 'Über Uns' : 'About Us'), __jsx("div", {
+    className: "additional_menu-item",
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: this
+  }, lang === 'de' ? 'Leistungen' : 'Services')), __jsx("a", {
     href: lang === 'de' ? '/' : '/en',
     id: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 106
     },
     __self: this
   }, __jsx("img", {
@@ -505,29 +528,45 @@ var Header = function Header(_ref) {
     alt: "Golden Door Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 107
     },
     __self: this
   })), __jsx("div", {
     className: "panel panel__menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 109
     },
     __self: this
-  }, __jsx("button", {
+  }, __jsx("div", {
+    className: "additional_menu-item",
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: this
+  }, "Locations"), __jsx("div", {
+    className: "additional_menu-item",
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112
+    },
+    __self: this
+  }, lang === 'de' ? 'Galerie' : 'Gallery'), __jsx("button", {
     className: "menutoggler__button",
     ref: menuToggler,
     onClick: toggleMenu,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 114
     },
     __self: this
   }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 115
     },
     __self: this
   })))), __jsx("a", {
@@ -535,13 +574,13 @@ var Header = function Header(_ref) {
     className: "menuMailer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 119
     },
     __self: this
   }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 120
     },
     __self: this
   }))));

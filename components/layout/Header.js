@@ -85,22 +85,32 @@ const Header = ({ data, logo, lang, pathname }) => {
 			<div className="frame">
 				<div className="logoarea">
 					<div className="panel panel__lang">
-						<button
-							className="panel__lang-selector"
-							onClick={changeLang}>
-							{`${lang.toUpperCase()}▾`}
-						</button>
-						<a href={setPathLang()}
-							ref={langSelection}
-							className="panel__lang-selected"
-							onClick={setLang}>
-							<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
-						</a>
+						<div className="langselection">
+							<button
+								className="panel__lang-selector"
+								onClick={changeLang}>
+								{`${lang.toUpperCase()}▾`}
+							</button>
+							<a href={setPathLang()}
+								ref={langSelection}
+								className="panel__lang-selected"
+								onClick={setLang}>
+								<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
+							</a>
+						</div>
+						<div className="additional_menu-item" onClick={toggleMenu}>
+							{lang === 'de' ? 'Über Uns' : 'About Us'}</div>
+						<div className="additional_menu-item" onClick={toggleMenu}>
+							{lang === 'de' ? 'Leistungen' : 'Services'}</div>
 					</div>
 					<a href={lang === 'de' ? '/' : '/en'} id="logo" >
 						<img src={logo} alt="Golden Door Logo" />
 					</a>
 					<div className="panel panel__menu">
+						<div className="additional_menu-item" onClick={toggleMenu}>
+							Locations</div>
+						<div className="additional_menu-item" onClick={toggleMenu}>
+							{lang === 'de' ? 'Galerie' : 'Gallery'}</div>
 						<button className="menutoggler__button" ref={menuToggler} onClick={toggleMenu}>
 							<MenuToggler />
 						</button>
