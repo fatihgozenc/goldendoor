@@ -1,1 +1,1 @@
-self.__BUILD_MANIFEST = {};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+self.__BUILD_MANIFEST = {"/kontakt":["static\u002Fcss\u002Fstatic\u002Fdevelopment\u002Fpages\u002Fkontakt.js.chunk.css"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

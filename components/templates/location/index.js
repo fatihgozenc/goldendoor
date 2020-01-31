@@ -31,7 +31,6 @@ export default function ({ data }) {
 	const kontaktHref = data.lang === 'de' ? '/kontakt' : '/en/kontakt';
 	const router = useRouter();
 	const goToContact = e => {
-		e.preventDefault();
 		router.push({
 			pathname: kontaktHref,
 			query: {

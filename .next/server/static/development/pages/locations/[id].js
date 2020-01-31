@@ -398,7 +398,6 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
 
   const goToContact = e => {
-    e.preventDefault();
     router.push({
       pathname: kontaktHref,
       query: {
@@ -412,21 +411,21 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     description: data.fields.seo.description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: this
   }), __jsx("h1", {
     className: "seo__hidden",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: this
   }, data.title), __jsx("div", {
     className: "page__title page__title--singleloc",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 49
     },
     __self: this
   }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -434,27 +433,27 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     title: data.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 50
     },
     __self: this
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 51
     },
     __self: this
   }, data.title)), __jsx("div", {
     className: "singleloc",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 53
     },
     __self: this
   }, __jsx("div", {
     className: "singleloc__info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 55
     },
     __self: this
   }, __jsx("div", {
@@ -462,14 +461,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     ref: infoPanel,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 57
     },
     __self: this
   }, __jsx("div", {
     className: "singleloc__info--front",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 60
     },
     __self: this
   }, __jsx("img", {
@@ -478,21 +477,21 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__info--img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 61
     },
     __self: this
   }), __jsx("span", {
     className: "singleloc__info--type",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 62
     },
     __self: this
   }, data.fields.subtitel), __jsx("div", {
     className: "singleloc__info--buttons",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: this
   }, __jsx("a", {
@@ -501,7 +500,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 64
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -509,7 +508,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     name: data.fields.buttongroup.anfragen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 64
     },
     __self: this
   })), data.slug != 'burgermeister' && __jsx("a", {
@@ -518,7 +517,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 67
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -526,7 +525,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     name: data.fields.buttongroup.datenblatt,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 68
     },
     __self: this
   })), __jsx("a", {
@@ -535,7 +534,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -543,14 +542,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     name: data.fields.buttongroup.karte,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 72
     },
     __self: this
   }))), __jsx("div", {
     className: "singleloc__info--socialmedia",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 75
     },
     __self: this
   }, __jsx("a", {
@@ -558,14 +557,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "socialmedia__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 76
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "facebook",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 76
     },
     __self: this
   })), __jsx("a", {
@@ -573,14 +572,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "socialmedia__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 77
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "instagram",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 77
     },
     __self: this
   }))), __jsx("a", {
@@ -588,7 +587,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__info--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 79
     },
     __self: this
   }, data.fields.location_info.location_webseite), __jsx("button", {
@@ -596,7 +595,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__info--desc golden__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 82
     },
     __self: this
   }, data.fields.buttongroup.beschreibung, " > "), __jsx("a", {
@@ -604,27 +603,27 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__info--desc singleloc__gallerybutton",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 83
     },
     __self: this
   }, "\u25BE")), __jsx("div", {
     className: "singleloc__info--side",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 88
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 89
     },
     __self: this
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_6___default()(data.content)), data.slug != 'burgermeister' && __jsx("div", {
     className: "singleloc__info--bullets",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 93
     },
     __self: this
   }, html_react_parser__WEBPACK_IMPORTED_MODULE_6___default()(data.fields.location_info.bulletpoints)), __jsx("button", {
@@ -632,14 +631,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__info--desc",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 97
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "back",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 98
     },
     __self: this
   }))))), __jsx("div", {
@@ -647,14 +646,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     id: "gallery",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 106
     },
     __self: this
   }, __jsx("div", {
     className: "singleloc__gallery",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 108
     },
     __self: this
   }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["CarouselProvider"], {
@@ -666,14 +665,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     infinite: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 110
     },
     __self: this
   }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["Slider"], {
     className: "singleloc__gallery--wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 118
     },
     __self: this
   }, data.fields.location_gallery.map((item, imageKey) => __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["Slide"], {
@@ -681,7 +680,7 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     index: imageKey,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 122
     },
     __self: this
   }, __jsx("img", {
@@ -689,21 +688,21 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     src: item,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 123
     },
     __self: this
   })))), __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_8__["DotGroup"], {
     className: "gallery--nav gallery--nav-location",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 130
     },
     __self: this
   }))), data.slug != 'burgermeister' && __jsx("div", {
     className: "singleloc__detail--data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 137
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(data.fields.technische_daten).map((locData, key) => __jsx("div", {
@@ -711,21 +710,21 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "singleloc__detail--dataitem",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 140
     },
     __self: this
   }, __jsx("span", {
     className: "dataitem--key",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 141
     },
     __self: this
   }, locData.name), __jsx("span", {
     className: "dataitem--value",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 142
     },
     __self: this
   }, locData.option)))))), __jsx("div", {
@@ -733,21 +732,21 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     className: "location__karte--wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 155
     },
     __self: this
   }, __jsx("div", {
     className: "location__karte",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 156
     },
     __self: this
   }, __jsx(MapContainer, {
     data: data.fields.karte_koordinaten,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 157
     },
     __self: this
   }), __jsx("div", {
@@ -755,14 +754,14 @@ const MapContainer = next_dynamic__WEBPACK_IMPORTED_MODULE_3___default()(() => _
     onClick: closeMap,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 158
     },
     __self: this
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
     type: "cross",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 159
     },
     __self: this
   })))));
