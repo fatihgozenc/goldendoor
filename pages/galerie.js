@@ -1,4 +1,3 @@
-import { API_HOST } from '../config';
 import Galerie from '../components/templates/galerie';
 
 const GaleriePage = ({ data }) => <Galerie data={data} />

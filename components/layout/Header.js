@@ -54,24 +54,24 @@ const Header = ({ data, logo, lang, pathname }) => {
 						data.map(item => {
 							return (
 								<ul key={item.id}>
-										<a href={item.url} onClick={toggleMenu} className="nav__parent">{item.title}</a>
+									<a href={item.url} onClick={toggleMenu} className="nav__parent">{item.title}</a>
 									{item.children !== null &&
 										item.children.map(subItem => (
 											(subItem.children !== null)
 												? (
 													<ul key={subItem.id}>
-															<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
+														<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 														{subItem.children.map(subItemChild => (
 															<li key={subItemChild.id}>
-																	<a href={subItemChild.url} onClick={toggleMenu} className="nav__child nav__child--sub">
-																		{subItemChild.title}
-																	</a>
+																<a href={subItemChild.url} onClick={toggleMenu} className="nav__child nav__child--sub">
+																	{subItemChild.title}
+																</a>
 															</li>
 														))}
 													</ul>
 												) : (
 													<li key={subItem.id}>
-															<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
+														<a href={subItem.url} onClick={toggleMenu} className="nav__child">{subItem.title}</a>
 													</li>
 												)
 										))
@@ -90,16 +90,16 @@ const Header = ({ data, logo, lang, pathname }) => {
 							onClick={changeLang}>
 							{`${lang.toUpperCase()}▾`}
 						</button>
-							<a href={setPathLang()}
-								ref={langSelection}
-								className="panel__lang-selected"
-								onClick={setLang}>
-								<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
-							</a>
-					</div>
-						<a href={lang === 'de' ? '/' : '/en'} id="logo" >
-							<img src={logo} alt="Golden Door Logo" />
+						<a href={setPathLang()}
+							ref={langSelection}
+							className="panel__lang-selected"
+							onClick={setLang}>
+							<span>{(lang === 'de' ? 'EN' : 'DE')}</span>
 						</a>
+					</div>
+					<a href={lang === 'de' ? '/' : '/en'} id="logo" >
+						<img src={logo} alt="Golden Door Logo" />
+					</a>
 					<div className="panel panel__menu">
 						<button className="menutoggler__button" ref={menuToggler} onClick={toggleMenu}>
 							<MenuToggler />

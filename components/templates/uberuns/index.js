@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo';
-import Link from 'next/link'
 import Hero from '../../Hero'
 import parse from 'html-react-parser'
 import MehrLesen from '../../MehrLesen'
@@ -27,17 +26,13 @@ export default function ({ data, lang }) {
 						{
 							lang === 'de'
 								? (
-									<Link href="/referenzen">
-										<a>
-											<MehrLesen name={`ZU DEN REFERENZEN`} />
-										</a>
-									</Link>
+									<a href="/referenzen">
+										<MehrLesen name={`ZU DEN REFERENZEN`} />
+									</a>
 								) : (
-									<Link href="/en/referenzen">
-										<a>
-											<MehrLesen name={`TO REFERENCES`} />
-										</a>
-									</Link>
+									<a href="/en/referenzen">
+										<MehrLesen name={`TO REFERENCES`} />
+									</a>
 								)
 						}
 					</div>

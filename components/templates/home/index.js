@@ -1,5 +1,4 @@
 import parse from 'html-react-parser';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import MehrLesen from '../../MehrLesen';
 import Opening from '../../opening';
@@ -29,21 +28,19 @@ export default function ({ data }) {
 
 				{data.fields.routers.map((route, key) => (
 
-					<Link key={key} href={route.link}>
-						<a className="home__route" >
-							<div className="home__route--wrapper">
-								<div className="home__route--img backgroundImg"
-									style={{ backgroundImage: "url(" + route.bild + ")" }} />
-								<div className="home__route--content">
-									<h3 className="title__lg">{route.titel}</h3>
-									{parse(route.inhalt)}
-									<span className="home__route--link">
-										<MehrLesen name={route.titel} />
-									</span>
-								</div>
+					<a key={key} href={route.link} className="home__route" >
+						<div className="home__route--wrapper">
+							<div className="home__route--img backgroundImg"
+								style={{ backgroundImage: "url(" + route.bild + ")" }} />
+							<div className="home__route--content">
+								<h3 className="title__lg">{route.titel}</h3>
+								{parse(route.inhalt)}
+								<span className="home__route--link">
+									<MehrLesen name={route.titel} />
+								</span>
 							</div>
-						</a>
-					</Link>
+						</div>
+					</a>
 
 				))}
 			</div>

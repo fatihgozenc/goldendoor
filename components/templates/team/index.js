@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo';
 import Hero from '../../Hero';
-import Link from 'next/link';
 import Carousel from '../../carousel';
 import './style.scss';
 
@@ -29,11 +28,9 @@ export default function ({ data }) {
 				/>
 				<div className="team__lastblock">
 					<h5>{data.fields.karriere_text}</h5>
-					<Link href={data.fields.karriere_button.link}>
-						<a className="golden__button" >
-							{data.fields.karriere_button.text}
-						</a>
-					</Link>
+					<a href={data.fields.karriere_button.link} className="golden__button" >
+						{data.fields.karriere_button.text}
+					</a>
 				</div>
 			</div>
 		</>

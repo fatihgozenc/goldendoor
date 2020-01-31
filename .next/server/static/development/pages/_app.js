@@ -137,15 +137,13 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-obfuscate */ "react-obfuscate");
-/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! html-react-parser */ "html-react-parser");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-obfuscate */ "react-obfuscate");
+/* harmony import */ var react_obfuscate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_obfuscate__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/fatih/repos/goldendoor-next/components/layout/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -153,103 +151,261 @@ const Footer = ({
   data
 }) => {
   return __jsx("footer", {
-    className: "footer"
+    className: "footer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__block"
+    className: "footer__block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__block__item"
+    className: "footer__block__item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
   }, __jsx("img", {
     id: "footer--logo",
     src: data.info.logo,
-    alt: "Golden Door Logo"
+    alt: "Golden Door Logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
   })), __jsx("div", {
-    className: "footer__block__item"
-  }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.berlin)), __jsx("div", {
-    className: "footer__block__item"
-  }, html_react_parser__WEBPACK_IMPORTED_MODULE_2___default()(data.info.address.dresden)), __jsx("div", {
-    className: "footer__block__item footer__block__item--numbers"
-  }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    tel: data.info.telefon.split('T:')[1]
-  }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    email: data.info.email.toLowerCase()
+    className: "footer__block__item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(data.info.address.berlin)), __jsx("div", {
+    className: "footer__block__item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(data.info.address.dresden)), __jsx("div", {
+    className: "footer__block__item footer__block__item--numbers",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    tel: data.info.telefon.split('T:')[1],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), __jsx(react_obfuscate__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    email: data.info.email.toLowerCase(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
   })), __jsx("div", {
-    className: "footer__block__item"
+    className: "footer__block__item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__routes"
+    className: "footer__routes",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__routes--block"
+    className: "footer__routes--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
   }, data.routes.map((route, key) => {
     while (key <= 3) {
-      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      return __jsx("a", {
         key: route.id,
-        href: route.url
-      }, __jsx("a", {
-        className: "footer__routes--item"
-      }, route.title));
+        href: route.url,
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: undefined
+      }, route.title);
     }
   })), __jsx("div", {
-    className: "footer__routes--block"
+    className: "footer__routes--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
   }, data.routes.map((route, key) => {
     while (key >= 4) {
-      return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      return __jsx("a", {
         key: route.id,
-        href: route.url
-      }, __jsx("a", {
-        className: "footer__routes--item"
-      }, route.title));
+        href: route.url,
+        className: "footer__routes--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: undefined
+      }, route.title);
     }
   }), __jsx("div", {
-    className: "footer__routes--item copyright"
+    className: "footer__routes--item copyright",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
   }, data.info.copyright))))), __jsx("div", {
-    className: "footer__block"
+    className: "footer__block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__submarken"
+    className: "footer__submarken",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
   }, __jsx("div", {
     id: "submarken--text",
-    className: "footer__submarken--item "
+    className: "footer__submarken--item ",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
   }, data.submarken.submarke_text), __jsx("div", {
-    className: "footer__submarken--wrapper"
+    className: "footer__submarken--wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "footer__submarken--block"
+    className: "footer__submarken--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key < 4) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item"
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route
-      }, __jsx("a", null, __jsx("img", {
+        className: "footer__submarken--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: undefined
+      }, __jsx("a", {
+        href: marke.route,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: undefined
+      }, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo"
-      }))));
+        alt: "Submarke Logo",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: undefined
+      })));
     }
   })), __jsx("div", {
-    className: "footer__submarken--block"
+    className: "footer__submarken--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key > 3 && key < 8) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item"
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route
-      }, __jsx("a", null, __jsx("img", {
+        className: "footer__submarken--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: undefined
+      }, __jsx("a", {
+        href: marke.route,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: undefined
+      }, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo"
-      }))));
+        alt: "Submarke Logo",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: undefined
+      })));
     }
   }))), __jsx("div", {
-    className: "footer__submarken--block"
+    className: "footer__submarken--block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
   }, data.submarken.submarke_logogroup.map((marke, key) => {
     while (key > 7) {
       return __jsx("div", {
         key: key,
-        className: "footer__submarken--item"
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        href: marke.route
-      }, __jsx("a", null, __jsx("img", {
+        className: "footer__submarken--item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: undefined
+      }, __jsx("a", {
+        href: marke.route,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: undefined
+      }, __jsx("img", {
         src: marke.logo,
-        alt: "Submarke Logo"
-      }))));
+        alt: "Submarke Logo",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: undefined
+      })));
     }
   })))));
 };
@@ -273,6 +429,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cookie_universal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cookie_universal__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _MenuToggler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuToggler */ "./components/layout/MenuToggler.js");
 /* harmony import */ var _MenuMailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MenuMailer */ "./components/layout/MenuMailer.js");
+var _jsxFileName = "/Users/fatih/repos/goldendoor-next/components/layout/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -327,68 +484,191 @@ const Header = ({
   };
 
   return __jsx("header", {
-    className: "header"
+    className: "header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
   }, __jsx("nav", {
     className: "nav",
-    ref: navigation
+    ref: navigation,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "nav__wrapper"
+    className: "nav__wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
   }, data.map(item => {
     return __jsx("ul", {
-      key: item.id
+      key: item.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: undefined
     }, __jsx("a", {
       href: item.url,
       onClick: toggleMenu,
-      className: "nav__parent"
+      className: "nav__parent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: undefined
     }, item.title), item.children !== null && item.children.map(subItem => subItem.children !== null ? __jsx("ul", {
-      key: subItem.id
+      key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: undefined
     }, __jsx("a", {
       href: subItem.url,
       onClick: toggleMenu,
-      className: "nav__child"
+      className: "nav__child",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63
+      },
+      __self: undefined
     }, subItem.title), subItem.children.map(subItemChild => __jsx("li", {
-      key: subItemChild.id
+      key: subItemChild.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: undefined
     }, __jsx("a", {
       href: subItemChild.url,
       onClick: toggleMenu,
-      className: "nav__child nav__child--sub"
+      className: "nav__child nav__child--sub",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: undefined
     }, subItemChild.title)))) : __jsx("li", {
-      key: subItem.id
+      key: subItem.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: undefined
     }, __jsx("a", {
       href: subItem.url,
       onClick: toggleMenu,
-      className: "nav__child"
+      className: "nav__child",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74
+      },
+      __self: undefined
     }, subItem.title))));
   }))), __jsx("div", {
-    className: "frame"
+    className: "frame",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "logoarea"
+    className: "logoarea",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
   }, __jsx("div", {
-    className: "panel panel__lang"
+    className: "panel panel__lang",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: undefined
   }, __jsx("button", {
     className: "panel__lang-selector",
-    onClick: changeLang
+    onClick: changeLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: undefined
   }, `${lang.toUpperCase()}▾`), __jsx("a", {
     href: setPathLang(),
     ref: langSelection,
     className: "panel__lang-selected",
-    onClick: setLang
-  }, __jsx("span", null, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
+    onClick: setLang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: undefined
+  }, lang === 'de' ? 'EN' : 'DE'))), __jsx("a", {
     href: lang === 'de' ? '/' : '/en',
-    id: "logo"
+    id: "logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
   }, __jsx("img", {
     src: logo,
-    alt: "Golden Door Logo"
+    alt: "Golden Door Logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
   })), __jsx("div", {
-    className: "panel panel__menu"
+    className: "panel panel__menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: undefined
   }, __jsx("button", {
     className: "menutoggler__button",
     ref: menuToggler,
-    onClick: toggleMenu
-  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), __jsx("a", {
+    onClick: toggleMenu,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx(_MenuToggler__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  })))), __jsx("a", {
     href: "#newsletter",
-    className: "menuMailer"
-  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+    className: "menuMailer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  }, __jsx(_MenuMailer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: undefined
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -519,17 +799,6 @@ const MenuToggler = () => {
 /***/ (function(module, exports) {
 
 
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/map */ "core-js/library/fn/map");
 
 /***/ }),
 
@@ -936,319 +1205,6 @@ module.exports = _typeof;
 
 module.exports = __webpack_require__(/*! ./dist/pages/_app */ "./node_modules/next/dist/pages/_app.js")
 
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/client/link.js":
-/*!***********************************************!*\
-  !*** ./node_modules/next/dist/client/link.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _map = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/map */ "./node_modules/@babel/runtime-corejs2/core-js/map.js"));
-
-var _url = __webpack_require__(/*! url */ "url");
-
-var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
-
-var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
-
-var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
-
-function isLocal(href) {
-  var url = (0, _url.parse)(href, false, true);
-  var origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
-  return !url.host || url.protocol === origin.protocol && url.host === origin.host;
-}
-
-function memoizedFormatUrl(formatFunc) {
-  var lastHref = null;
-  var lastAs = null;
-  var lastResult = null;
-  return (href, as) => {
-    if (lastResult && href === lastHref && as === lastAs) {
-      return lastResult;
-    }
-
-    var result = formatFunc(href, as);
-    lastHref = href;
-    lastAs = as;
-    lastResult = result;
-    return result;
-  };
-}
-
-function formatUrl(url) {
-  return url && typeof url === 'object' ? (0, _utils.formatWithValidation)(url) : url;
-}
-
-var observer;
-var listeners = new _map.default();
-var IntersectionObserver = false ? undefined : null;
-var prefetched = {};
-
-function getObserver() {
-  // Return shared instance of IntersectionObserver if already created
-  if (observer) {
-    return observer;
-  } // Only create shared IntersectionObserver if supported in browser
-
-
-  if (!IntersectionObserver) {
-    return undefined;
-  }
-
-  return observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!listeners.has(entry.target)) {
-        return;
-      }
-
-      var cb = listeners.get(entry.target);
-
-      if (entry.isIntersecting || entry.intersectionRatio > 0) {
-        observer.unobserve(entry.target);
-        listeners.delete(entry.target);
-        cb();
-      }
-    });
-  }, {
-    rootMargin: '200px'
-  });
-}
-
-var listenToIntersections = (el, cb) => {
-  var observer = getObserver();
-
-  if (!observer) {
-    return () => {};
-  }
-
-  observer.observe(el);
-  listeners.set(el, cb);
-  return () => {
-    try {
-      observer.unobserve(el);
-    } catch (err) {
-      console.error(err);
-    }
-
-    listeners.delete(el);
-  };
-};
-
-class Link extends _react.Component {
-  constructor(props) {
-    super(props);
-    this.p = void 0;
-
-    this.cleanUpListeners = () => {};
-
-    this.formatUrls = memoizedFormatUrl((href, asHref) => {
-      return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
-      };
-    });
-
-    this.linkClicked = e => {
-      // @ts-ignore target exists on currentTarget
-      var {
-        nodeName,
-        target
-      } = e.currentTarget;
-
-      if (nodeName === 'A' && (target && target !== '_self' || e.metaKey || e.ctrlKey || e.shiftKey || e.nativeEvent && e.nativeEvent.which === 2)) {
-        // ignore click for new tab / new window behavior
-        return;
-      }
-
-      var {
-        href,
-        as
-      } = this.formatUrls(this.props.href, this.props.as);
-
-      if (!isLocal(href)) {
-        // ignore click if it's outside our scope (e.g. https://google.com)
-        return;
-      }
-
-      var {
-        pathname
-      } = window.location;
-      href = (0, _url.resolve)(pathname, href);
-      as = as ? (0, _url.resolve)(pathname, as) : href;
-      e.preventDefault(); //  avoid scroll for urls with anchor refs
-
-      var {
-        scroll
-      } = this.props;
-
-      if (scroll == null) {
-        scroll = as.indexOf('#') < 0;
-      } // replace state instead of push if prop is present
-
-
-      _router.default[this.props.replace ? 'replace' : 'push'](href, as, {
-        shallow: this.props.shallow
-      }).then(success => {
-        if (!success) return;
-
-        if (scroll) {
-          window.scrollTo(0, 0);
-          document.body.focus();
-        }
-      });
-    };
-
-    if (true) {
-      if (props.prefetch) {
-        console.warn('Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://err.sh/zeit/next.js/prefetch-true-deprecated');
-      }
-    }
-
-    this.p = props.prefetch !== false;
-  }
-
-  componentWillUnmount() {
-    this.cleanUpListeners();
-  }
-
-  getHref() {
-    var {
-      pathname
-    } = window.location;
-    var {
-      href: parsedHref
-    } = this.formatUrls(this.props.href, this.props.as);
-    return (0, _url.resolve)(pathname, parsedHref);
-  }
-
-  handleRef(ref) {
-    var isPrefetched = prefetched[this.getHref()];
-
-    if (this.p && IntersectionObserver && ref && ref.tagName) {
-      this.cleanUpListeners();
-
-      if (!isPrefetched) {
-        this.cleanUpListeners = listenToIntersections(ref, () => {
-          this.prefetch();
-        });
-      }
-    }
-  } // The function is memoized so that no extra lifecycles are needed
-  // as per https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-
-
-  prefetch() {
-    if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
-
-    var href = this.getHref();
-
-    _router.default.prefetch(href);
-
-    prefetched[href] = true;
-  }
-
-  render() {
-    var {
-      children
-    } = this.props;
-    var {
-      href,
-      as
-    } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
-
-    if (typeof children === 'string') {
-      children = _react.default.createElement("a", null, children);
-    } // This will return the first child, if multiple are provided it will throw an error
-
-
-    var child = _react.Children.only(children);
-
-    var props = {
-      ref: el => {
-        this.handleRef(el);
-
-        if (child && typeof child === 'object' && child.ref) {
-          if (typeof child.ref === 'function') child.ref(el);else if (typeof child.ref === 'object') {
-            child.ref.current = el;
-          }
-        }
-      },
-      onMouseEnter: e => {
-        if (child.props && typeof child.props.onMouseEnter === 'function') {
-          child.props.onMouseEnter(e);
-        }
-
-        this.prefetch();
-      },
-      onClick: e => {
-        if (child.props && typeof child.props.onClick === 'function') {
-          child.props.onClick(e);
-        }
-
-        if (!e.defaultPrevented) {
-          this.linkClicked(e);
-        }
-      }
-    }; // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
-    // defined, we specify the current 'href', so that repetition is not needed by the user
-
-    if (this.props.passHref || child.type === 'a' && !('href' in child.props)) {
-      props.href = as || href;
-    } // Add the ending slash to the paths. So, we can serve the
-    // "<page>/index.html" directly.
-
-
-    if (false) { var rewriteUrlForNextExport; }
-
-    return _react.default.cloneElement(child, props);
-  }
-
-}
-
-if (true) {
-  var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
-
-  var PropTypes = __webpack_require__(/*! prop-types */ "prop-types");
-
-  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact"); // @ts-ignore the property is supported, when declaring it on the class it outputs an extra bit of code which is not needed.
-
-
-  Link.propTypes = exact({
-    href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    prefetch: PropTypes.bool,
-    replace: PropTypes.bool,
-    shallow: PropTypes.bool,
-    passHref: PropTypes.bool,
-    scroll: PropTypes.bool,
-    children: PropTypes.oneOfType([PropTypes.element, (props, propName) => {
-      var value = props[propName];
-
-      if (typeof value === 'string') {
-        warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
-      }
-
-      return null;
-    }]).isRequired
-  });
-}
-
-var _default = Link;
-exports.default = _default;
 
 /***/ }),
 
@@ -2605,18 +2561,6 @@ function createUrl(router) {
 
 /***/ }),
 
-/***/ "./node_modules/next/link.js":
-/*!***********************************!*\
-  !*** ./node_modules/next/link.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
-
-
-/***/ }),
-
 /***/ "./pages/_app.js":
 /*!***********************!*\
   !*** ./pages/_app.js ***!
@@ -2771,17 +2715,6 @@ module.exports = require("cookie-universal");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/json/stringify");
-
-/***/ }),
-
-/***/ "core-js/library/fn/map":
-/*!*****************************************!*\
-  !*** external "core-js/library/fn/map" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/map");
 
 /***/ }),
 
@@ -2969,28 +2902,6 @@ module.exports = require("next/dynamic");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "prop-types":
-/*!*****************************!*\
-  !*** external "prop-types" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
-/***/ "prop-types-exact":
-/*!***********************************!*\
-  !*** external "prop-types-exact" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types-exact");
 
 /***/ }),
 

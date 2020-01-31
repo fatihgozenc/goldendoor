@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import parse from 'html-react-parser';
 import Obfuscate from 'react-obfuscate';
 
@@ -31,9 +30,7 @@ const Footer = ({ data }) => {
 							{data.routes.map((route, key) => {
 								while (key <= 3) {
 									return (
-										<Link key={route.id} href={route.url}>
-											<a className="footer__routes--item" >{route.title}</a>
-										</Link>
+										<a key={route.id} href={route.url} className="footer__routes--item" >{route.title}</a>
 									)
 								}
 							})}
@@ -42,9 +39,7 @@ const Footer = ({ data }) => {
 							{data.routes.map((route, key) => {
 								while (key >= 4) {
 									return (
-										<Link key={route.id} href={route.url}>
-											<a className="footer__routes--item">{route.title}</a>
-										</Link>
+										<a key={route.id} href={route.url} className="footer__routes--item">{route.title}</a>
 									)
 								}
 							})}
@@ -65,11 +60,9 @@ const Footer = ({ data }) => {
 								while (key < 4) {
 									return (
 										<div key={key} className="footer__submarken--item">
-											<Link href={marke.route}>
-												<a>
-													<img src={marke.logo} alt="Submarke Logo" />
-												</a>
-											</Link>
+											<a href={marke.route}>
+												<img src={marke.logo} alt="Submarke Logo" />
+											</a>
 										</div>
 									)
 								}
@@ -81,11 +74,9 @@ const Footer = ({ data }) => {
 								while (key > 3 && key < 8) {
 									return (
 										<div key={key} className="footer__submarken--item">
-											<Link href={marke.route}>
-												<a>
-													<img src={marke.logo} alt="Submarke Logo" />
-												</a>
-											</Link>
+											<a href={marke.route}>
+												<img src={marke.logo} alt="Submarke Logo" />
+											</a>
 										</div>
 									)
 								}
@@ -100,11 +91,9 @@ const Footer = ({ data }) => {
 							while (key > 7) {
 								return (
 									<div key={key} className="footer__submarken--item">
-										<Link href={marke.route}>
-											<a>
-												<img src={marke.logo} alt="Submarke Logo" />
-											</a>
-										</Link>
+										<a href={marke.route}>
+											<img src={marke.logo} alt="Submarke Logo" />
+										</a>
 									</div>
 								)
 							}
@@ -114,7 +103,7 @@ const Footer = ({ data }) => {
 				</div>
 			</div>
 
-		</footer>
+		</footer >
 	)
 };
 
