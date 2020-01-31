@@ -522,20 +522,6 @@ const MenuToggler = () => {
 
 /***/ }),
 
-/***/ "./config/index.js":
-/*!*************************!*\
-  !*** ./config/index.js ***!
-  \*************************/
-/*! exports provided: API_HOST */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_HOST", function() { return API_HOST; });
-const API_HOST = 'http://goldendoor-api.narcissundtaurus.com/wp-json/gd/';
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -2665,7 +2651,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/layout/Layout */ "./components/layout/Layout.js");
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next-seo */ "next-seo");
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../config */ "./config/index.js");
 
 
 
@@ -2688,7 +2673,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-
 function GoldenDoor({
   Component,
   pageProps,
@@ -2699,7 +2683,7 @@ function GoldenDoor({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: this
   }, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_13__["DefaultSeo"], {
@@ -2711,7 +2695,7 @@ function GoldenDoor({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }), __jsx("link", {
@@ -2719,7 +2703,7 @@ function GoldenDoor({
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   })), __jsx(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -2727,13 +2711,13 @@ function GoldenDoor({
     pathname: pathname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }))));
@@ -2742,7 +2726,7 @@ function GoldenDoor({
 GoldenDoor.getInitialProps = async appContext => {
   const pathname = appContext.router.asPath;
   const lang = appContext.router.asPath.split('/')[1] === 'en' ? 'en' : 'de';
-  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()(`${_config__WEBPACK_IMPORTED_MODULE_14__["API_HOST"]}${lang}/layout`);
+  const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()(`${"http://goldendoor-api.narcissundtaurus.com/wp-json/gd/"}${lang}/layout`);
   const data = await response.json();
   const appProps = await next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps, {

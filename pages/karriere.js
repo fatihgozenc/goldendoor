@@ -5,7 +5,7 @@ const KarrierePage = ({ data, language }) => <Karriere data={data} language={lan
 
 KarrierePage.getInitialProps = async () => {
 	const language = 'de';
-	const res = await fetch(`${API_HOST}de/career`)
+	const res = await fetch(`${process.env.API_HOST_SITE}de/career`)
 	const json = await res.json()
 	return { data: json, language: language }
 }
