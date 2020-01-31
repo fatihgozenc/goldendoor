@@ -110,15 +110,15 @@ export default ({ data, layout, lang }) => {
 		const finalForm = { ...values, ...dates };
 
 		fetch('/api/kontakt', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: serialize(finalForm)
-    }).then((res) => {
-      res.status === 200 ? setSubmitted(!submitted) : ''
-    }).catch((err) => console.log(err))
+			method: 'post',
+			headers: {
+				'Accept': 'application/json, text/plain, */*',
+				'Content-Type': 'application/json'
+			},
+			body: serialize(finalForm)
+		}).then((res) => {
+			res.status === 200 ? setSubmitted(!submitted) : ''
+		}).catch((err) => console.log(err))
 	};
 
 	React.useEffect(() => {
@@ -129,7 +129,7 @@ export default ({ data, layout, lang }) => {
 	}, []);
 
 	React.useEffect(() => {
-		if (submitted){
+		if (submitted) {
 			formSteps.current.classList.add('hideForm');
 			successBlock.current.classList.add('showSuccess');
 		}
@@ -272,13 +272,13 @@ export default ({ data, layout, lang }) => {
 
 									<div className="contact__stepblock">
 										<label ref={secondStepLock} className="label__text" htmlFor="personenzahl">{steps[1].feld_1.frage_1}</label>
-										<input onChange={removeUnchecked} 
-										type="text" 
-										ref={register({ 
-											required: true,
-											maxLength: 30, 
-										})} 
-										className="input__text" name="personenzahl" />
+										<input onChange={removeUnchecked}
+											type="text"
+											ref={register({
+												required: true,
+												maxLength: 30,
+											})}
+											className="input__text" name="personenzahl" />
 									</div>
 
 									<div className="contact__stepblock">
@@ -345,79 +345,79 @@ export default ({ data, layout, lang }) => {
 								</div>
 
 								<div className="contact__stepblock">
-									<label className="label__text" 
+									<label className="label__text"
 										htmlFor={`kontakt_company`}>
 										{steps[2].andere_fragen.firma}</label>
-										<input
-											ref={register({ 
-												maxlength: 40, 
-											})}
-											className="input__text"
-											type="text"
-											name={`kontakt_company`} />
+									<input
+										ref={register({
+											maxlength: 40,
+										})}
+										className="input__text"
+										type="text"
+										name={`kontakt_company`} />
 								</div>
 
 								<div className="contact__stepblock">
-									<label className="label__text" 
+									<label className="label__text"
 										htmlFor={`kontakt_name`}>
 										{steps[2].andere_fragen.vorname}*</label>
-										<input
-											ref={register({ 
-												required: true, 
-												maxlength: 20, 
-												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
-											})}
-											className="input__text"
-											type="text"
-											name={`kontakt_name`} />
-											{errors.kontakt_name && data.fields.fehlerfelder[1].text.toUpperCase()}
+									<input
+										ref={register({
+											required: true,
+											maxlength: 20,
+											pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+										})}
+										className="input__text"
+										type="text"
+										name={`kontakt_name`} />
+									{errors.kontakt_name && data.fields.fehlerfelder[1].text.toUpperCase()}
 								</div>
 
 								<div className="contact__stepblock">
-									<label className="label__text" 
+									<label className="label__text"
 										htmlFor={`kontakt_surname`}>
 										{steps[2].andere_fragen.nachname}*</label>
-										<input
-											ref={register({ 
-												required: true, 
-												maxlength: 25, 
-												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
-											})}
-											className="input__text"
-											type="text"
-											name={`kontakt_surname`} />
-											{errors.kontakt_surname && data.fields.fehlerfelder[1].text.toUpperCase()}
+									<input
+										ref={register({
+											required: true,
+											maxlength: 25,
+											pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+										})}
+										className="input__text"
+										type="text"
+										name={`kontakt_surname`} />
+									{errors.kontakt_surname && data.fields.fehlerfelder[1].text.toUpperCase()}
 								</div>
 
 								<div className="contact__stepblock">
-									<label className="label__text" 
+									<label className="label__text"
 										htmlFor={`kontakt_email`}>
 										{steps[2].andere_fragen.email}*</label>
-										<input
-											ref={register({ 
-												required: true,
-												pattern: {
-													value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-													message: `UNGÜLTIGE E-MAIL-ADRESSE`
-												}
-											})}
-											className="input__text"
-											type="email"
-											name={`kontakt_email`} />
-											{errors.kontakt_email && errors.kontakt_email.message}
+									<input
+										ref={register({
+											required: true,
+											pattern: {
+												value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+												message: `UNGÜLTIGE E-MAIL-ADRESSE`
+											}
+										})}
+										className="input__text"
+										type="email"
+										name={`kontakt_email`} />
+									{errors.kontakt_email && errors.kontakt_email.message}
 								</div>
 
 								<div className="contact__stepblock">
-									<label className="label__text" 
+									<label className="label__text"
 										htmlFor={`kontakt_phone`}>
 										{steps[2].andere_fragen.telefon}</label>
-										<input
-											ref={register({ 
-												maxlength: 35, 
-											})}
-											className="input__text"
-											type="tel"
-											name={`kontakt_phone`} />
+									<input
+										ref={register({
+											maxlength: 35,
+										})}
+										className="input__text"
+										type="tel"
+										name={`kontakt_phone`} />
 								</div>
 
 								<div className="contact__stepblock">
@@ -425,12 +425,13 @@ export default ({ data, layout, lang }) => {
 									<textarea ref={register}
 										name="event_nachricht" cols="30" rows="5" />
 								</div>
+
 								<div className="contact__stepblock contact__stepblock--acceptance">
-										<label htmlFor="acceptance" className="contact__stepblock--inner">
-											{lang === 'en' ? 'DATA PRIVACY' : 'DATENSCHUTZ'}*</label>
-												<input ref={register({required: true})} type="radio" className="input__radio" name="acceptance" />
-												<span className="label__radio">{parse(data.fields.kontakt_stufe_3.datenschutz)}</span>
-									</div>
+									<label htmlFor="acceptance" className="contact__stepblock--inner">
+										{lang === 'en' ? 'DATA PRIVACY' : 'DATENSCHUTZ'}*</label>
+									<input ref={register({ required: true })} type="radio" className="input__radio" name="acceptance" />
+									<span className="label__radio">{parse(data.fields.kontakt_stufe_3.datenschutz)}</span>
+								</div>
 
 							</div>
 
@@ -445,13 +446,13 @@ export default ({ data, layout, lang }) => {
 
 							</div>
 						</div>
-						
+
 					</form>
 
 					<div className="contact__success">
 						<div ref={successBlock} className="contact__success--wrapper">
 							{submitted &&
-								<SendingQuery color="#C2AC84" message={data.fields.fehlerfelder[2].text}/>
+								<SendingQuery color="#C2AC84" message={data.fields.fehlerfelder[2].text} />
 							}
 						</div>
 					</div>
