@@ -12,8 +12,12 @@ const transporter = nodemailer.createTransport({
 });
 
 const send = (props) => {
+<<<<<<< HEAD
 	const encodedFile = new Uint8Array(new TextEncoder("utf-8").encode(props.attachment_buffer));
 	console.log(encodedFile)
+=======
+	console.log(typeof encodedFile)
+>>>>>>> fix: sending base64 works
 	// console.log(fs.readFile(encodedFile, function (err, data) {
 	// 	if (err) throw err;
 	// }))
@@ -73,7 +77,11 @@ const send = (props) => {
 	const uploadedFile =
 		props.contactType == 'contactForm' || props.contactType == 'keyRequest' ? null : [{
 			filename: props.attachment_name,
+<<<<<<< HEAD
 			content: encodedFile
+=======
+			content: props.attachment_buffer
+>>>>>>> fix: sending base64 works
 		}]
 	const sender = `${name} <${email}>`;
 	const message = {

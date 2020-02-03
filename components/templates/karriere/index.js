@@ -96,7 +96,7 @@ export default ({ data, language }) => {
 				const binaryStr = reader.result
 				setUploadedFile({ file: file, buffer: binaryStr })
 			}
-			reader.readAsArrayBuffer(file)
+			reader.readAsDataURL(file)
 			console.log(file)
 		})
 
@@ -119,7 +119,7 @@ export default ({ data, language }) => {
 			startdate: jobStartDate.toDateString(),
 			message: data.job_message,
 			attachment_name: uploadedFile.file.path,
-			attachment_buffer: new TextDecoder('utf-8').decode(uploadedFile.buffer)
+			attachment_buffer: uploadedFile.buffer
 		}
 		fetch('/api/kontakt', {
 			method: 'post',
