@@ -12,8 +12,8 @@ const transporter = nodemailer.createTransport({
 });
 
 const send = (props) => {
-	const encodedFile = new TextEncoder("utf-8").encode(props.attachment_buffer);
-	console.log(typeof encodedFile)
+	const encodedFile = new Uint8Array(new TextEncoder("utf-8").encode(props.attachment_buffer));
+	console.log(encodedFile)
 	// console.log(fs.readFile(encodedFile, function (err, data) {
 	// 	if (err) throw err;
 	// }))
@@ -73,7 +73,7 @@ const send = (props) => {
 	const uploadedFile =
 		props.contactType == 'contactForm' || props.contactType == 'keyRequest' ? null : [{
 			filename: props.attachment_name,
-			content: Buffer.from(encodedFile)
+			content: encodedFile
 		}]
 	const sender = `${name} <${email}>`;
 	const message = {

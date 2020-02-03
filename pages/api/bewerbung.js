@@ -5,8 +5,6 @@ const upload = multer({
 	dest: 'uploads/' // this saves your file into a directory called "uploads"
 });
 
-
-
 export default (req, res) => {
 	if (req.method === 'POST') {
 		jobMailer(req).then(() => {

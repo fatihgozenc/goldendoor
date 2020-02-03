@@ -43,7 +43,6 @@ export default ({ data, language }) => {
 	const openBlock = (e) => {
 		const entryContainer = e.currentTarget.parentElement.parentElement;
 		let isCollapsed = entryContainer.getAttribute('data-collapsed') === 'true';
-		console.log(isCollapsed)
 		if (isCollapsed) {
 			collapseBlock(entryContainer)
 			entryContainer.setAttribute('data-collapsed', 'false');
@@ -51,7 +50,6 @@ export default ({ data, language }) => {
 			expandBlock(entryContainer)
 			entryContainer.setAttribute('data-collapsed', 'true');
 		}
-		console.log(e.currentTarget)
 		e.currentTarget.firstElementChild.classList.toggle('rotateSymbol');
 	}
 

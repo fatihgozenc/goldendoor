@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -378,7 +378,6 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
   const openBlock = e => {
     const entryContainer = e.currentTarget.parentElement.parentElement;
     let isCollapsed = entryContainer.getAttribute('data-collapsed') === 'true';
-    console.log(isCollapsed);
 
     if (isCollapsed) {
       collapseBlock(entryContainer);
@@ -388,7 +387,6 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
       entryContainer.setAttribute('data-collapsed', 'true');
     }
 
-    console.log(e.currentTarget);
     e.currentTarget.firstElementChild.classList.toggle('rotateSymbol');
   };
 
@@ -431,7 +429,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
       accept: "application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 79
       },
       __self: undefined
     });
@@ -503,14 +501,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     description: data.fields.seo.description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 138
     },
     __self: undefined
   }), __jsx("div", {
     className: "page__title page__title--contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 142
     },
     __self: undefined
   }, __jsx(_Breadcrumb__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -518,20 +516,20 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     title: data.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 143
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 144
     },
     __self: undefined
   }, data.title)), __jsx("div", {
     className: "career",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 146
     },
     __self: undefined
   }, data.fields.karriere_eintrage.map((item, key) => __jsx("div", {
@@ -539,7 +537,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "career__entry--wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 149
     },
     __self: undefined
   }, __jsx("div", {
@@ -547,27 +545,27 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     "data-collapsed": "false",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 150
     },
     __self: undefined
   }, __jsx("div", {
     className: "career__entry--block career__entry--util",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153
+      lineNumber: 151
     },
     __self: undefined
   }, item.info.arbeitszeit), __jsx("div", {
     className: "career__entry--block career__entry--info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 155
     },
     __self: undefined
   }, item.info.titel), html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(item.beschreibung), __jsx("a", {
@@ -575,21 +573,21 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "golden__button button--bewerbung",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 157
     },
     __self: undefined
   }, formFields.bewerbung_button)), __jsx("div", {
     className: "career__entry--block career__entry--util",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 161
     },
     __self: undefined
   }, item.info.standort), __jsx("div", {
     className: "career__entry--block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 164
     },
     __self: undefined
   }, __jsx("a", {
@@ -597,14 +595,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     onClick: e => openBlock(e),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 165
     },
     __self: undefined
   }, __jsx(_Icon__WEBPACK_IMPORTED_MODULE_11__["default"], {
     type: "plus",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 166
     },
     __self: undefined
   }))))))), __jsx("form", {
@@ -613,27 +611,27 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "career__application",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 174
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 176
     },
     __self: undefined
   }, formFields.bewerbung_titel), __jsx("div", {
     className: "contact__step--flexWrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 178
     },
     __self: undefined
   }, __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 180
     },
     __self: undefined
   }, __jsx("label", {
@@ -641,7 +639,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     htmlFor: "bewerbung_name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 181
     },
     __self: undefined
   }, labels.bewerbung_vorname, "*", __jsx("input", {
@@ -655,14 +653,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     name: "bewerbung_name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 182
     },
     __self: undefined
   }))), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 194
     },
     __self: undefined
   }, __jsx("label", {
@@ -670,7 +668,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     htmlFor: "bewerbung_name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 195
     },
     __self: undefined
   }, labels.bewerbung_name, "*", __jsx("input", {
@@ -684,14 +682,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     name: "bewerbung_surname",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 196
     },
     __self: undefined
   }))), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 208
     },
     __self: undefined
   }, __jsx("label", {
@@ -699,7 +697,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     htmlFor: "bewerbung_email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 209
     },
     __self: undefined
   }, "EMAIL*", __jsx("input", {
@@ -715,14 +713,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     name: "bewerbung_email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 212
+      lineNumber: 210
     },
     __self: undefined
   }))), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 226
+      lineNumber: 224
     },
     __self: undefined
   }, __jsx("label", {
@@ -730,7 +728,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     htmlFor: "bewerbung_tel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227
+      lineNumber: 225
     },
     __self: undefined
   }, labels.bewerbung_telefon, __jsx("input", {
@@ -742,14 +740,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     name: "bewerbung_tel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 226
     },
     __self: undefined
   }))), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 240
+      lineNumber: 238
     },
     __self: undefined
   }, __jsx("label", {
@@ -757,7 +755,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "label__select",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 239
     },
     __self: undefined
   }, formFields.bewerbung_frage_1), __jsx("select", {
@@ -765,13 +763,13 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     ref: register,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 242
+      lineNumber: 240
     },
     __self: undefined
   }, __jsx("optgroup", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243
+      lineNumber: 241
     },
     __self: undefined
   }, data.fields.karriere_eintrage.map((item, key) => __jsx("option", {
@@ -779,20 +777,20 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     value: item.info.titel,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 245
+      lineNumber: 243
     },
     __self: undefined
   }, item.info.titel, ", ", item.info.standort))))), __jsx("div", {
     className: "contact__stepblock uploadcv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 251
+      lineNumber: 249
     },
     __self: undefined
   }, __jsx("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getRootProps(), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253
+      lineNumber: 251
     },
     __self: undefined
   }), __jsx("input", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -801,32 +799,32 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
   }, getInputProps(), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 254
+      lineNumber: 252
     },
     __self: undefined
   })), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 255
+      lineNumber: 253
     },
     __self: undefined
   }, uploadTextParts[0]), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 256
+      lineNumber: 254
     },
     __self: undefined
   }, uploadTextParts[1]), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 257
+      lineNumber: 255
     },
     __self: undefined
   }, `${uploadTextParts[2]} ${uploadTextParts[3]}`))), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 261
+      lineNumber: 259
     },
     __self: undefined
   }, __jsx("label", {
@@ -834,7 +832,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "contact__stepblock--inner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 262
+      lineNumber: 260
     },
     __self: undefined
   }, formFields.bewerbung_frage_2.frage), formFields.bewerbung_frage_2.job_status.map((item, key) => __jsx("p", {
@@ -842,7 +840,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     key: key,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 265
+      lineNumber: 263
     },
     __self: undefined
   }, __jsx("input", {
@@ -853,21 +851,21 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     value: item.status,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 266
+      lineNumber: 264
     },
     __self: undefined
   }), __jsx("span", {
     className: "label__radio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 267
+      lineNumber: 265
     },
     __self: undefined
   }, item.status)))), __jsx("div", {
     className: "contact__stepblock contact__stepblock--date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 272
+      lineNumber: 270
     },
     __self: undefined
   }, __jsx("label", {
@@ -875,7 +873,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     htmlFor: "job_start_date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 273
+      lineNumber: 271
     },
     __self: undefined
   }, formFields.bewerbung_zeit), __jsx(react_datepicker__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -883,21 +881,21 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     onChange: date => setJobStartDate(date),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 274
+      lineNumber: 272
     },
     __self: undefined
   })), __jsx("div", {
     className: "contact__stepblock",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 277
+      lineNumber: 275
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "job_message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 278
+      lineNumber: 276
     },
     __self: undefined
   }, formFields.bewerbung_nachricht), __jsx("textarea", {
@@ -908,14 +906,14 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     rows: "5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 279
+      lineNumber: 277
     },
     __self: undefined
   })), __jsx("div", {
     className: "contact__stepblock career__submitwrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 285
+      lineNumber: 283
     },
     __self: undefined
   }, __jsx("button", {
@@ -923,7 +921,7 @@ var bufferify = __webpack_require__(/*! json-bufferify */ "json-bufferify");
     className: "golden__button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 287
+      lineNumber: 285
     },
     __self: undefined
   }, formFields.bewerbung_button)))));
@@ -1057,7 +1055,7 @@ KarrierePage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*********************************!*\
   !*** multi ./pages/karriere.js ***!
   \*********************************/
