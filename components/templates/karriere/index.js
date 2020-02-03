@@ -1,14 +1,16 @@
 import parse from 'html-react-parser';
 import DatePicker from 'react-datepicker';
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { NextSeo } from 'next-seo';
 import { useDropzone } from 'react-dropzone';
 import Breadcrumb from '../../Breadcrumb';
+import Dropzone from 'react-dropzone-uploader'
 import serialize from 'serialize-javascript';
+var bufferify = require('json-bufferify');
 import Icon from '../../Icon';
 import './style.scss';
 
-export default ({data, language}) => {
+export default ({ data, language }) => {
 
 	const formFields = data.fields.karriere_bewerbung;
 
@@ -53,12 +55,38 @@ export default ({data, language}) => {
 		e.currentTarget.firstElementChild.classList.toggle('rotateSymbol');
 	}
 
+	const labels = data.fields.karriere_bewerbung.bewerbung_etiketten;
+
 	const uploadText = formFields.bewerbung_hochladen;
 	const uploadMessages = formFields.formnachrichten;
 	const [uploadedFile, setUploadedFile] = React.useState({
 		file: '',
 		buffer: {}
 	});
+
+	const MyUploader = () => {
+		// specify upload params and url for your files
+		const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
+
+		// called every time a file's `status` changes
+		const handleChangeStatus = ({ meta, file }, status) => { console.log(status, meta, file) }
+
+		// receives array of files that are done uploading when submit button is clicked
+		const handleSubmit = (files, allFiles) => {
+			console.log(files.map(f => f.meta))
+			allFiles.forEach(f => f.remove())
+		}
+
+		return (
+			<Dropzone
+				getUploadParams={getUploadParams}
+				onChangeStatus={handleChangeStatus}
+				onSubmit={handleSubmit}
+				accept="application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+			/>
+		)
+	}
+
 
 	const onDrop = React.useCallback((acceptedFiles) => {
 		acceptedFiles.forEach((file) => {
@@ -68,21 +96,20 @@ export default ({data, language}) => {
 			reader.onload = () => {
 				// Do whatever you want with the file contents
 				const binaryStr = reader.result
-				setUploadedFile({buffer: binaryStr})
+				setUploadedFile({ file: file, buffer: binaryStr })
 			}
 			reader.readAsArrayBuffer(file)
 			console.log(file)
-			setUploadedFile({file: file})
 		})
 
 	}, [])
-	
+
 	const { getRootProps, getInputProps } = useDropzone({ onDrop })
 	const uploadTextParts = uploadText.split(' ');
 	const [submitted, setSubmitted] = React.useState(false);
 	const { handleSubmit, register, errors } = useForm();
 
-	const onSubmit = data => { 
+	const onSubmit = data => {
 		const formData = {
 			lang: language,
 			contactType: "jobApplication",
@@ -91,24 +118,22 @@ export default ({data, language}) => {
 			email: data.bewerbung_email,
 			position: data.job_position,
 			jobstatus: data.job_status,
-			startdate : jobStartDate.toDateString(),
+			startdate: jobStartDate.toDateString(),
 			message: data.job_message,
-			attachment: uploadedFile
+			attachment_name: uploadedFile.file.path,
+			attachment_buffer: new TextDecoder('utf-8').decode(uploadedFile.buffer)
 		}
-
 		fetch('/api/kontakt', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-				'Content-Type': 'application/json',
-				'Content-Disposition': 'attachment'
-      },
-      body: serialize(formData)
-    }).then((res) => {
-      res.status === 200 ? setSubmitted(!submitted) : ''
-    }).catch((err) => console.log(err))
+			method: 'post',
+			headers: {
+				'Accept': 'application/json, text/plain, */*',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(formData)
+		}).then((res) => {
+			res.status === 200 ? setSubmitted(!submitted) : ''
+		}).catch((err) => console.log(err))
 	};
-
 
 	return (
 		<>
@@ -154,34 +179,63 @@ export default ({data, language}) => {
 
 				<div className="contact__step--flexWrapper">
 
-					{Object.values(formFields.bewerbung_etiketten).map((item, key) => (
+					<div className="contact__stepblock">
+						<label className="label__text" htmlFor="bewerbung_name">{labels.bewerbung_vorname}*
+							<input
+								className="input__text"
+								type="text"
+								ref={register({
+									required: true,
+									maxlength: 20,
+									pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+								})}
+								name="bewerbung_name" />
+						</label>
+					</div>
 
-						<div key={key} className="contact__stepblock">
+					<div className="contact__stepblock">
+						<label className="label__text" htmlFor="bewerbung_name">{labels.bewerbung_name}*
+							<input
+								className="input__text"
+								type="text"
+								ref={register({
+									required: true,
+									maxlength: 20,
+									pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+								})}
+								name="bewerbung_surname" />
+						</label>
+					</div>
 
-							{key === 3
-								? (
-									<label className="label__text" htmlFor={`bewerbung_${item}`}>{item}
-										<input
-											className="input__text"
-											type="text" id={`bewerbung_${item.toLowerCase()}`}
-											name={`bewerbung_${item.toLowerCase()}`} />
-									</label>
-								) : (
-									<label className="label__text" htmlFor={`bewerbung_${item}`}>{`${item}*`}
-										<input
-											ref={register({ 
-												required: true, 
-												maxlength: 20, 
-												pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u 
-											})}
-											className="input__text"
-											type="text" id={`bewerbung_${item.toLowerCase()}`}
-											name={`bewerbung_${item.toLowerCase()}`} />
-									</label>
-								)
-							}
-						</div>
-					))}
+					<div className="contact__stepblock">
+						<label className="label__text" htmlFor="bewerbung_email">EMAIL*
+							<input
+								className="input__text"
+								type="email"
+								ref={register({
+									required: true,
+									pattern: {
+										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+										message: `UNGÜLTIGE E-MAIL-ADRESSE`
+									}
+								})}
+								name="bewerbung_email" />
+						</label>
+					</div>
+
+					<div className="contact__stepblock">
+						<label className="label__text" htmlFor="bewerbung_tel">{labels.bewerbung_telefon}
+							<input
+								className="input__text"
+								type="tel"
+								ref={
+									register({
+										maxlength: 35
+									})
+								}
+								name="bewerbung_tel" />
+						</label>
+					</div>
 
 					<div className="contact__stepblock">
 						<label htmlFor="job_position" className="label__select">{formFields.bewerbung_frage_1}</label>
@@ -195,6 +249,7 @@ export default ({data, language}) => {
 					</div>
 
 					<div className="contact__stepblock uploadcv">
+						{/* <MyUploader /> */}
 						<div {...getRootProps()}>
 							<input name="uploadedfile" ref={register} {...getInputProps()} />
 							<span>{uploadTextParts[0]}</span>

@@ -74,6 +74,7 @@
 	display: flex;
 	justify-content: flex-end;
 	margin: 5% 0;
+	position: relative;
 	@include xxl {
 		width: 110%;
 	}
@@ -189,7 +190,7 @@
 }
 
 .label__radio > p, .label__radio > a {
-	display: inline-block;
+	display: inline;
 	text-transform: initial;
 	letter-spacing: initial;
 	font-family: "Noto Serif" !important;

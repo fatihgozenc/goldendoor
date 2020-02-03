@@ -20,6 +20,7 @@ export default function ({ data, language }) {
 	));
 
 	const successBlock = React.useRef();
+	const presskitForm = React.useRef();
 	const { handleSubmit, register, errors } = useForm();
 	const [submitted, setSubmitted] = React.useState(false);
 
@@ -27,9 +28,9 @@ export default function ({ data, language }) {
 		const formData = {
 			lang: language,
 			contactType: "keyRequest",
-			name: language === 'de' ? data.bewerbung_vorname : data.bewerbung_name,
-			surname: language === 'de' ? data.bewerbung_name : data.bewerbung_surname,
-			email: data.bewerbung_email,
+			name: data.name,
+			surname: data.surname,
+			email: data.email,
 		}
 
 		fetch('/api/kontakt', {
@@ -43,6 +44,13 @@ export default function ({ data, language }) {
 			res.status === 200 ? setSubmitted(!submitted) : ''
 		}).catch((err) => console.log(err))
 	};
+
+	React.useEffect(() => {
+		if (submitted) {
+			presskitForm.current.classList.add('hideForm');
+			successBlock.current.classList.add('showSuccess');
+		}
+	}, [submitted])
 
 	return (
 		<>
@@ -83,31 +91,47 @@ export default function ({ data, language }) {
 				</div>
 
 				<div className="presskit__formblock">
-					<form onSubmit={handleSubmit(onSubmit)} className="presskit__form">
+					<form ref={presskitForm} onSubmit={handleSubmit(onSubmit)} className="presskit__form">
 
 						<div className="presskit__form--item">
 							<label className="label__text" htmlFor="name">
 								{formFields.etiketten.vorname}
-								<input className="input__text" type="text" name="name" />
+								<input
+									ref={register({
+										required: true,
+										maxlength: 20,
+										pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+									})} className="input__text" type="text" name="name" />
 							</label>
 						</div>
 
 						<div className="presskit__form--item">
 							<label className="label__text" htmlFor="surname">
 								{formFields.etiketten.name}
-								<input className="input__text" type="text" name="surname" />
+								<input
+									ref={register({
+										required: true,
+										maxlength: 20,
+										pattern: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+									})} className="input__text" type="text" name="surname" />
 							</label>
 						</div>
 
 						<div className="presskit__form--item">
 							<label className="label__text" htmlFor="email">
 								{formFields.etiketten.email}
-								<input className="input__text" type="email" name="email" />
+								<input
+									ref={register({
+										required: true,
+										pattern: {
+											value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+											message: `UNGÜLTIGE E-MAIL-ADRESSE`
+										}
+									})} className="input__text" type="email" name="email" />
 							</label>
 						</div>
 
 						<div className="presskit__form--item">
-
 							<input ref={register({ required: true })} type="radio" className="input__radio" name="acceptance" />
 							<span className="label__radio">{parse(formFields.datenschutz)}</span>
 						</div>

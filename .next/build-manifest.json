@@ -19,17 +19,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/downloads": [
+    "/karriere": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
-      "static/runtime/main.js"
-    ],
-    "/en/kontakt": [
-      "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
-      "static/css/static/development/pages/en/kontakt.js.chunk.css",
+      "static/css/static/development/pages/karriere.js.chunk.css",
       "static/runtime/main.js"
     ]
   }
