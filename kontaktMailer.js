@@ -12,10 +12,6 @@ const transporter = nodemailer.createTransport({
 });
 
 const send = (props) => {
-	// console.log(fs.readFile(encodedFile, function (err, data) {
-	// 	if (err) throw err;
-	// }))
-	// console.log(new TextEncoder("utf-8").encode(props.attachment_buffer))
 	const name = props.contactType == 'contactForm' ? (props.kontakt_name + " " + props.kontakt_surname) : props.name + ' ' + props.surname;
 	const email = props.contactType == 'contactForm' ? props.kontakt_email : props.email;
 	const text = () => {
@@ -69,10 +65,10 @@ const send = (props) => {
 	const content = text();
 
 	const uploadedFile =
-		props.contactType == 'contactForm' || props.contactType == 'keyRequest' ? null : [{
-			filename: props.attachment_name,
-			content: props.attachment_buffer
-		}]
+		props.contactType == 'jobApplication' ? [{
+			path: props.attachment_buffer
+		}] : null;
+
 	const sender = `${name} <${email}>`;
 	const message = {
 		from: 'f.gozenc@narciss-taurus.de',

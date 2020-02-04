@@ -1,4 +1,3 @@
-import { API_HOST } from '../config';
 import Karriere from '../components/templates/karriere';
 
 const KarrierePage = ({ data, language }) => <Karriere data={data} language={language} />
