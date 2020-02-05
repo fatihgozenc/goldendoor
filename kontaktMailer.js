@@ -66,6 +66,7 @@ const send = (props) => {
 
 	const uploadedFile =
 		props.contactType == 'jobApplication' ? [{
+			filename: props.attachment_name,
 			path: props.attachment_buffer
 		}] : null;
 

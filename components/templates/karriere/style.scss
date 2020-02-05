@@ -256,12 +256,13 @@
   }
 
   input {
-    margin: .3;
+    margin: .3rem;
     width: 100%;
     background: transparent;
     border: none;
     padding: 1rem 0 1rem 2rem;
-    border-bottom: 1px solid $gold;
+		border-bottom: 1px solid $gold;
+		font-size: 1.4rem;
     border-radius: 0;
     color: $gold;
     font-family: "Lato";
@@ -387,6 +388,22 @@
 
 .hidden {
   display: none;
+}
+
+.hideForm {
+  opacity: 0;
+  transition: .25s all ease;
+}
+
+.showSuccess {
+  display: block;
+}
+
+.karriere__success {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .contact__info{
@@ -555,6 +572,7 @@
 }
 
 .career__application {
+	position: relative;
 	padding-top: 20%;
 	margin: 0 8%;
 
@@ -595,7 +613,8 @@
 	border: 1px solid $gold;
 	border-style: dashed;
 	border-radius: 1.6rem;
-	input:focus {
+	cursor: pointer;
+	div, input:focus {
 		outline: none;
 	}
 	span {
@@ -609,4 +628,10 @@
 	@include md {
 		padding: 1.6rem 0;
 	}
+}
+
+.uploaded__field {
+	display: flex !important;
+	padding: initial;
+	justify-content: space-evenly;
 }

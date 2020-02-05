@@ -4,9 +4,8 @@ import { useForm } from 'react-hook-form';
 import { NextSeo } from 'next-seo';
 import { useDropzone } from 'react-dropzone';
 import Breadcrumb from '../../Breadcrumb';
-import Dropzone from 'react-dropzone-uploader'
+import SendingQuery from '../../SendingQuery';
 import serialize from 'serialize-javascript';
-var bufferify = require('json-bufferify');
 import Icon from '../../Icon';
 import './style.scss';
 
@@ -57,34 +56,11 @@ export default ({ data, language }) => {
 
 	const uploadText = formFields.bewerbung_hochladen;
 	const uploadMessages = formFields.formnachrichten;
+	const [uploaded, setUploaded] = React.useState(false);
 	const [uploadedFile, setUploadedFile] = React.useState({
 		file: '',
 		buffer: {}
 	});
-
-	const MyUploader = () => {
-		// specify upload params and url for your files
-		const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
-
-		// called every time a file's `status` changes
-		const handleChangeStatus = ({ meta, file }, status) => { console.log(status, meta, file) }
-
-		// receives array of files that are done uploading when submit button is clicked
-		const handleSubmit = (files, allFiles) => {
-			console.log(files.map(f => f.meta))
-			allFiles.forEach(f => f.remove())
-		}
-
-		return (
-			<Dropzone
-				getUploadParams={getUploadParams}
-				onChangeStatus={handleChangeStatus}
-				onSubmit={handleSubmit}
-				accept="application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-			/>
-		)
-	}
-
 
 	const onDrop = React.useCallback((acceptedFiles) => {
 		acceptedFiles.forEach((file) => {
@@ -95,6 +71,7 @@ export default ({ data, language }) => {
 				// Do whatever you want with the file contents
 				const binaryStr = reader.result
 				setUploadedFile({ file: file, buffer: binaryStr })
+				setUploaded(!uploaded)
 			}
 			reader.readAsDataURL(file)
 			console.log(file)
@@ -102,8 +79,13 @@ export default ({ data, language }) => {
 
 	}, [])
 
-	const { getRootProps, getInputProps } = useDropzone({ onDrop })
+	const { getRootProps, getInputProps } = useDropzone({
+		onDrop,
+		accept: 'application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+	})
 	const uploadTextParts = uploadText.split(' ');
+	const successBlock = React.useRef();
+	const jobApplication = React.useRef();
 	const [submitted, setSubmitted] = React.useState(false);
 	const { handleSubmit, register, errors } = useForm();
 
@@ -132,6 +114,13 @@ export default ({ data, language }) => {
 			res.status === 200 ? setSubmitted(!submitted) : ''
 		}).catch((err) => console.log(err))
 	};
+
+	React.useEffect(() => {
+		if (submitted) {
+			jobApplication.current.classList.add('hideForm');
+			successBlock.current.classList.add('showSuccess');
+		}
+	}, [submitted])
 
 	return (
 		<>
@@ -175,7 +164,7 @@ export default ({ data, language }) => {
 
 				<h2>{formFields.bewerbung_titel}</h2>
 
-				<div className="contact__step--flexWrapper">
+				<div className="contact__step--flexWrapper" ref={jobApplication}>
 
 					<div className="contact__stepblock">
 						<label className="label__text" htmlFor="bewerbung_name">{labels.bewerbung_vorname}*
@@ -247,12 +236,24 @@ export default ({ data, language }) => {
 					</div>
 
 					<div className="contact__stepblock uploadcv">
-						{/* <MyUploader /> */}
 						<div {...getRootProps()}>
 							<input name="uploadedfile" ref={register} {...getInputProps()} />
-							<span>{uploadTextParts[0]}</span>
-							<span>{uploadTextParts[1]}</span>
-							<span>{`${uploadTextParts[2]} ${uploadTextParts[3]}`}</span>
+							{
+								!uploaded
+									? (
+										<>
+											<span>{uploadTextParts[0]}</span>
+											<span>{uploadTextParts[1]}</span>
+											<span>{`${uploadTextParts[2]} ${uploadTextParts[3]}`}</span>
+											<small>{language === 'de' ? 'PDF, DOC, DOCX FORMATE WERDEN AKZEPTIERT.' : 'PDF, DOC, DOCX FORMATS ARE ACCEPTED.'}</small>
+										</>
+									) : (
+										<>
+											<p className="uploaded__field" onClick={() => setUploaded(!uploaded)}>{uploadedFile.file.name}&nbsp;&nbsp;&nbsp;<Icon type="cross" /></p>
+										</>
+									)
+							}
+
 						</div>
 					</div>
 
@@ -286,6 +287,15 @@ export default ({ data, language }) => {
 
 					</div>
 
+				</div>
+
+				<div className="contact__success karriere__success">
+					<div ref={successBlock} className="contact__success--wrapper">
+						{submitted &&
+							<SendingQuery color="#C2AC84"
+								message={language == 'de' ? 'Ihre Anfrage wurde gesendet. Vielen Dank für Ihre Kontaktaufnahme.' : 'Your request has been sent, thank you for contacting us.'} />
+						}
+					</div>
 				</div>
 
 			</form>
