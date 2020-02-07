@@ -3,6 +3,7 @@ import Hero from '../../Hero';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import parse from 'html-react-parser';
 import MehrLesen from '../../MehrLesen';
+import './slider.scss';
 import './style.scss'
 
 export default function ({ data }) {
