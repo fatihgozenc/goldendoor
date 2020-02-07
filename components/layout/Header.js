@@ -28,6 +28,10 @@ const Header = ({ data, logo, lang, pathname }) => {
 			return `/`
 		} else if (pathname === '/en/engagement' || pathname === '/engagement') {
 			return lang === 'de' ? `/en/engagement` : `/engagement`
+		} else if (/.*\/referenzen\/.*/.test(pathname)) {
+			return lang === 'de' ? `/en/referenzen` : `/referenzen`
+		} else if (/.*\/presse\/.*/.test(pathname)) {
+			return lang === 'de' ? `/en/presse` : `/presse`
 		} else if (lang === 'en') {
 			return pathname.split('/en')[1]
 		} else {

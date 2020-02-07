@@ -5,8 +5,6 @@ import './style.scss';
 
 export default function ({ data }) {
 
-	console.log(data)
-
 	return (
 		<>
 			<NextSeo
@@ -26,16 +24,42 @@ export default function ({ data }) {
 				{
 					data.children.map((item, key) => (
 						<div key={key} className="engagement__item">
-							<div className="engagement__item--img backgroundImg"
-								style={{ backgroundImage: "url(" + item.image + ")" }} />
-							<div className="engagement__item--info">
-								<h3>{item.title}</h3>
-								<p>{parse(item.excerpt)}</p>
-							</div>
+
+							<a href={`presse/${item.slug}`}>
+								<div className="engagement__item--img backgroundImg"
+									style={{ backgroundImage: "url(" + item.image + ")" }} />
+								<div className="engagement__item--info">
+									<h3>{item.title}</h3>
+									<p>{parse(item.excerpt)}</p>
+								</div>
+							</a>
 						</div>
 					))
 				}
 
+			</div>
+
+			<div className="pool__pagination">
+				{
+					new Array(data.page_count + 1).fill(data.page_count).map((item, key) => {
+						if (key === 1) {
+							return (
+								<a key={key} href={data.lang === 'en' ? `/en/presse` : `/presse`} className={data.page_number == key ? 'pageActive' : null}
+								>{key}
+								</a>
+							)
+						} else if (key > 1) {
+							return (
+								<a key={key} href={data.lang === 'en' ? `/en/presse/page/${key}` : `/presse/page/${key}`}
+									className={data.page_number == key ? 'pageActive' : null}
+								>{key}
+								</a>
+							)
+						} else {
+							return null;
+						}
+					})
+				}
 			</div>
 
 		</>
