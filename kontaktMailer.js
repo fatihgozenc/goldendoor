@@ -2,14 +2,24 @@ const nodemailer = require('nodemailer')
 const fs = require('fs');
 const transporter = nodemailer.createTransport({
 	pool: true,
-	host: "smtprelaypool.ispgateway.de",
+	host: process.env.SMTP_HOST,
 	port: 465,
 	secure: true, // use TLS
+	auth: {
+		user: process.env.SMTP_USER,
+		pass: process.env.SMTP_PASS
+	}
+});
+
+const devMail = {
+	pool: true,
+	host: "smtprelaypool.ispgateway.de",
+	port: 465,
 	auth: {
 		user: 'f.gozenc@narciss-taurus.de',
 		pass: '1rk3n84L>h8c'
 	}
-});
+}
 
 const send = (props) => {
 	const name = props.contactType == 'contactForm' ? (props.kontakt_name + " " + props.kontakt_surname) : props.name + ' ' + props.surname;
@@ -72,8 +82,8 @@ const send = (props) => {
 
 	const sender = `${name} <${email}>`;
 	const message = {
-		from: 'f.gozenc@narciss-taurus.de',
-		to: 'f.gozenc@narciss-taurus.de',
+		from: process.env.SMTP_FROM,
+		to: props.contactType == 'keyRequest' ? process.env.SMTP_TO : process.env.SMTP_FROM,
 		subject: `Neu Nachricht von ${sender}`,
 		text: content,
 		attachments: uploadedFile,
