@@ -24,7 +24,7 @@ module.exports = withSASS(
 			SMTP_USER: 'w018aa9c',
 			SMTP_PASS: 'ho7yZrChhnT6CgYF',
 			SMTP_FROM: 'hallo@goldendoor.group',
-			SMTP_TO: 'hallo@goldendoor.group',
+			SMTP_TO: 'marketing@goldendoor.group',
 			RECAPTCHA_SECRET: '6LejFI8UAAAAAEJm8Dlam0If-F5Uv3KkiLJAgKBX'
 		}
 	},
