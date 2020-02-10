@@ -15,7 +15,7 @@ module.exports = withSASS(
 			return config
 		},
 		env: {
-			API_HOST_SITE: 'http://api.goldendoor.group/wp-json/gd/',
+			API_HOST_SITE: 'https://api.goldendoor.group/wp-json/gd/',
 			NEWSLETTER_USER: 'marketing@goldendoor.group',
 			NEWSLETTER_PASS: '&n2go@GD',
 			NEWSLETTER_API_HOST: 'https://api.newsletter2go.com',
