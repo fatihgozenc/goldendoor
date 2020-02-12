@@ -13,6 +13,7 @@ export default function ({ data }) {
 				title={data.fields.seo.title}
 				description={data.fields.seo.description}
 			/>
+			<h1 className="seo_title">Home</h1>
 			<Opening data={data.fields.text_slider} />
 			<div className="preface">
 				<h2>{parse(data.fields.titel)}</h2>
