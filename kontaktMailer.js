@@ -1,25 +1,27 @@
 const nodemailer = require('nodemailer')
 const fs = require('fs');
-const transporter = nodemailer.createTransport({
+
+const transporterOne = nodemailer.createTransport({
 	pool: true,
 	host: process.env.SMTP_HOST,
 	port: 465,
 	secure: true, // use TLS
 	auth: {
-		user: process.env.SMTP_USER,
-		pass: process.env.SMTP_PASS
+		user: process.env.SMTP_ONE_USER,
+		pass: process.env.SMTP_ONE_PASS
 	}
 });
 
-const devMail = {
+const transporterTwo = nodemailer.createTransport({
 	pool: true,
-	host: "smtprelaypool.ispgateway.de",
+	host: process.env.SMTP_HOST,
 	port: 465,
+	secure: true, // use TLS
 	auth: {
-		user: 'f.gozenc@narciss-taurus.de',
-		pass: '1rk3n84L>h8c'
+		user: process.env.SMTP_TWO_USER,
+		pass: process.env.SMTP_TWO_PASS
 	}
-}
+});
 
 const send = (props) => {
 	const name = props.contactType == 'contactForm' ? (props.kontakt_name + " " + props.kontakt_surname) : props.name + ' ' + props.surname;
@@ -82,19 +84,28 @@ const send = (props) => {
 
 	const sender = `${name} <${email}>`;
 	const message = {
-		from: process.env.SMTP_FROM,
-		to: props.contactType == 'keyRequest' ? process.env.SMTP_TO : process.env.SMTP_FROM,
+		from: props.contactType == 'keyRequest' ? process.env.SMTP_TWO_FROM : process.env.SMTP_ONE_FROM,
+		to: props.contactType == 'keyRequest' ? process.env.SMTP_TWO_TO : process.env.SMTP_ONE_TO,
 		subject: `Neu Nachricht von ${sender}`,
 		text: content,
 		attachments: uploadedFile,
 		replyTo: sender
 	}
 
-	return new Promise((resolve, reject) => {
-		transporter.sendMail(message, (error, info) =>
-			error ? reject(error) : resolve(info)
-		)
-	})
+	if (props.contactType == 'keyRequest') {
+		return new Promise((resolve, reject) => {
+			transporterTwo.sendMail(message, (error, info) =>
+				error ? reject(error) : resolve(info)
+			)
+		})
+	} else {
+		return new Promise((resolve, reject) => {
+			transporterOne.sendMail(message, (error, info) =>
+				error ? reject(error) : resolve(info)
+			)
+		})
+	}
+
 }
 
 module.exports = send
