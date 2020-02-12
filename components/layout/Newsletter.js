@@ -5,7 +5,6 @@ import SendingQuery from '../SendingQuery';
 const Newsletter = ({ data }) => {
 
 	const [accessToken, setAccessToken] = React.useState('');
-
 	const n2goHeaders = new Headers();
 	n2goHeaders.append("Content-Type", "application/json");
 	n2goHeaders.append("Authorization", "Basic " + Buffer.from(process.env.NEWSLETTER_API_KEY).toString('base64'));
@@ -35,7 +34,7 @@ const Newsletter = ({ data }) => {
 
 	React.useEffect(() => {
 		// localStorage.getItem('newsletter') === null &&
-			connectToNewsletter();
+		connectToNewsletter();
 	}, [])
 
 	const [registerResponse, setRegisterResponse] = React.useState({});
@@ -162,7 +161,7 @@ const Newsletter = ({ data }) => {
 
 			{
 				registerResponse.status === 200 &&
-				 <SendingQuery color="#C2AC84" message={`Danke für die Registrierung.`} />
+				<SendingQuery color="#C2AC84" message={`Danke für die Registrierung.`} />
 			}
 
 		</div>

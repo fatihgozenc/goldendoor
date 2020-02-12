@@ -1,5 +1,6 @@
 const withSASS = require('@zeit/next-sass');
 const withFonts = require('nextjs-fonts');
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 module.exports = withSASS(
 	{
@@ -16,16 +17,16 @@ module.exports = withSASS(
 		},
 		env: {
 			API_HOST_SITE: 'https://api.goldendoor.group/wp-json/gd/',
-			NEWSLETTER_USER: 'marketing@goldendoor.group',
-			NEWSLETTER_PASS: '&n2go@GD',
-			NEWSLETTER_API_HOST: 'https://api.newsletter2go.com',
-			NEWSLETTER_API_KEY: 't4u26bmr_Qe1ORGnr_fDNBssO_Sjxlfmi3_a5Ri5P:gyt7smav',
-			SMTP_HOST: 'w018aa9c.kasserver.com',
-			SMTP_USER: 'w018aa9c',
-			SMTP_PASS: 'ho7yZrChhnT6CgYF',
-			SMTP_FROM: 'hallo@goldendoor.group',
-			SMTP_TO: 'marketing@goldendoor.group',
-			RECAPTCHA_SECRET: '6LejFI8UAAAAAEJm8Dlam0If-F5Uv3KkiLJAgKBX'
+			NEWSLETTER_USER: process.env.NEWSLETTER_USER,
+			NEWSLETTER_PASS: process.env.NEWSLETTER_PASS,
+			NEWSLETTER_API_HOST: process.env.NEWSLETTER_API_HOST,
+			NEWSLETTER_API_KEY: process.env.NEWSLETTER_API_KEY,
+			SMTP_HOST: process.env.SMTP_HOST,
+			SMTP_USER: process.env.SMTP_USER,
+			SMTP_PASS: process.env.SMTP_PASS,
+			SMTP_FROM: process.env.SMTP_FROM,
+			SMTP_TO: process.env.SMTP_TO,
+			RECAPTCHA_SECRET: process.env.RECAPTCHA_SECRET
 		}
 	},
 	withFonts(),

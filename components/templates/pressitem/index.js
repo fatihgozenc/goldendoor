@@ -16,8 +16,6 @@ export default function ({ data }) {
 		scroll: data.scroll
 	}
 
-	console.log(data)
-
 	return (
 		<>
 			<NextSeo
