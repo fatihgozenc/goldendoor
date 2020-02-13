@@ -19,7 +19,7 @@ export default function ({ data }) {
 				<h1>{data.main.title}</h1>
 			</div>
 			{
-				data.children.length > 0 ? (
+				data.children != null ? (
 					<>
 						<div className="engagement">
 							{
