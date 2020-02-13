@@ -19,6 +19,7 @@ function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 					}}
 				/>
 				<link href="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css" rel="stylesheet" />
+				<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 			</Head>
 			<Layout data={layoutData} pathname={pathname}>
 				<Component {...pageProps} />

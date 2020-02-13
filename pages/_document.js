@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class GoldenDoorDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -18,19 +18,43 @@ class GoldenDoorDocument extends Document {
 					<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#632948" />
 					<meta name="msapplication-TileColor" content="#603cba" />
 					<meta name="theme-color" content="#603cba" />
+
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
-					{/* PAGEPROOFER */}
-					{/* <script
-          dangerouslySetInnerHTML={{ __html: `(function (d, t) {
-					var pp = d.createElement(t), s = d.getElementsByTagName(t)[0];
-					pp.src = '//app.pageproofer.com/overlay/js/4956/1600';
-					pp.type = 'text/javascript';
-					pp.async = true;
-					s.parentNode.insertBefore(pp, s);
-				})(document, 'script');`}} /> */}
+					<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+					<script dangerouslySetInnerHTML={{
+						__html: `
+							window.cookieconsent.initialise({
+								"palette": {
+									"popup": {
+										"background": "#000",
+										"text": "#c2ac84"
+									},
+									"button": {
+										"background": "transparent",
+										"border": "#c2ac84",
+										"text": "#c2ac84",
+									}
+								},
+								"type": "opt-out",
+								"content": {
+									"message": "Diese Website verwendet Cookies – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen zu können.",
+									"allow": "Ich stimme zu.",
+									"deny": "Ablehnen",
+									"link": "zum Datenschutz",
+									"href": "/datenschutz"
+								},
+								onStatusChange: function(status, chosenBefore) {
+									var type = this.options.type;
+									var didConsent = this.hasConsented();
+									if (type == 'opt-out' && !didConsent) {
+										window['ga-disable-UA-146438813-4'] = true;
+									}
+								}
+							});
+						`}} />
 				</body>
 			</Html>
 		)
