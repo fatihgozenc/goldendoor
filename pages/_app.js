@@ -3,6 +3,8 @@ import Head from 'next/head';
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/Layout';
 import { DefaultSeo } from 'next-seo';
+import Router from "next/router";
+import withGA from "next-ga";
 
 function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 	return (
@@ -12,7 +14,7 @@ function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 					openGraph={{
 						type: 'website',
 						locale: 'de_DE',
-						url: 'http://goldendoor.group/',
+						url: 'https://goldendoor.group/',
 						site_name: 'Golden Door Group',
 					}}
 				/>
@@ -34,4 +36,4 @@ GoldenDoor.getInitialProps = async (appContext) => {
 	return { ...appProps, layoutData: data, pathname: pathname, lang: lang }
 }
 
-export default GoldenDoor;
+export default withGA('UA-146438813-4', Router)(GoldenDoor);
