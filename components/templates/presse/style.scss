@@ -75,3 +75,12 @@
 .engagement__item--info {
   padding: 0 1.6rem 1.6rem 1.6rem;
 }
+
+.nocontent {
+	margin: 0 10%;
+	text-align: center;
+	@include display_text;
+	@include md {
+		margin: 0 auto;
+	}
+}
