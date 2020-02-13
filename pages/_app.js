@@ -3,8 +3,6 @@ import Head from 'next/head';
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/Layout';
 import { DefaultSeo } from 'next-seo';
-import Router from "next/router";
-import withGA from "next-ga";
 
 function GoldenDoor({ Component, pageProps, layoutData, pathname, lang }) {
 	return (
@@ -37,4 +35,4 @@ GoldenDoor.getInitialProps = async (appContext) => {
 	return { ...appProps, layoutData: data, pathname: pathname, lang: lang }
 }
 
-export default withGA('UA-146438813-4', Router)(GoldenDoor);
+export default GoldenDoor;
