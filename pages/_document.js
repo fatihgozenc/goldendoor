@@ -37,6 +37,7 @@ class GoldenDoorDocument extends Document {
 						}
 					`}} />
 				</Head>
+
 				<body>
 					<Main />
 					<NextScript />
@@ -72,6 +73,10 @@ class GoldenDoorDocument extends Document {
 								}
 							});
 						`}} />
+					<div className="whomadethis" dangerouslySetInnerHTML={{
+						__html: `<!-- Designed and coded by Fatih Gozenc © 2020 | fatihgozenc.com -->`
+					}}
+					/>
 				</body>
 			</Html>
 		)
