@@ -256,7 +256,7 @@
 	
 	@supports (-ms-ime-align: auto) {
 		span > p {
-			display: inline-block !important;
+			display: block !important;
 		}
 	}
 }
