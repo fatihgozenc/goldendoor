@@ -252,7 +252,13 @@
     a {
       text-decoration: underline;
     }
-  }
+	}
+	
+	@supports (-ms-ime-align: auto) {
+		span > p {
+			display: inline-block !important;
+		}
+	}
 }
 
 .contact__stepblock--datewrapper {
