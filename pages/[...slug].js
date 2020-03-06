@@ -1,3 +1,5 @@
+import Error from './_error';
+
 const redirects = [
 	{
 		from: '/factsheet',
@@ -5,7 +7,7 @@ const redirects = [
 	}
 ];
 
-const Redirecter = () => { };
+const Redirecter = () => { return <Error statusCode={404} />; };
 
 Redirecter.getInitialProps = async ({ res, pathname, query, asPath }) => {
 	const redirect = redirects.find(({ from }) => {
@@ -18,7 +20,8 @@ Redirecter.getInitialProps = async ({ res, pathname, query, asPath }) => {
 			Location: redirect.to,
 		});
 		res.end();
+	} else {
+		return <Error statusCode={404} />;
 	}
-	return {};
 };
 export default Redirecter;

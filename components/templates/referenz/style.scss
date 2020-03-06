@@ -162,16 +162,19 @@
 .singleloc__gallery--wrapper {
   height: 30vh;
 
-  @include md {
-    height: initial;
-  }
+	@include md {
+		height: initial;
+	}
 
-  @include xl {
-    height: 42vh;
-  }
+	@include xl {
+		height: 560px;
+	}
 
-  @include xxl {
-    height: 50vh;
-  }
-
+	@include xxl {
+		height: 680px;
+	}
+	
+	@include huge {
+		height: 820px;
+	}
 }
